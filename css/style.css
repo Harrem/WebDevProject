@@ -2,67 +2,88 @@
 body{
     margin: 0px;
 }
-#aLogo{
-    width: 255px;
-    height: 57.6px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    
-    
+/* in line 6 to line 40 it is header CSS code*/
+header{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    background-color: blue;
 }
 #appleLogo{
     width: 40px;
     height: 40px;
     position: absolute;
     left: 57px;
-    top: 6px;
+    top: 16px;
 }
 #divHeader{
-    width: 34em;
-    height: 30px;
-    padding-top: 17px;
-    background-color: rgb(255, 255, 255);
-    color: black;
     float: right;
+    height: 52px;
+    padding-top: 23px;
 }
 .aHeader{
-    padding: 0px;
     font-size: 22px;
     color: black;
     text-decoration: none;
     font-family: robotoregular;
-    padding-left: 0px;
-    padding-right: 20px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    position: relative;
+    padding-right: 33px;
 }
 .aHeader:hover{
     color: rgb(131, 106, 106);
 }
+/*******************************************/
+/*******************************************/
+/* in line 37 to line 51 it is after header CSS code*/
+#div-React-Phone{
+    min-width: 50%;
+    margin-top: 108px; 
+    height: auto; 
+    float: right;
+    border: 1px solid black;
+}
 #Rectangle{
-    width: 307px;
-    height: 615px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    width: 21vw;
+    height: 44vw;
     float: right;
 }
 #headPhone{
-    position: sticky;
-    left: 54vw;
+    width: 46vw;
+    height: 45vw;
+margin-right: -252px;
 }
-#pNav{
-    width: 397px;
+/*******************************************/
+/*******************************************/
+#div-theDocomment{
+    float: left;
+   min-width: 50%;
+   height: auto;
+   border: 2px solid brown;
+}
+#div-title{
+    float: left;
+    font-family: robotobold;
+    top: 261px;
+    font-size: 47px;
+}
+#div-p{
+    width: 541px;
     height: 100px;
-    border: 1px solid blue;
     color: black;
     font-family: robotoregular;
-    position: sticky;
-    left: 20vw;
-    position: absolute;
-    top: 254px;
+    padding: 25px;
+    font-size: 23px;
+    float: left;
+    color: rgb(100,100,100);
+}
+#div-buttom{
+    width: 10%;
+    width: 270px;
+    height: 60px;
+    float: left;
+    font-family: robotobold;
+    top: 492px;
+    font-size: 23px;
+    border: none;
+    background-color: rgb(140, 255, 228);
+    border-radius: 13px;
 }
