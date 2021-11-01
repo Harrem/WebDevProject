@@ -3,26 +3,33 @@ body{
     margin: 0px;
 }
 /* in line 6 to line 40 it is header CSS code*/
+@supports (backdrop-filter: blur(12px)){
+    header{
+        backdrop-filter: saturate(180%) blur(13px);
+    }
+    header{
+        background-color: #ffffffa4;
+    }
+}
 header{
+    padding-top: 11px;
     width: 100%;
     height: auto;
     position: fixed;
-    background-color: blue;
 }
 #appleLogo{
-    width: 40px;
-    height: 40px;
+    width: 37px;
+    height: 36px;
     position: absolute;
     left: 57px;
-    top: 16px;
+    top: 7px;
 }
 #divHeader{
     float: right;
-    height: 52px;
-    padding-top: 23px;
+    height: 48px;
 }
 .aHeader{
-    font-size: 22px;
+    font-size: 20px;
     color: black;
     text-decoration: none;
     font-family: robotoregular;
@@ -33,13 +40,13 @@ header{
 }
 /*******************************************/
 /*******************************************/
-/* in line 37 to line 51 it is after header CSS code*/
+/* in line 37 to line 53 it is after header CSS code*/
 #div-React-Phone{
-    min-width: 50%;
+    min-width: 40%;
     margin-top: 108px; 
     height: auto; 
     float: right;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 #Rectangle{
     width: 21vw;
@@ -47,43 +54,117 @@ header{
     float: right;
 }
 #headPhone{
-    width: 46vw;
+    width: 42vw;
     height: 45vw;
-margin-right: -252px;
+margin-right: -21vw;
 }
 /*******************************************/
 /*******************************************/
-#div-theDocomment{
+/*this for first table in line (57-81)*/
+table{
+    margin-left: 10vw;
+    margin-top: 19.5vw;
+    /* border: 2px solid brown; */
     float: left;
-   min-width: 50%;
-   height: auto;
-   border: 2px solid brown;
+    width: 40%;
+    height: auto;
+    
 }
-#div-title{
-    float: left;
+#td-title{
     font-family: robotobold;
-    top: 261px;
-    font-size: 47px;
+    font-size: 3vw;
 }
-#div-p{
-    width: 541px;
-    height: 100px;
-    color: black;
+#td-p{
     font-family: robotoregular;
-    padding: 25px;
-    font-size: 23px;
-    float: left;
+    font-size: 1.3vw;
     color: rgb(100,100,100);
 }
-#div-buttom{
-    width: 10%;
-    width: 270px;
-    height: 60px;
-    float: left;
+#td-buttom{
+    margin-top: 42px;
+    width: 9em;
+    height: 2.5em;
     font-family: robotobold;
-    top: 492px;
-    font-size: 23px;
+    font-size: 20px;
     border: none;
     background-color: rgb(140, 255, 228);
-    border-radius: 13px;
+    border-radius: 10px;
 }
+#td-buttom:hover{
+    background-color: rgb(196, 186, 174);
+}
+#aReadMore{
+    text-decoration: none;
+    color: black;
+}
+#aReadMore:hover{
+   color: rgb(177, 20, 20);
+}
+/*******************************************/
+/*******************************************/
+.allIphone{
+     width: auto;
+    height: 734px;
+    clear: both;
+    background-color: black;
+}
+#phone{
+    margin-top: -25vw;
+    margin-left: 10vw;
+}
+#td-title1{
+    font-family: robotobold;
+    font-size: 2vw;
+    color: rgb(255, 255, 255);
+}
+#td-p1{
+    font-family: robotoregular;
+    font-size: 1.3vw;
+    color: rgb(100,100,100);
+}
+#td-buttom1{
+    width: 9em;
+    height: 2.5em;
+    font-family: robotobold;
+    font-size: 20px;
+    margin-top: 42px;
+    border: none;
+    background-color: rgb(140, 255, 228);
+    border-radius: 10px;
+}
+#td-buttom1:hover{
+    background-color: rgb(196, 186, 174);
+}
+#iPhone{
+    margin-left: 19vw;
+    min-width: 40%;
+    margin-top: 108px; 
+    height: auto; 
+    float: right;
+}
+#iPhone1{
+ width: 29vw;
+ height: 43vw;
+ margin-left: 1vw;
+ animation-name: example;
+  animation-duration: 4s;
+}
+#iPhone2{
+    width: 7.3vw;
+    height: auto;
+    animation-name: example;
+  animation-duration: 4s;
+}
+/* The animation code */
+@keyframes example {
+    0%   {background-color: rgb(255, 0, 0);}
+    25%  {background-color: rgb(209, 209, 33);}
+    50%  {background-color: rgb(131, 131, 172);}
+    100% {background-color: green;}
+  }
+  
+  /* The element to apply the animation to */
+  #Rectangle {
+    animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
