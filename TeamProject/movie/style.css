@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+}
+
+.navigation {
+  background-color: darkcyan;
+  height: 50px;
+  margin-top: 10px;
+  padding-top: 15px;
+  padding-left: 50px;
+}
+
+a {
+  text-decoration: none;
+  padding: 10px;
+  font-size: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: whitesmoke;
+}
+
+#search {
+  -webkit-appearance: none;
+  text-indent: 0px;
+  height: 35px;
+  border-radius: 30px;
+  border-width: 0px;
+  line-height: 3;
+  width: 250px;
+  margin-right: 100px;
+  float: right;
+}
+
+#logo {
+  color: black;
+}
+
+#bestMovies {
+  background-color: rgb(131, 131, 131);
+  height: 400px;
+  margin-top: 10px;
+}
+#topMovies {
+  background-color: rgb(156, 156, 156);
+  height: 400px;
+  margin-top: 10px;
+}
+#topTVShows {
+  background-color: rgb(160, 160, 160);
+  height: 400px;
+  margin-top: 10px;
+}
+#contentForm {
+  position: relative;
+  background-color: whitesmoke;
+  height: 370px;
+  width: 300px;
+  float: left;
+  margin: 15px;
+  padding: auto;
+  border-radius: 15px;
+}
+/* form */
+/* #imgContainer{
+    width: 95%;
+    height: 95%;
+    padding: auto;
+    margin-left: auto;
+    margin-top: 8px;
+    margin-right: auto;
+} */
+
+#img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+#movieTitle {
+  color: white;
+  /* margin-top: 20px; */
+  text-align: center;
+  position: relative;
+  bottom: 100px;
+}
