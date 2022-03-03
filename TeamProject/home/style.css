@@ -44,17 +44,10 @@ a {
   outline: none;
 }
 
-#icon_search {
-  width: 20px;
-  float: right;
-  position: relative;
-  right: 340px;
-  top: 8px;
-}
-
 #logo {
   color: black;
   float: left;
+  margin-left: 0px;
 }
 
 #new_movie {
