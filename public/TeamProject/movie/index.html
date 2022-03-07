@@ -7,17 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TestPage</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../home/nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
 <body>
-    <div class="navigation">
-        <a href="" id="logo">LOGO&NAME</a>
-        <a href="">Home</a>
-        <a href="">Movies</a>
-        <a href="">TV Shows</a>
-        <a href="">About Us</a>
-        <input class="SearchBar" type="search" results=5 autosave=some_unique_value placeholder="search" id="search">
-    </div>
+    <nav>
+        <div class="menu-icon">
+            <span class="fas fa-bars"></span>
+        </div>
+        <div class="logo">
+            Movie
+        </div>
+        <div class="nav-items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Movie</a></li>
+            <li><a href="#">Tv</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Sign Up</a></li>
+        </div>
+        <div class="search-icon">
+            <span class="fas fa-search"></span>
+        </div>
+        <div class="cancel-icon">
+            <span class="fas fa-times"></span>
+        </div>
+        <form action="#">
+            <input type="search" class="search-data" placeholder="Search" required>
+            <button type="submit" class="fas fa-search"></button>
+        </form>
+    </nav>
     <div name="content">
         <div id="bestMovies">
             <div id="contentForm">
@@ -31,6 +51,7 @@
         <div id="topTVShows"></div>
     </div>
     <div name="footer"></div>
+    <script src="../home/nav.js"></script>
 </body>
 
 </html>
