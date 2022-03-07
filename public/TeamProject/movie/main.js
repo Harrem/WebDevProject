@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
 // TODO: Replace with your app's Firebase project configuration
