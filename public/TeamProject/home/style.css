@@ -66,10 +66,10 @@ a {
   background-color: brown;
 }
 
-#new_movie1{
+#new_movie1 {
   vertical-align: middle;
-    overflow: hidden;
-    width: 100%;
+  overflow: hidden;
+  width: 100%;
 }
 
 #box-movies {
