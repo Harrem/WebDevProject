@@ -24,15 +24,42 @@
             <li class="nav">About Us</li>
         </ol> -->
     </div>
-    <div class="movies" id="movies">
-        <div id="top">
+
+    <div class="SlideShowDiv" id="slideshowdiv">
+        <div class="mySlides" id="">
             <img id="topimg"
                 src="https://s3-us-west-2.amazonaws.com/prd-rteditorial/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg"
-                alt="">
+                alt="cover image">
+            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRChDQITIVlqysDK2HpjYdrc_ip-4hujzLAv_Yuggv8z1SJ_6qD"
+                alt="" id="poster">
+            <div id="container">
+                <div id="textContainer">
+                    <h1 id="title">The Maze Runner</h1>
+                    <p id="description">Thomas is deposited in a community
+                        of boys after his memory is erased, soon learning they're
+                        all trapped in a maze that will require him to join forces
+                        with fellow "runners" for a shot at escape.</p>
+                    <div id="details">
+                        <ol>
+                            <li class="details_li" id="imdbRating">imdb rating</li>
+                            <li class="details_li" id="rottenTomato">rotten tomato</li>
+                            <li class="details_li" id="tmdb">tmdb</li>
+                            <li class="details_li" id="corn">corn</li>
+                        </ol>
+                    </div>
+                    <div id="buttons">
+                        <button class="button">Watch Trailor</button>
+                        <button class="button">Add To Wishlist</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
+    <div class="movies" id="movies">
+    </div>
+    <script src="SlideShow.js"></script>
     <script src="main.js"></script>
+    <script type="module" src="./getImgColor.js"></script>
 </body>
 
 </html>

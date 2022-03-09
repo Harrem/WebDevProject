@@ -1,24 +1,33 @@
-body {
-  background-color: whitesmoke;
-  width: 90%;
+html, body {
+  /* background-color: whitesmoke; */
+  /* width: 90%; */
   margin: 0 auto;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #navigation {
-  width: auto;
-  background-color: black;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
   height: 60px;
   padding: 0 0;
+  position: fixed;
+  z-index: 100;
 }
 .nav {
   color: whitesmoke;
   display: inline-table;
   font-size: 20px;
+  text-decoration: none;
   margin: 0;
   /* height: inherit; */
   padding: 20px 20px;
   text-align: center;
 }
+a {color:white; text-decoration: none;}         /* Unvisited link  */
+a:visited {color:white;} /* Visited link    */
+a:hover {color:white;}   /* Mouse over link */
+a:active {color:white;}  /* Selected link   */
 
 .nav:hover {
   background-color: rgb(80, 80, 80);
@@ -27,7 +36,7 @@ body {
 .movies {
   margin: 0;
   text-align: center;
-  background-color: whitesmoke;
+  background-color: rgba(245, 245, 245, 0);
   padding-top: 10px;
 }
 
@@ -39,12 +48,12 @@ body {
     border-radius: 15px;
     padding: px ;
     text-align: center;
-
 } */
 
 .movie {
-  background-color: whitesmoke;
+  background-color: rgba(245, 245, 245, 0);
   display: inline-table;
+  position: relative;
   margin: 10px;
   padding-top: 40px;
   padding: 0 auto;
@@ -53,21 +62,6 @@ body {
   border-radius: 20px;
 }
 
-#top {
-  background-color: black;
-  width: auto;
-  height: fit-content;
-  /* padding: 80px 0 0 0; */
-  position: relative;
-  justify-content: center;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-#topimg {
-  vertical-align: middle;
-  overflow: hidden;
-  width: 100%;
-}
 h2 {
   font-size: 16px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -79,3 +73,68 @@ img {
   scale: 1.3;
   margin-bottom: 10px;
 }
+/* slideshow */
+
+.SlideShowDiv{
+  background-color: cyan;
+  position:relative;
+  width: 100%;
+  height: 100%;
+}
+.mySlides{
+  background-color: red;
+  position: relative;
+  overflow:hidden;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+/* #top {
+  background-color: gray;
+  width: auto;
+  height: 100%;
+  position: relative;
+  /* justify-content: center; */
+  /* overflow: hidden; *//*
+  margin-bottom: 20px;
+} */
+
+#topimg {
+  filter: brightness(40%) blur(20px);
+  /* vertical-align: middle; */
+  /* overflow: hidden; */
+  object-fit:fill;
+  width: auto;
+  height: 100%;
+}
+
+#poster {
+  position: absolute;
+  top: 200px;
+  left: 150px;
+  width: 230px;
+  height: 350px;
+}
+
+#container{
+  color: white;
+  position: absolute;
+  width: 50%;
+  top: 200px;
+  left: 450px;
+}
+
+.details_li{
+  padding:10px;
+  display: inline-table;
+}
+
+.button{
+  margin-top:100px;
+  font-weight: bold;
+  font: inherit;
+  height: 30px;
+  width: auto;
+}
+

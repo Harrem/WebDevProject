@@ -12,6 +12,20 @@ if (v) {
   icon();
 }
 
+window.onscroll = function(){
+  CheckNav();
+}
+//Navigation
+var nav = document.getElementById("navigation");
+function CheckNav(){
+  var range = window.scrollY * 0.0025;
+  nav.style.backgroundColor = `rgb(20,20,20,${range})`;
+  
+  if(window.scrollY >= 400){
+    range = 255;
+  }
+}
+
 window.onresize = function () {
   if (window.innerWidth <= 1080) {
     nav.style.fontSize = 0 + "px";
@@ -39,7 +53,7 @@ window.onresize = function () {
   }
 };
 
-fetch("https://imdb-api.com/en/API/Top250Movies/k_l748umtr", {
+fetch("https://imdb-api.com/en/API/ComingSoon/k_py4ssa7a", {
   method: "GET",
 })
   .then((response) => response.json())
@@ -70,6 +84,6 @@ fetch("https://imdb-api.com/en/API/Top250Movies/k_l748umtr", {
     console.error(err);
   });
 
-{
-  /* <img src="img" alt="Lamp" width="32" height="32"></img> */
-}
+/////////////////////////////////////
+    
+
