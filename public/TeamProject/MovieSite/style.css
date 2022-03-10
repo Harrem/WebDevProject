@@ -26,7 +26,7 @@ html, body {
 }
 a {color:white; text-decoration: none;}         /* Unvisited link  */
 a:visited {color:white;} /* Visited link    */
-a:hover {color:white;}   /* Mouse over link */
+a:hover {color:rgb(185, 185, 185);}   /* Mouse over link */
 a:active {color:white;}  /* Selected link   */
 
 .nav:hover {
@@ -82,7 +82,6 @@ img {
   height: 100%;
 }
 .mySlides{
-  background-color: red;
   position: relative;
   overflow:hidden;
   width: 100%;
@@ -128,6 +127,7 @@ img {
 .details_li{
   padding:10px;
   display: inline-table;
+  width: 40px;
 }
 
 .button{
@@ -138,3 +138,7 @@ img {
   width: auto;
 }
 
+.details_logo{
+  height: 20px;
+
+}

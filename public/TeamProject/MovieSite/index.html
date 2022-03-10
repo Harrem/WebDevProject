@@ -10,23 +10,17 @@
 </head>
 
 <body>
+    <!-- //NavigationBar -->
     <div id="navigation">
         <div class="nav"><a href="../home/index.html">Home</a></div>
         <div class="nav"><a href="../MovieSite/index.html">Movies</a></div>
         <div class="nav"><a href="../tv_show/index.html">TV Shows</a></div>
         <div class="nav"><a>About Us</a></div>
-
-
-        <!-- <ol>
-            <li class="nav">Home</li>
-            <li class="nav">Movies</li>
-            <li class="nav">TV Shows</li>
-            <li class="nav">About Us</li>
-        </ol> -->
     </div>
 
+    <!-- //SlideShow -->
     <div class="SlideShowDiv" id="slideshowdiv">
-        <div class="mySlides" id="">
+        <div class="mySlides" id="" >
             <img id="topimg"
                 src="https://s3-us-west-2.amazonaws.com/prd-rteditorial/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg"
                 alt="cover image">
@@ -41,10 +35,18 @@
                         with fellow "runners" for a shot at escape.</p>
                     <div id="details">
                         <ol>
-                            <li class="details_li" id="imdbRating">imdb rating</li>
-                            <li class="details_li" id="rottenTomato">rotten tomato</li>
-                            <li class="details_li" id="tmdb">tmdb</li>
-                            <li class="details_li" id="corn">corn</li>
+                            <li class="details_li" id="imdbRating">
+                                <img class="details_logo" id="imdb" src="./1-tomato.png">
+                                imdb rating
+                            </li>
+                            <li class="details_li" id="imdbRating">
+                                <img class="details_logo" id="rottentomato" src="./2-imdb.png">
+                                
+                            </li>
+                            <li class="details_li" id="tmdbRating">
+                                <img class="details_logo" id="imdb" src="./3-tmdb.svg">
+                                tmdb rating
+                            </li>
                         </ol>
                     </div>
                     <div id="buttons">
@@ -59,7 +61,6 @@
     </div>
     <script src="SlideShow.js"></script>
     <script src="main.js"></script>
-    <script type="module" src="./getImgColor.js"></script>
 </body>
 
 </html>

@@ -5,13 +5,9 @@ var d = window.innerWidth;
 
 var v = false;
 
-function icon() {
-  document.getElementById("navigation").innerHTML += `<img src="./icon.png"/>`;
+window.onload = function(){
+  CheckNav();
 }
-if (v) {
-  icon();
-}
-
 window.onscroll = function(){
   CheckNav();
 }
@@ -42,7 +38,7 @@ window.onresize = function () {
   } else if (window.innerWidth > 1080) {
     nav.style.fontSize = 25 + "px";
     nav.style.scale = 1 + "px";
-    search.disabled = false;
+    // search.disabled = false;
     // search.style.width = 250 + "px";
     // search.style.height = 35 + "px";
     // search.style.marginRight = 100 + "px";
