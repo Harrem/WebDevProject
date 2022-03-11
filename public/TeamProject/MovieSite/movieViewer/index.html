@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../../node_modules/@splidejs/splide/dist/css/splide.min.css">
+</head>
+
+<body>
+    <div class="splide">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide">Slide 01</li>
+                <li class="splide__slide">Slide 02</li>
+                <li class="splide__slide">Slide 04</li>
+                <li class="splide__slide">Slide 05</li>
+                <li class="splide__slide">Slide 06</li>
+                <li class="splide__slide">Slide 07</li>
+                <li class="splide__slide">Slide 08</li>
+                <li class="splide__slide">Slide 09</li>
+                <li class="splide__slide">Slide 10</li>
+            </ul>
+        </div>
+    </div>
+<script src="./main.js"></script>
+</body>
+
+<script src="../../../../node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+<script>
+    const splide = new Splide('.splide').mount();
+    console.log(splide.index);
+</script>
+</html>

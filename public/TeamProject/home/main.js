@@ -2,7 +2,7 @@ fetch("https://imdb-api.com/en/API/Top250Movies/k_l748umtr", {
   method: "GET",
 })
   .then((response) => response.json())
-  .then((data) => {
+  .then(async(data) => {
     console.log(data);
     const list = data.items;
 
