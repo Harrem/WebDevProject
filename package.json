@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "color.js": "^1.2.0"
+    "color.js": "^1.2.0",
+    "fast-average-color": "^7.1.0"
   }
 }

@@ -20,12 +20,11 @@
 
     <!-- //SlideShow -->
     <div class="SlideShowDiv" id="slideshowdiv">
-        <div class="mySlides" id="" >
-            <img id="topimg"
-                src="https://s3-us-west-2.amazonaws.com/prd-rteditorial/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg"
-                alt="cover image">
-            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRChDQITIVlqysDK2HpjYdrc_ip-4hujzLAv_Yuggv8z1SJ_6qD"
-                alt="" id="poster">
+        <!-- <div id="coverImg"></div> -->
+        <div class="mySlides" id="">
+            <img id="topimg" src="./1078157.jpg" alt="cover image">
+            <img src="https://collider.com/wp-content/uploads/2017/06/black-panther-movie-poster-teaser.jpg" alt=""
+                id="poster">
             <div id="container">
                 <div id="textContainer">
                     <h1 id="title">The Maze Runner</h1>
@@ -41,7 +40,7 @@
                             </li>
                             <li class="details_li" id="imdbRating">
                                 <img class="details_logo" id="rottentomato" src="./2-imdb.png">
-                                
+
                             </li>
                             <li class="details_li" id="tmdbRating">
                                 <img class="details_logo" id="imdb" src="./3-tmdb.svg">
@@ -57,10 +56,35 @@
             </div>
         </div>
     </div>
-    <div class="movies" id="movies">
+
+    <div class="scrollViewer">
+        <div class="movies" id="mostPopular">
+        </div>
+    </div>
+    <div class="scrollViewer">
+        <div class="movies" id="topRated">
+        </div>
+    </div>
+    <div class="scrollViewer">
+        <div class="movies" id="upcoming">
+        </div>
     </div>
     <script src="SlideShow.js"></script>
     <script src="main.js"></script>
+    <!-- <script src="https://unpkg.com/fast-average-color/dist/index.min.js"></script>
+    <script>
+        const fac = new FastAverageColor();
+        const container = document.body;
+
+        fac.getColorAsync(container.querySelector('#topimg'))
+            .then(color => {
+                container.style.backgroundColor = color.rgba;
+                container.style.color = color.isDark ? '#fff' : '#000';
+            })
+            .catch(e => {
+                console.log(e);
+            });
+    </script> -->
 </body>
 
 </html>
