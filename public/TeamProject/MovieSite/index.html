@@ -6,21 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/public/TeamProject/home/nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
 <body>
-    <!-- //NavigationBar -->
-    <div id="navigation">
-        <div class="nav"><a href="../home/index.html">Home</a></div>
-        <div class="nav"><a href="../MovieSite/index.html">Movies</a></div>
-        <div class="nav"><a href="../tv_show/index.html">TV Shows</a></div>
-        <div class="nav"><a>About Us</a></div>
-    </div>
-
+    <nav id="nav">
+        <div class="menu-icon">
+            <span class="fas fa-bars"></span>
+        </div>
+        <div class="logo">
+            Movie
+        </div>
+        <div class="nav-items">
+            <li><a href="../home/index.html">Home</a></li>
+            <li><a href="./index.html">Movie</a></li>
+            <li><a href="../tv_show/index.html">Tv</a></li>
+            <li><a href="../about/about.html">About</a></li>
+            <li><a href="../login/login.html">Login</a></li>
+            <li><a href="../signUp/signUp.html">Sign Up</a></li>
+        </div>
+        <div class="search-icon">
+            <span class="fas fa-search"></span>
+        </div>
+        <div class="cancel-icon">
+            <span class="fas fa-times"></span>
+        </div>
+        <form action="#">
+            <input type="search" class="search-data" placeholder="Search" required>
+            <button type="submit" class="fas fa-search"></button>
+        </form>
+    </nav>
     <!-- //SlideShow -->
     <div class="SlideShowDiv" id="slideshowdiv">
-        <!-- <div id="coverImg"></div> -->
         <div class="mySlides" id="">
             <img id="topimg" src="./1078157.jpg" alt="cover image">
             <img src="https://collider.com/wp-content/uploads/2017/06/black-panther-movie-poster-teaser.jpg" alt=""
@@ -69,22 +88,9 @@
         <div class="movies" id="upcoming">
         </div>
     </div>
-    <script src="SlideShow.js"></script>
-    <script src="main.js"></script>
-    <!-- <script src="https://unpkg.com/fast-average-color/dist/index.min.js"></script>
-    <script>
-        const fac = new FastAverageColor();
-        const container = document.body;
-
-        fac.getColorAsync(container.querySelector('#topimg'))
-            .then(color => {
-                container.style.backgroundColor = color.rgba;
-                container.style.color = color.isDark ? '#fff' : '#000';
-            })
-            .catch(e => {
-                console.log(e);
-            });
-    </script> -->
+    <script src="/public/TeamProject/home/nav.js"></script>
+    <script src="./slideShow.js"></script>
+    <script src="./main.js"></script>
 </body>
 
 </html>
