@@ -6,14 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./nav.css">
-    <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="./tv_show.css">
+    <link rel="stylesheet" href="../home/nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
 <body>
-    <nav id="nav">
+    <nav>
         <div class="menu-icon">
             <span class="fas fa-bars"></span>
         </div>
@@ -21,7 +20,7 @@
             Movie
         </div>
         <div class="nav-items">
-            <li><a href="./index.html">Home</a></li>
+            <li><a href="../home/index.html">Home</a></li>
             <li><a href="../MovieSite/index.html">Movie</a></li>
             <li><a href="../tv_show/index.html">Tv</a></li>
             <li><a href="../about/about.html">About</a></li>
@@ -39,12 +38,15 @@
             <button type="submit" class="fas fa-search"></button>
         </form>
     </nav>
+
     <!-- //SlideShow -->
     <div class="SlideShowDiv" id="slideshowdiv">
         <div class="mySlides" id="">
-            <img id="topimg" src="./1078157.jpg" alt="cover image">
-            <img src="https://collider.com/wp-content/uploads/2017/06/black-panther-movie-poster-teaser.jpg" alt=""
-                id="poster">
+            <img id="topimg"
+                src="https://s3-us-west-2.amazonaws.com/prd-rteditorial/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg"
+                alt="cover image">
+            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRChDQITIVlqysDK2HpjYdrc_ip-4hujzLAv_Yuggv8z1SJ_6qD"
+                alt="" id="poster">
             <div id="container">
                 <div id="textContainer">
                     <h1 id="title">The Maze Runner</h1>
@@ -76,52 +78,11 @@
             </div>
         </div>
     </div>
-
-    <div class="scrollViewer">
-        <div class="movies" id="mostPopular">
-        </div>
+    <div class="movies" id="movies">
     </div>
-    <div class="scrollViewer">
-        <div class="movies" id="topRated">
-        </div>
-    </div>
-    <div class="scrollViewer">
-        <div class="movies" id="upcoming">
-        </div>
-    </div>
-    <footer>
-        <div class="footer-content">
-            <h3>Movie</h3>
-            <p>This website is make by peshawa othman and harem mhamad they are student in
-                charmo university and this website it ferst progect for peshawa and harem. by
-                the way i an sure you will like it becouse it bilde by to secsecful person in the world.
-            </p>
-            <ul class="socials">
-                <li><a href="#"><i></i></a></li>
-                <li><a href="#"><i></i></a></li>
-                <li><a href="#"><i></i></a></li>
-                <li><a href="#"><i></i></a></li>
-                <li><a href="#"><i></i></a></li>
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; <a href="./index.html">Movie</a></p>
-            <div class="footer-menu">
-                <ul class="f-menu">
-                    <li><a href="../home/index.html">Home</a></li>
-                    <li><a href="../MovieSite/index.html">Movie</a></li>
-                    <li><a href="../tv_show/index.html">Tv Show</a></li>
-                    <li><a href="../about/about.html">About</a></li>
-                    <li><a href="../signUp/signUp.html">signUp</a></li>
-                    <li><a href="../login/login.html">Login</a></li>
-                </ul>
-            </div>
-        </div>
-
-    </footer>
-    <script src="./nav.js"></script>
-    <script src="./slideShow.js"></script>
-    <script src="./main.js"></script>
+    <script src="../home/nav.js"></script>
+    <script src="./tv_show2.js"></script>
+    <script src="./tv_show.js"></script>
 </body>
 
 </html>

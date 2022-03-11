@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tv Show</title>
+    <title>Document</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="../home/nav.css">
+    <link rel="stylesheet" href="../home/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
 <body>
-    <nav>
+    <nav id="nav">
         <div class="menu-icon">
             <span class="fas fa-bars"></span>
         </div>
@@ -20,11 +21,11 @@
             Movie
         </div>
         <div class="nav-items">
-            <li><a href="../home/index.html">Home</a></li>
+            <li><a href="./index.html">Home</a></li>
             <li><a href="../MovieSite/index.html">Movie</a></li>
-            <li><a href="./index.html">Tv</a></li>
+            <li><a href="../tv_show/index.html">Tv</a></li>
             <li><a href="../about/about.html">About</a></li>
-            <li><a href="../tv_show/index.html">Login</a></li>
+            <li><a href="../login/login.html">Login</a></li>
             <li><a href="../signUp/signUp.html">Sign Up</a></li>
         </div>
         <div class="search-icon">
@@ -38,71 +39,104 @@
             <button type="submit" class="fas fa-search"></button>
         </form>
     </nav>
-    <div id="box-movies">
-        <div class="contentForm">
-            <a href="./movie_content.html">
-                <img id="movies" src="./DoctorStrange.jpeg" />
-            </a>
-            <div id="name">The Lost</div>
-        </div>
+    <!-- //SlideShow -->
+    <div class="SlideShowDiv" id="slideshowdiv">
+        <!-- <div id="coverImg"></div> -->
+        <div class="mySlides" id="">
+            <img id="topimg" src="./1078157.jpg" alt="cover image">
+            <img src="https://collider.com/wp-content/uploads/2017/06/black-panther-movie-poster-teaser.jpg" alt=""
+                id="poster">
+            <div id="container">
+                <div id="textContainer">
+                    <h1 id="title">The Maze Runner</h1>
+                    <p id="description">Thomas is deposited in a community
+                        of boys after his memory is erased, soon learning they're
+                        all trapped in a maze that will require him to join forces
+                        with fellow "runners" for a shot at escape.</p>
+                    <div id="details">
+                        <ol>
+                            <li class="details_li" id="imdbRating">
+                                <img class="details_logo" id="imdb" src="./1-tomato.png">
+                                imdb rating
+                            </li>
+                            <li class="details_li" id="imdbRating">
+                                <img class="details_logo" id="rottentomato" src="./2-imdb.png">
 
-        <div class="contentForm">
-            <a>
-                <img id="movies" src="./DoctorStrange.jpeg" />
-            </a>
-            <div id="name">The Time</div>
-        </div>
-        <div class="contentForm">
-            <a>
-                <img id="movies" src="./DoctorStrange.jpeg" />
-            </a>
-            <div id="name">War</div>
-        </div>
-        <div class="contentForm">
-            <a>
-                <img id="movies" src="./DoctorStrange.jpeg" />
-            </a>
-            <div id="name">The Deth</div>
-        </div>
-        <div class="contentForm">
-            <a>
-                <img id="movies" src="./DoctorStrange.jpeg" />
-            </a>
-            <div id="name">Kurdstan</div>
-        </div>
-        <div class="contentForm">
-            <a>
-                <img id="movies" src="./DoctorStrange.jpeg" />
-            </a>
-            <div id="name">Peshmarga</div>
-        </div>
-
-        <div class="contentForm">
-            <a>
-                <img id="movies" src="./DoctorStrange.jpeg" />
-            </a>
-            <div id="name">The Love</div>
-        </div>
-        <div class="contentForm">
-            <a>
-                <img id="movies" src="./DoctorStrange.jpeg" />
-            </a>
-            <div id="name">Friends</div>
-        </div>
-        <div class="contentForm">
-            <a>
-                <img id="movies" src="./DoctorStrange.jpeg" />
-            </a>
-            <div id="name">Fother</div>
-        </div>
-        <div class="contentForm">
-            <a>
-                <img id="movies" src="./DoctorStrange.jpeg" />
-            </a>
-            <div id="name">This Mean War</div>
+                            </li>
+                            <li class="details_li" id="tmdbRating">
+                                <img class="details_logo" id="imdb" src="./3-tmdb.svg">
+                                tmdb rating
+                            </li>
+                        </ol>
+                    </div>
+                    <div id="buttons">
+                        <button class="button">Watch Trailor</button>
+                        <button class="button">Add To Wishlist</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <script src="../home/nav.js"></script>
+
+    <div class="scrollViewer">
+        <div class="movies" id="mostPopular">
+        </div>
+    </div>
+    <div class="scrollViewer">
+        <div class="movies" id="topRated">
+        </div>
+    </div>
+    <div class="scrollViewer">
+        <div class="movies" id="upcoming">
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <h3>Movie</h3>
+            <p>This website is make by peshawa othman and harem mhamad they are student in
+                charmo university and this website it ferst progect for peshawa and harem. by
+                the way i an sure you will like it becouse it bilde by to secsecful person in the world.
+            </p>
+            <ul class="socials">
+                <li><a href="#"><i></i></a></li>
+                <li><a href="#"><i></i></a></li>
+                <li><a href="#"><i></i></a></li>
+                <li><a href="#"><i></i></a></li>
+                <li><a href="#"><i></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <a href="../home/footer.css">Movie</a></p>
+            <div class="footer-menu">
+                <ul class="f-menu">
+                    <li><a href="../home/index.html">Home</a></li>
+                    <li><a href="../MovieSite/index.html">Movie</a></li>
+                    <li><a href="../tv_show/index.html">Tv Show</a></li>
+                    <li><a href="../about/about.html">About</a></li>
+                    <li><a href="../signUp/signUp.html">signUp</a></li>
+                    <li><a href="../login/login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+    <script src="/public/TeamProject/home/nav.js"></script>
+    <script src="./slideShow.js"></script>
+    <script src="./main.js"></script>
+    <!-- <script src="https://unpkg.com/fast-average-color/dist/index.min.js"></script>
+    <script>
+        const fac = new FastAverageColor();
+        const container = document.body;
+
+        fac.getColorAsync(container.querySelector('#topimg'))
+            .then(color => {
+                container.style.backgroundColor = color.rgba;
+                container.style.color = color.isDark ? '#fff' : '#000';
+            })
+            .catch(e => {
+                console.log(e);
+            });
+    </script> -->
 </body>
 
 </html>
