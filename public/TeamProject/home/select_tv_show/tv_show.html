@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Tv Show</title>
+    <title>Document</title>
     <link rel="stylesheet" href="./tv_show.css">
-    <link rel="stylesheet" href="../nav.css">
+    <link rel="stylesheet" href="/public/TeamProject/home/nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
@@ -20,12 +20,12 @@
             Movie
         </div>
         <div class="nav-items">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="/public/TeamProject/movie/index.html">Movie</a></li>
-            <li><a href="/public/TeamProject/tv_show/index.html">Tv</a></li>
-            <li><a href="/public/TeamProject/about/about.html">About</a></li>
-            <li><a href="/public/TeamProject/login/login.html">Login</a></li>
-            <li><a href="/public/TeamProject/signUp/signUp.html">Sign Up</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="../movie/index.html">Movie</a></li>
+            <li><a href="../tv_show/index.html">Tv</a></li>
+            <li><a href="../about/about.html">About</a></li>
+            <li><a href="../login/login.html">Login</a></li>
+            <li><a href="../signUp/signUp.html">Sign Up</a></li>
         </div>
         <div class="search-icon">
             <span class="fas fa-search"></span>
@@ -38,30 +38,51 @@
             <button type="submit" class="fas fa-search"></button>
         </form>
     </nav>
-    <div>
-        <img id="img" src="./The-100-season-1-poster.jpg" alt="">
-        <img id="background" src="./6247986.jpg" alt="">
+
+    <!-- //SlideShow -->
+    <div class="SlideShowDiv" id="slideshowdiv">
+        <div class="mySlides" id="">
+            <img id="topimg"
+                src="https://s3-us-west-2.amazonaws.com/prd-rteditorial/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg"
+                alt="cover image">
+            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRChDQITIVlqysDK2HpjYdrc_ip-4hujzLAv_Yuggv8z1SJ_6qD"
+                alt="" id="poster">
+            <div id="container">
+                <div id="textContainer">
+                    <h1 id="title">The Maze Runner</h1>
+                    <p id="description">Thomas is deposited in a community
+                        of boys after his memory is erased, soon learning they're
+                        all trapped in a maze that will require him to join forces
+                        with fellow "runners" for a shot at escape.</p>
+                    <div id="details">
+                        <ol>
+                            <li class="details_li" id="imdbRating">
+                                <img class="details_logo" id="imdb" src="./1-tomato.png">
+                                imdb rating
+                            </li>
+                            <li class="details_li" id="imdbRating">
+                                <img class="details_logo" id="rottentomato" src="./2-imdb.png">
+
+                            </li>
+                            <li class="details_li" id="tmdbRating">
+                                <img class="details_logo" id="imdb" src="./3-tmdb.svg">
+                                tmdb rating
+                            </li>
+                        </ol>
+                    </div>
+                    <div id="buttons">
+                        <button class="button">Watch Trailor</button>
+                        <button class="button">Add To Wishlist</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <h1 id="title">The 100</h1>
-        <table id="datas">
-            <tr>
-                <td>
-                    <h2 id="data">PG-13</h2>
-                </td>
-                <td>
-                    <h2 id="data">2009</h2>
-                </td>
-                <td>
-                    <h2 id="data">4.8 (276,352)</h2>
-                </td>
-                <td>
-                    <h2 id="data">44</h2>
-                </td>
-            </tr>
-        </table>
+    <div class="movies" id="movies">
     </div>
-    <script src="../nav.js"></script>
+    <script src="/public/TeamProject/home/nav.js"></script>
+    <script src="./tv_show2.js"></script>
+    <script src="./tv_show.js"></script>
 </body>
 
 </html>
