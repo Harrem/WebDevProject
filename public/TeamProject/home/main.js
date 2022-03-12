@@ -22,7 +22,7 @@ function CheckNav() {
     range = 255;
   }
 }
-
+//topPopelarMovie
 fetch(
   "https://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334",
   {
@@ -30,7 +30,7 @@ fetch(
   }
 )
   .then((response) => response.json())
-  .then(async(data) => {
+  .then(async (data) => {
     console.log(data);
     const list = data.results;
 
@@ -50,7 +50,7 @@ fetch(
             <h4>${score}</h4>
           </div>
         </div>`;
-      document.getElementById("mostPopular").innerHTML += movie;
+      document.getElementById("mostPopularMovie").innerHTML += movie;
     });
   })
 
@@ -58,9 +58,9 @@ fetch(
     console.error(err);
   });
 
-//topRatedMovieList
+//topPopelarTvShow
 fetch(
-  "https://api.themoviedb.org/3/movie/top_rated?api_key=717eacf2852518ed1f0a438d848f9334",
+  "https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=1",
   {
     method: "GET",
   }
@@ -72,11 +72,11 @@ fetch(
 
     list.map((item) => {
       const id = item.id;
-      const title = item.title;
+      const title = item.name;
       const score = item.vote_average;
       const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const year = item.release_date;
+      const year = item.first_air_date;
 
       const movie = `<div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
@@ -86,7 +86,7 @@ fetch(
             <h4>${score}</h4>
           </div>
         </div>`;
-      document.getElementById("topRated").innerHTML += movie;
+      document.getElementById("mostPopularTvShow").innerHTML += movie;
     });
   })
 
@@ -94,7 +94,7 @@ fetch(
     console.error(err);
   });
 
-//TrendingMovies
+//latestMovie
 fetch(
   "https://api.themoviedb.org/3/movie/upcoming?api_key=717eacf2852518ed1f0a438d848f9334",
   {
@@ -122,7 +122,43 @@ fetch(
               <h4>${score}</h4>
             </div>
           </div>`;
-      document.getElementById("upcoming").innerHTML += movie;
+      document.getElementById("latestMovie").innerHTML += movie;
+    });
+  })
+
+  .catch((err) => {
+    console.error(err);
+  });
+
+//latestTvShow
+fetch(
+  "https://api.themoviedb.org/3/tv/airing_today?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&page=1",
+  {
+    method: "GET",
+  }
+)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+    const list = data.results;
+
+    list.map((item) => {
+      const id = item.id;
+      const title = item.name;
+      const score = item.vote_average;
+      const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
+      // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
+      const year = item.first_air_date;
+
+      const movie = `<div class="movie">
+            <img class="posters" src="${poster}" alt="Poster">
+            <div id="textContainer">
+              <h2 id="title">${title}</h2>
+              <h4>${year}</h4>
+              <h4>${score}</h4>
+            </div>
+          </div>`;
+      document.getElementById("latestTvShow").innerHTML += movie;
     });
   })
 

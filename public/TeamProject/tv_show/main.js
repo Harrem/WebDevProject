@@ -51,23 +51,23 @@ function CheckNav() {
 // };
 
 fetch(
-  "https://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334",
+  "https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=1",
   {
     method: "GET",
   }
 )
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
+    // console.log(data);
     const list = data.results;
 
     list.map((item) => {
       const id = item.id;
-      const title = item.title;
+      var title = item.name;
       const score = item.vote_average;
       const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const year = item.release_date;
+      const year = item.first_air_date;
 
       const movie = `<div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
@@ -85,25 +85,25 @@ fetch(
     console.error(err);
   });
 
-//topRatedMovieList
+//topRated Tv Show
 fetch(
-  "https://api.themoviedb.org/3/movie/top_rated?api_key=717eacf2852518ed1f0a438d848f9334",
+  "https://api.themoviedb.org/3/tv/top_rated?api_key=717eacf2852518ed1f0a438d848f9334&page=1",
   {
     method: "GET",
   }
 )
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
+    // console.log(data);
     const list = data.results;
 
     list.map((item) => {
       const id = item.id;
-      const title = item.title;
+      const title = item.name;
       const score = item.vote_average;
       const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const year = item.release_date;
+      const year = item.first_air_date;
 
       const movie = `<div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
@@ -121,9 +121,9 @@ fetch(
     console.error(err);
   });
 
-//TrendingMovies
+//latest Tv Show
 fetch(
-  "https://api.themoviedb.org/3/movie/upcoming?api_key=717eacf2852518ed1f0a438d848f9334",
+  "https://api.themoviedb.org/3/tv/airing_today?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&page=1",
   {
     method: "GET",
   }
@@ -135,11 +135,11 @@ fetch(
 
     list.map((item) => {
       const id = item.id;
-      const title = item.title;
+      const title = item.name;
       const score = item.vote_average;
       const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const year = item.release_date;
+      const year = item.first_air_date;
 
       const movie = `<div class="movie">
             <img class="posters" src="${poster}" alt="Poster">
