@@ -42,7 +42,7 @@ fetch(
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
       const year = item.release_date;
 
-      const movie = `<a href="../select_movies/movie.html">
+      const movie = `<a href="../select_movies/movie.html?${id}">
       <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
