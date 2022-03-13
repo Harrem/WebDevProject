@@ -42,14 +42,15 @@ fetch(
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
       const year = item.release_date;
 
-      const movie = `<div class="movie">
+      const movie = `<a href="../select_movies/movie.html">
+      <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 id="title">${title}</h2>
-            <h4>${year}</h4>
-            <h4>${score}</h4>
+            <h2 style="color: black" id="title">${title}</h2>
+            <h4 style="color: black">${year}</h4>
+            <h4 style="color: black">${score}</h4>
           </div>
-        </div>`;
+        </div></a>`;
       document.getElementById("mostPopularMovie").innerHTML += movie;
     });
   })
@@ -78,14 +79,15 @@ fetch(
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
       const year = item.first_air_date;
 
-      const movie = `<div class="movie">
+      const movie = `<a href="../select_movies/movie.html">
+      <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 id="title">${title}</h2>
-            <h4>${year}</h4>
-            <h4>${score}</h4>
+            <h2 style="color: black" id="title">${title}</h2>
+            <h4 style="color: black">${year}</h4>
+            <h4 style="color: black">${score}</h4>
           </div>
-        </div>`;
+        </div></a>`;
       document.getElementById("mostPopularTvShow").innerHTML += movie;
     });
   })
@@ -114,14 +116,15 @@ fetch(
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
       const year = item.release_date;
 
-      const movie = `<div class="movie">
-            <img class="posters" src="${poster}" alt="Poster">
-            <div id="textContainer">
-              <h2 id="title">${title}</h2>
-              <h4>${year}</h4>
-              <h4>${score}</h4>
-            </div>
-          </div>`;
+      const movie = `<a href="../select_movies/movie.html">
+      <div class="movie">
+          <img class="posters" src="${poster}" alt="Poster">
+          <div id="textContainer">
+            <h2 style="color: black" id="title">${title}</h2>
+            <h4 style="color: black">${year}</h4>
+            <h4 style="color: black">${score}</h4>
+          </div>
+        </div></a>`;
       document.getElementById("latestMovie").innerHTML += movie;
     });
   })
@@ -150,14 +153,15 @@ fetch(
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
       const year = item.first_air_date;
 
-      const movie = `<div class="movie">
-            <img class="posters" src="${poster}" alt="Poster">
-            <div id="textContainer">
-              <h2 id="title">${title}</h2>
-              <h4>${year}</h4>
-              <h4>${score}</h4>
-            </div>
-          </div>`;
+      const movie = `<a href="../select_movies/movie.html">
+      <div class="movie">
+          <img class="posters" src="${poster}" alt="Poster">
+          <div id="textContainer">
+            <h2 style="color: black" id="title">${title}</h2>
+            <h4 style="color: black">${year}</h4>
+            <h4 style="color: black">${score}</h4>
+          </div>
+        </div></a>`;
       document.getElementById("latestTvShow").innerHTML += movie;
     });
   })
