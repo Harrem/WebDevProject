@@ -25,12 +25,15 @@
             </ul>
         </div>
     </div>
-<script src="./main.js"></script>
 </body>
-
+ 
+<script src="./main.js"></script>
 <script src="../../../../node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
 <script>
-    const splide = new Splide('.splide').mount();
-    console.log(splide.index);
+    setTimeout(function() {
+        var splide = new Splide( '.splide' ).mount();
+        console.log("Called!")
+
+    }, 5000);
 </script>
 </html>
