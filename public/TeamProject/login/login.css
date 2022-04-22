@@ -187,3 +187,18 @@ form {
     justify-content: center;
   }
 }
+
+/* @media screen and (max-width: 393px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .img img {
+    width: 400px;
+  }
+  .wave {
+    display: none;
+  }
+  .login-content {
+    justify-content: center;
+  }
+} */
