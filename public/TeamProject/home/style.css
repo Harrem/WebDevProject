@@ -50,8 +50,8 @@ body {
 }
 
 .posters {
-  width: inherit;
-  height: auto;
+  width: 175px;
+  height: 233px;
   border-radius: 10px;
 }
 
@@ -63,11 +63,11 @@ body {
 
 #title {
   user-select: none;
-  font-size: 15px;
+  font-size: 14px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-bottom: auto;
   width: 100%;
-  height: 38px;
+  height: 62px;
   word-wrap: break-word;
   white-space: normal;
 }
@@ -243,7 +243,7 @@ body {
 @media screen and (max-width: 393px) {
   .posters {
     width: 154px;
-    height: auto;
+    height: 269px;
     border-radius: 10px;
   }
 }

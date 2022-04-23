@@ -45,9 +45,9 @@ fetch(
       const movie = `<div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 id="title">${title}</h2>
-            <h4>${year}</h4>
-            <h4>${score}</h4>
+            <h2 style="color: white" id="title">${title}</h2>
+            <h4 style="color: white">${year}</h4>
+            <h4 style="color: white">${score}</h4>
           </div>
         </div>`;
       document.getElementById("mostPopular").innerHTML += movie;
@@ -81,9 +81,9 @@ fetch(
       const movie = `<div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 id="title">${title}</h2>
-            <h4>${year}</h4>
-            <h4>${score}</h4>
+            <h2 style="color: white" id="title">${title}</h2>
+            <h4 style="color: white">${year}</h4>
+            <h4 style="color: white">${score}</h4>
           </div>
         </div>`;
       document.getElementById("topRated").innerHTML += movie;
@@ -117,9 +117,9 @@ fetch(
       const movie = `<div class="movie">
             <img class="posters" src="${poster}" alt="Poster">
             <div id="textContainer">
-              <h2 id="title">${title}</h2>
-              <h4>${year}</h4>
-              <h4>${score}</h4>
+              <h2 style="color: white" id="title">${title}</h2>
+              <h4 style="color: white">${year}</h4>
+              <h4 style="color: white">${score}</h4>
             </div>
           </div>`;
       document.getElementById("upcoming").innerHTML += movie;

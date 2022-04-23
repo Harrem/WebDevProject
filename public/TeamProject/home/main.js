@@ -45,9 +45,9 @@ fetch(
       <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 style="color: black" id="title">${title}</h2>
-            <h4 style="color: black">${year}</h4>
-            <h4 style="color: black">${score}</h4>
+            <h2 style="color: white" id="title">${title}</h2>
+            <h4 style="color: white">${year}</h4>
+            <h4 style="color: white">${score}</h4>
           </div>
         </div></a>`;
       document.getElementById("mostPopularMovie").innerHTML += movie;
@@ -82,9 +82,9 @@ fetch(
       <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 style="color: black" id="title">${title}</h2>
-            <h4 style="color: black">${year}</h4>
-            <h4 style="color: black">${score}</h4>
+            <h2 style="color: white" id="title">${title}</h2>
+            <h4 style="color: white">${year}</h4>
+            <h4 style="color: white">${score}</h4>
           </div>
         </div></a>`;
       document.getElementById("mostPopularTvShow").innerHTML += movie;
@@ -119,9 +119,9 @@ fetch(
       <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 style="color: black" id="title">${title}</h2>
-            <h4 style="color: black">${year}</h4>
-            <h4 style="color: black">${score}</h4>
+            <h2 style="color: white" id="title">${title}</h2>
+            <h4 style="color: white">${year}</h4>
+            <h4 style="color: white">${score}</h4>
           </div>
         </div></a>`;
       document.getElementById("latestMovie").innerHTML += movie;
@@ -156,9 +156,9 @@ fetch(
       <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 style="color: black" id="title">${title}</h2>
-            <h4 style="color: black">${year}</h4>
-            <h4 style="color: black">${score}</h4>
+            <h2 style="color: white" id="title">${title}</h2>
+            <h4 style="color: white">${year}</h4>
+            <h4 style="color: white">${score}</h4>
           </div>
         </div></a>`;
       document.getElementById("latestTvShow").innerHTML += movie;
