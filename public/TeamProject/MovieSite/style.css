@@ -107,6 +107,11 @@ body {
   left: 393px;
 }
 
+#textContainer {
+  height: 200px;
+  overflow: hidden;
+}
+
 .details_li {
   padding: 10px;
   display: inline-table;
@@ -114,7 +119,13 @@ body {
 }
 
 .button {
+  background-image: url();
   user-select: none;
+<<<<<<< Updated upstream
+=======
+  margin-top: 10px;
+  border-radius: 10px;
+>>>>>>> Stashed changes
   font-weight: bold;
   font: inherit;
   margin-top: 4px;
@@ -127,6 +138,7 @@ body {
 
 .details_logo {
   height: 20px;
+<<<<<<< Updated upstream
 }
 
 @media screen and (max-width: 850px) {
@@ -268,4 +280,6 @@ body {
     height: auto;
     border-radius: 10px;
   }
+=======
+>>>>>>> Stashed changes
 }

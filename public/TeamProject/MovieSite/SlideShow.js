@@ -46,7 +46,7 @@
 });*/
 
 fetch(
-  "https://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334",
+  "httpss://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334",
   {
     method: "GET",
   }
