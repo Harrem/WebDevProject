@@ -82,16 +82,8 @@ fetch(
                   <div id="details">
                       <ol>
                           <li class="details_li" id="imdbRating">
-                              <img class="details_logo" id="imdb" src="./1-tomato.png">
+                              <img class="details_logo" id="imdb" src="./2-imdb.png">
                               ${rating}
-                          </li>
-                          <li class="details_li" id="imdbRating">
-                              <img class="details_logo" id="rottentomato" src="./2-imdb.png">
-                              
-                          </li>
-                          <li class="details_li" id="tmdbRating">
-                              <img class="details_logo" id="imdb" src="./3-tmdb.svg">
-                              tmdb rating
                           </li>
                       </ol>
                   </div>
