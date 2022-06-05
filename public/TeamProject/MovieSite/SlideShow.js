@@ -17,11 +17,6 @@ fetch(
       const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
       const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
       const year = item.release_date;
-
-      // if (description.length > 100) {
-      //   description = description.substring(0, 100) + "...";
-      // }
-
       const movie = `<div class="mySlides" id="" >
           <img id="topimg" class="backgroundImage"
               src="${backdrop}"
@@ -69,57 +64,5 @@ function carousel() {
     slideIndex = 1;
   }
   x[slideIndex - 1].style.display = "block";
-  setTimeout(carousel, 5000); // Change image every 2 seconds
+  setTimeout(carousel, 5000);
 }
-
-// var rgb = getAverageRGB(document.getElementById('topimg'));
-//     document.body.style.backgroundColor = `rgb(${rgb.r},${rgb.g},${rgb.b})`;
-
-// function getAverageRGB(imgEl) {
-
-//     var blockSize = 10, // only visit every 5 pixels
-//         defaultRGB = {r:0,g:0,b:0}, // for non-supporting envs
-//         canvas = document.createElement('canvas'),
-//         context = canvas.getContext && canvas.getContext('2d'),
-//         data, width, height,
-//         i = -4,
-//         length,
-//         rgb = {r:0,g:0,b:0},
-//         count = 0;
-
-//     if (!context) {
-//         return defaultRGB;
-//     }
-
-//     height = canvas.height = imgEl.naturalHeight || imgEl.offsetHeight || imgEl.height;
-//     width = canvas.width = imgEl.naturalWidth || imgEl.offsetWidth || imgEl.width;
-
-//     context.drawImage(imgEl, 0, 0);
-
-//     try {
-//         data = context.getImageData(0, 0, width, height);
-//     } catch(e) {
-//         /* security error, img on diff domain */alert('x');
-//         return defaultRGB;
-//     }
-
-//     length = data.data.length;
-
-//     while ( (i += blockSize * 4) < length ) {
-//         ++count;
-//         rgb.r += data.data[i];
-//         rgb.g += data.data[i+1];
-//         rgb.b += data.data[i+2];
-//     }
-
-//     // ~~ used to floor values
-//     rgb.r = ~~(rgb.r/count);
-//     rgb.g = ~~(rgb.g/count);
-//     rgb.b = ~~(rgb.b/count);
-
-//     return rgb;
-// }
-
-// var containingDiv = document.getElementById("slideshowdiv");
-
-// containingDiv.style.height = window.innerHeight;
