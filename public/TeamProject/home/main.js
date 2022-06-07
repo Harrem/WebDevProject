@@ -46,8 +46,8 @@ fetch(
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
             <h2 style="color: white" id="title">${title}</h2>
-            <h4 style="color: white">${year}</h4>
-            <h4 style="color: white">${score}</h4>
+            <span style="color: white">${year}</span>
+            <span style="color: white">${score}</span>
           </div>
         </div></a>`;
       document.getElementById("mostPopularMovie").innerHTML += movie;
