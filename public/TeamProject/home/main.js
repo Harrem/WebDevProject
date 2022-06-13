@@ -39,15 +39,16 @@ fetch(
       const score = item.vote_average;
       const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const year = item.release_date;
+      const date = item.release_date;
+      const year = date.toString().substr(0, 4);
 
       const movie = `<a href="../select_movies/movie.html?${id}">
       <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 style="color: white" id="title">${title}</h2>
-            <span style="color: white">${year}</span>
-            <span style="color: white">${score}</span>
+            <h2 style="color: black;" id="title">${title}</h2>
+            <span style="color: black; margin-right: 40px;">2:24</span>
+            <span style="color: black;">${year}</span>
           </div>
         </div></a>`;
       document.getElementById("mostPopularMovie").innerHTML += movie;
@@ -76,15 +77,16 @@ fetch(
       const score = item.vote_average;
       const poster = "http://image.tmdb.org/t/p/w200/" + item.poster_path;
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const year = item.first_air_date;
+      const date = item.release_date;
+      const year = date.toString().substr(0, 4);
 
       const movie = `<a href="../select_tv_show/tv_show.html?${id}">
       <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 style="color: white" id="title">${title}</h2>
-            <h4 style="color: white">${year}</h4>
-            <h4 style="color: white">${score}</h4>
+            <h2 style="color: black;" id="title">${title}</h2>
+            <span style="color: black; margin-right: 40px;">2:23</span>
+            <span style="color: black;">${year}</span>
           </div>
         </div></a>`;
       document.getElementById("mostPopularTvShow").innerHTML += movie;
@@ -113,15 +115,16 @@ fetch(
       const score = item.vote_average;
       const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const year = item.release_date;
+      const date = item.release_date;
+      const year = date.toString().substr(0, 4);
 
       const movie = `<a href="../select_movies/movie.html?${id}">
       <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 style="color: white" id="title">${title}</h2>
-            <h4 style="color: white">${year}</h4>
-            <h4 style="color: white">${score}</h4>
+            <h2 style="color: black;" id="title">${title}</h2>
+            <span style="color: black; margin-right: 40px;">2:23</span>
+            <span style="color: black;">${year}</span>
           </div>
         </div></a>`;
       document.getElementById("latestMovie").innerHTML += movie;
@@ -150,15 +153,16 @@ fetch(
       const score = item.vote_average;
       const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const year = item.first_air_date;
+      const date = item.release_date;
+      const year = date.toString().substr(0, 4);
 
       const movie = `<a href="../select_tv_show/tv_show.html?${id}">
       <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 style="color: white" id="title">${title}</h2>
-            <h4 style="color: white">${year}</h4>
-            <h4 style="color: white">${score}</h4>
+            <h2 style="color: black;" id="title">${title}</h2>
+            <span style="color: black; margin-right: 40px;">2:23</span>
+            <span style="color: black;">${year}</span>
           </div>
         </div></a>`;
       document.getElementById("latestTvShow").innerHTML += movie;
