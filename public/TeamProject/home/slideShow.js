@@ -10,6 +10,7 @@ fetch(
     const list = data.results;
 
     list.map((item) => {
+
       const id = item.id;
       const title = item.title;
       const description = item.overview;
@@ -43,7 +44,6 @@ fetch(
               </div>
           </div>
       </div>`;
-
       document.getElementById("slideshowdiv").innerHTML += movie;
     });
   });
