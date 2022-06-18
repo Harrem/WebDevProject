@@ -1,5 +1,5 @@
 body {
-  background-color: #e1cdcd;
+  background-color: whitesmoke;
   object-fit: fill;
   margin: 0 auto;
   height: 100%;
@@ -9,10 +9,12 @@ body {
 .SlideShowDiv {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 700px;
   z-index: 1;
 }
+
 .mySlides {
+  padding: auto;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -46,7 +48,7 @@ body {
   width: 171px;
   height: 90%;
   border-radius: 10px;
-  box-shadow: 0px 0px 4px #888822;
+  box-shadow: 0px 0px 3px grey;
 }
 
 .posters {
@@ -71,9 +73,11 @@ body {
   word-wrap: break-word;
   white-space: normal;
 }
+
 #description {
   user-select: none;
 }
+
 #topimg {
   filter: brightness(40%);
   /* vertical-align: middle; */
@@ -131,11 +135,13 @@ body {
     width: 184px;
     height: 291px;
   }
+
   #container {
     width: auto;
     top: 179px;
     left: 232px;
   }
+
   .button {
     margin-top: 4px;
     height: 25px;
@@ -145,17 +151,19 @@ body {
     bottom: 0px;
   }
 }
+
 @media screen and (max-width: 800px) {
-  #poster {
-    display: none;
-  }
+  #poster {}
+
   #container {
     position: static;
   }
+
   .button {
     position: static;
     margin-left: 4%;
   }
+
   #description {
     user-select: none;
     text-align: left;
@@ -163,11 +171,13 @@ body {
     margin-right: 15px;
     color: black;
   }
+
   #title {
     text-align: center;
     margin-top: 10px;
     color: black;
   }
+
   .details_li {
     color: black;
     padding: 10px;
@@ -175,6 +185,7 @@ body {
     width: 65px;
   }
 }
+
 /* @media screen and (max-width: 740px) {
   #poster {
     position: absolute;
