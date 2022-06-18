@@ -37,10 +37,7 @@ fetch(
                           </li>
                       </ol>
                   </div>
-                  <div id="buttons">
-                      <button class="button">Watch Trailor</button>
-                      <button class="button">Add To Wishlist</button>
-                  </div>
+                  
               </div>
           </div>
       </div>`;
