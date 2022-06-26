@@ -22,109 +22,173 @@ function CheckNav() {
     range = 255;
   }
 }
-fetch(
-  "https://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=1",
-  {
-    method: "GET",
-  }
-)
-  .then((response) => response.json())
-  .then((data) => {
-    // console.log(data);
-    const list = data.results;
+// ?????????????????????????????????????????????????????????????????????????????????????????????????
+// fetch(
+//   "https://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=1",
+//   {
+//     method: "GET",
+//   }
+// )
+//   .then((response) => response.json())
+//   .then((data) => {
+//     // console.log(data);
+//     const list = data.results;
 
-    list.map((item) => {
-      const id = item.id;
-      var title = item.name;
-      const score = item.vote_average;
-      const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
-      // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const year = item.first_air_date;
+//     list.map((item) => {
+//       const id = item.id;
+//       var title = item.name;
+//       const score = item.vote_average;
+//       const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
+//       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
+//       const year = item.first_air_date;
 
-      const movie = `<div class="movie">
-          <img class="posters" src="${poster}" alt="Poster">
-          <div id="textContainer">
-            <h2 style="color: white" id="title">${title}</h2>
-            <h4 style="color: white">${year}</h4>
-            <h4 style="color: white">${score}</h4>
-          </div>
-        </div>`;
-      document.getElementById("mostPopular").innerHTML += movie;
-    });
-  })
+//       const movie = `<a href="../select_movies/movie.html?${id}">
+//       <div class="movie">
+//           <img class="posters" src="${poster}" alt="Poster">
+//           <div id="textContainer">
+//             <h2 style="color: black" id="title">${title}</h2>
+//             <span style="color: black">${year}</span>
+//             <span style="color: black">${score}</span>
+//           </div>
+//         </div></a>`;
+//       document.getElementById("mostPopular").innerHTML += movie;
+//     });
+//   })
 
-  .catch((err) => {
-    console.error(err);
+//   .catch((err) => {
+//     console.error(err);
+//   });
+
+// //topRated Tv Show
+// fetch(
+//   "https://api.themoviedb.org/3/movie/top_rated?api_key=717eacf2852518ed1f0a438d848f9334&page=1",
+//   {
+//     method: "GET",
+//   }
+// )
+//   .then((response) => response.json())
+//   .then((data) => {
+//     // console.log(data);
+//     const list = data.results;
+
+//     list.map((item) => {
+//       const id = item.id;
+//       const title = item.name;
+//       const score = item.vote_average;
+//       const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
+//       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
+//       const year = item.first_air_date;
+
+//       const movie = `<a href="../select_movies/movie.html?${id}">
+//       <div class="movie">
+//           <img class="posters" src="${poster}" alt="Poster">
+//           <div id="textContainer">
+//           <h2 style="color: black" id="title">${title}</h2>
+//           <span style="color: black">${year}</span>
+//           <span style="color: black">${score}</span>
+//           </div>
+//         </div></a>`;
+//       document.getElementById("topRated").innerHTML += movie;
+//     });
+//   })
+
+//   .catch((err) => {
+//     console.error(err);
+//   });
+
+// //latest Tv Show
+// fetch(
+//   "https://api.themoviedb.org/3/movie/airing_today?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&page=1",
+//   {
+//     method: "GET",
+//   }
+// )
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log(data);
+//     const list = data.results;
+
+//     list.map((item) => {
+//       const id = item.id;
+//       const title = item.name;
+//       const score = item.vote_average;
+//       const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
+//       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
+//       const year = item.first_air_date;
+
+//       const movie = `<a href="../select_movies/movie.html?${id}">
+//       <div class="movie">
+//             <img class="posters" src="${poster}" alt="Poster">
+//             <div id="textContainer">
+//             <h2 style="color: black" id="title">${title}</h2>
+//             <span style="color: black">${year}</span>
+//             <span style="color: black">${score}</span>
+//             </div>
+//           </div></a>`;
+//       document.getElementById("upcoming").innerHTML += movie;
+//     });
+//   })
+
+//   .catch((err) => {
+//     console.error(err);
+//   });
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+const APIURL =
+  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
+const IMGPATH = "https://image.tmdb.org/t/p/w1280";
+const SEARCHAPI =
+  "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
+
+const main = document.getElementById("main");
+const form = document.getElementById("form");
+const search = document.getElementById("search");
+
+const getMovies = async (url) => {
+  const resp = await fetch(url);
+  const respData = await resp.json();
+
+  console.log(respData);
+
+  showMovies(respData.results);
+};
+
+const showMovies = (movies) => {
+  main.innerHTML = "";
+
+  movies.forEach((movie) => {
+    const { poster_path, title, vote_average, overview } = movie;
+
+    const movieEl = document.createElement("div");
+    movieEl.classList.add("movie");
+
+    movieEl.innerHTML = `
+      <img class="posters"
+        src="${IMGPATH + poster_path}"
+        alt="${title}"
+      />`;
+    main.appendChild(movieEl);
   });
+};
 
-//topRated Tv Show
-fetch(
-  "https://api.themoviedb.org/3/movie/top_rated?api_key=717eacf2852518ed1f0a438d848f9334&page=1",
-  {
-    method: "GET",
+getMovies(APIURL);
+
+const getClassByRate = (vote) => {
+  if (vote >= 8) {
+    return "green";
+  } else if (vote >= 5) {
+    return "orange";
+  } else {
+    return "red";
   }
-)
-  .then((response) => response.json())
-  .then((data) => {
-    // console.log(data);
-    const list = data.results;
+};
 
-    list.map((item) => {
-      const id = item.id;
-      const title = item.name;
-      const score = item.vote_average;
-      const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
-      // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const year = item.first_air_date;
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const searchTerm = search.value;
 
-      const movie = `<div class="movie">
-          <img class="posters" src="${poster}" alt="Poster">
-          <div id="textContainer">
-            <h2 style="color: white" id="title">${title}</h2>
-            <h4 style="color: white">${year}</h4>
-            <h4 style="color: white">${score}</h4>
-          </div>
-        </div>`;
-      document.getElementById("topRated").innerHTML += movie;
-    });
-  })
-
-  .catch((err) => {
-    console.error(err);
-  });
-
-//latest Tv Show
-fetch(
-  "https://api.themoviedb.org/3/movie/airing_today?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&page=1",
-  {
-    method: "GET",
+  if (searchTerm) {
+    getMovies(SEARCHAPI + searchTerm);
+    search.value = "";
   }
-)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    const list = data.results;
-
-    list.map((item) => {
-      const id = item.id;
-      const title = item.name;
-      const score = item.vote_average;
-      const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
-      // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const year = item.first_air_date;
-
-      const movie = `<div class="movie">
-            <img class="posters" src="${poster}" alt="Poster">
-            <div id="textContainer">
-              <h2 style="color: white" id="title">${title}</h2>
-              <h4 style="color: white">${year}</h4>
-              <h4 style="color: white">${score}</h4>
-            </div>
-          </div>`;
-      document.getElementById("upcoming").innerHTML += movie;
-    });
-  })
-
-  .catch((err) => {
-    console.error(err);
-  });
+});

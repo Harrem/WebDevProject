@@ -47,8 +47,9 @@ fetch(
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
             <h2 style="color: black;" id="title">${title}</h2>
-            <span style="color: black; margin-right: 40px;">2:24</span>
-            <span style="color: black;">${year}</span>
+            <i id="sty1" class="fa fa-clock-o"></i>
+            <span id="sty2">2:24</span>
+            <span id="sty3">${year}</span>
           </div>
         </div></a>`;
       document.getElementById("mostPopularMovie").innerHTML += movie;
@@ -85,8 +86,9 @@ fetch(
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
             <h2 style="color: black;" id="title">${title}</h2>
-            <span style="color: black; margin-right: 40px;">2:23</span>
-            <span style="color: black;">${year}</span>
+            <i id="sty1" class="fa fa-clock-o"></i>
+            <span id="sty2">2:24</span>
+            <span id="sty3">${year}</span>
           </div>
         </div></a>`;
       document.getElementById("mostPopularTvShow").innerHTML += movie;
@@ -123,8 +125,9 @@ fetch(
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
             <h2 style="color: black;" id="title">${title}</h2>
-            <span style="color: black; margin-right: 40px;">2:23</span>
-            <span style="color: black;">${year}</span>
+            <i id="sty1" class="fa fa-clock-o"></i>
+            <span id="sty2">2:24</span>
+            <span id="sty3">${year}</span>
           </div>
         </div></a>`;
       document.getElementById("latestMovie").innerHTML += movie;
@@ -161,8 +164,9 @@ fetch(
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
             <h2 style="color: black;" id="title">${title}</h2>
-            <span style="color: black; margin-right: 40px;">2:23</span>
-            <span style="color: black;">${year}</span>
+            <i id="sty1" class="fa fa-clock-o"></i>
+            <span id="sty2">2:24</span>
+            <span id="sty3">${year}</span>
           </div>
         </div></a>`;
       document.getElementById("latestTvShow").innerHTML += movie;
