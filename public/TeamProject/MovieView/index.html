@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../home/nav.css">
     <link rel="stylesheet" href="../home/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -34,14 +35,13 @@
         <div class="cancel-icon">
             <span class="fas fa-times"></span>
         </div>
-        <form id="forms">
-            <input type="search" id="search" class="search-data" placeholder="Search" required>
-            <button type="submit" id="submit" class="fas fa-search"></button>
+        <form action="../Search/index.html" method="get">
+            <input type="search" class="search-data" placeholder="Search" required name="s">
+            <button type="submit" class="fas fa-search"></button>
         </form>
     </nav>
     <!-- //SlideShow -->
     <div class="SlideShowDiv" id="slideshowdiv">
-        <!-- <div id="coverImg"></div> -->
         <div class="mySlides" id="">
             <img id="topimg" src="./1078157.jpg" alt="cover image">
             <img src="https://collider.com/wp-content/uploads/2017/06/black-panther-movie-poster-teaser.jpg" alt=""
@@ -56,22 +56,10 @@
                     <div id="details">
                         <ol>
                             <li class="details_li" id="imdbRating">
-                                <img class="details_logo" id="imdb" src="./1-tomato.png">
+                                <img class="details_logo" id="imdb" src="./2-imdb.png">
                                 imdb rating
                             </li>
-                            <li class="details_li" id="imdbRating">
-                                <img class="details_logo" id="rottentomato" src="./2-imdb.png">
-
-                            </li>
-                            <li class="details_li" id="tmdbRating">
-                                <img class="details_logo" id="imdb" src="./3-tmdb.svg">
-                                tmdb rating
-                            </li>
                         </ol>
-                    </div>
-                    <div id="buttons">
-                        <button class="button">Watch Trailor</button>
-                        <button class="button">Add To Wishlist</button>
                     </div>
                 </div>
             </div>
@@ -80,17 +68,17 @@
     <!-- ///////////////////////////////////////////////////////////////////// -->
     <main id="main">
         <div class="scrollViewer">
-            <h1 style="color: black; margin: 65px; text-align: center;">Most popular Movie show</h1>
+            <h1 id="type">Most popular Movie show</h1>
             <div class="movies" id="mostPopular">
             </div>
         </div>
         <div class="scrollViewer">
-            <h1 style="color: black; margin: 65px; text-align: center;">Top rated Movie show</h1>
+            <h1 id="type">Top rated Movie show</h1>
             <div class="movies" id="topRated">
             </div>
         </div>
         <div class="scrollViewer">
-            <h1 style="color: black; margin: 65px; text-align: center;">Up coming Movie show</h1>
+            <h1 id="type">Up coming Movie show</h1>
             <div class="movies" id="upcoming">
             </div>
         </div>
@@ -124,7 +112,6 @@
                 </ul>
             </div>
         </div>
-
     </footer>
     <script src="../home/nav.js"></script>
     <script src="./slideShow.js"></script>

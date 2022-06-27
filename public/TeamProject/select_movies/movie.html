@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../home/nav.css">
     <link rel="stylesheet" href="../home/footer.css">
     <link rel="stylesheet" href="../home/style.css">
-    <link rel="stylesheet" href="./movie.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <title>Document</title>
 </head>
@@ -35,8 +34,8 @@
         <div class="cancel-icon">
             <span class="fas fa-times"></span>
         </div>
-        <form action="#">
-            <input type="search" class="search-data" placeholder="Search" required>
+        <form action="../Search/index.html" method="get">
+            <input type="search" class="search-data" placeholder="Search" required name="s">
             <button type="submit" class="fas fa-search"></button>
         </form>
     </nav>
@@ -80,7 +79,6 @@
         </div>
     </footer>
     <script src="../home/nav.js"></script>
-    <!-- <script src="../home/main.js"></script> -->
     <script src="./slideMovie.js"></script>
     <script src="./movie.js"></script>
 </body>

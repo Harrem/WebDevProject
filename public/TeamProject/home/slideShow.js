@@ -18,7 +18,7 @@ fetch(
       const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
       const year = item.release_date;
 
-      const movie = `<div class="mySlides" id="" >
+      const movie = `<div class="mySlides" >
           <img id="topimg" class="backgroundImage"
               src="${backdrop}"
               alt="cover image">
@@ -36,7 +36,6 @@ fetch(
                           </li>
                       </ol>
                   </div>
-                  
               </div>
           </div>
       </div>`;

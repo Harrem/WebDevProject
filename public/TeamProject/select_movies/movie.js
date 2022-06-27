@@ -17,17 +17,18 @@ var nav = document.getElementById("nav");
 function CheckNav() {
   var range = window.scrollY * 0.0025;
   nav.style.backgroundColor = `rgb(20,20,20,${range})`;
-  // nav.style.backgroundImage = `linear-gradient(to bottom, rgba(30, 30, 30,${range}), rgb(0, 0, 0, 0))`
 
   if (window.scrollY >= 400) {
     range = 255;
   }
 }
-fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US`,
+fetch(
+  `https://api.themoviedb.org/3/movie/${id}/videos?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US`,
   {
-    method: "GET"
-  })
-  .then((response) => response.json(),)
+    method: "GET",
+  }
+)
+  .then((response) => response.json())
   .then((data) => {
     console.log(data);
     const list = data.results;
@@ -38,12 +39,14 @@ fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=717eacf2852518ed1
         trailer = "https://www.youtube.com/embed/" + item.key;
         console.log(trailer);
 
-        document.getElementById("videoContainer").innerHTML += `<iframe id="ytplayer" width="560" height="315" src=${trailer}
+        document.getElementById(
+          "videoContainer"
+        ).innerHTML += `<iframe id="ytplayer" width="560" height="315" src=${trailer}
           title="YouTube video player" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>`
+          allowfullscreen></iframe>`;
       }
-    })
-  })
+    });
+  });
 ////////////////////////////////////////////////
 /// the Trailar for the Movies
