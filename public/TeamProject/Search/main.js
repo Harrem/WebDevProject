@@ -22,7 +22,7 @@ fetch(
       const year = date.substring(0, 4);
       console.log(typeof date);
 
-      const movie = `<a href="../select_tv_show/tv_show.html?${id}">
+      const movie = `<a href="../select_movies/movie.html?${id}">
       <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
