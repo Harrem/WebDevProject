@@ -46,7 +46,7 @@ fetch(
       <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 style="color: black;" id="title">${title}</h2>
+            <h2 style="color: black;" id="titleCard">${title}</h2>
             <i id="sty1" class="fa fa-clock-o"></i>
             <span id="sty2">2:24</span>
             <span id="sty3">${year}</span>
@@ -85,7 +85,7 @@ fetch(
       <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 style="color: black;" id="title">${title}</h2>
+            <h2 style="color: black;" id="titleCard">${title}</h2>
             <i id="sty1" class="fa fa-clock-o"></i>
             <span id="sty2">2:24</span>
             <span id="sty3">${year}</span>
@@ -124,7 +124,7 @@ fetch(
       <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 style="color: black;" id="title">${title}</h2>
+            <h2 style="color: black;" id="titleCard">${title}</h2>
             <i id="sty1" class="fa fa-clock-o"></i>
             <span id="sty2">2:24</span>
             <span id="sty3">${year}</span>
@@ -163,7 +163,7 @@ fetch(
       <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
-            <h2 style="color: black;" id="title">${title}</h2>
+            <h2 style="color: black;" id="titleCard">${title}</h2>
             <i id="sty1" class="fa fa-clock-o"></i>
             <span id="sty2">2:24</span>
             <span id="sty3">${year}</span>
