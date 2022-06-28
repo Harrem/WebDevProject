@@ -41,7 +41,8 @@ fetch(
       const date = item.first_air_date;
       const year = date.toString().substr(0, 4);
 
-      const movie = `<div class="movie">
+      const movie = `<a href="../select_tv_show/tv_show.html?${id}">
+      <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
           <h2 style="color: black;" id="titleCard">${title}</h2>
@@ -49,7 +50,7 @@ fetch(
           <span id="sty2">2:24</span>
           <span id="sty3">${year}</span>
           </div>
-        </div>`;
+        </div></a>`;
       document.getElementById("mostPopular").innerHTML += movie;
     });
   })
@@ -78,7 +79,8 @@ fetch(
       const date = item.first_air_date;
       const year = date.toString().substr(0, 4);
 
-      const movie = `<div class="movie">
+      const movie = `<a href="../select_tv_show/tv_show.html?${id}">
+      <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
           <h2 style="color: black;" id="titleCard">${title}</h2>
@@ -86,7 +88,7 @@ fetch(
           <span id="sty2">2:24</span>
           <span id="sty3">${year}</span>
           </div>
-        </div>`;
+        </div></a>`;
       document.getElementById("topRated").innerHTML += movie;
     });
   })
@@ -115,7 +117,8 @@ fetch(
       const date = item.first_air_date;
       const year = date.toString().substr(0, 4);
 
-      const movie = `<div class="movie">
+      const movie = `<a href="../select_tv_show/tv_show.html?${id}">
+      <div class="movie">
             <img class="posters" src="${poster}" alt="Poster">
             <div id="textContainer">
             <h2 style="color: black;" id="titleCard">${title}</h2>
@@ -123,7 +126,7 @@ fetch(
             <span id="sty2">2:24</span>
             <span id="sty3">${year}</span>
             </div>
-          </div>`;
+          </div></a>`;
       document.getElementById("upcoming").innerHTML += movie;
     });
   })

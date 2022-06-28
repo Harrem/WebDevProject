@@ -1,5 +1,5 @@
 var id = location.search.substring(1);
-console.log(id);
+// console.log(id);
 
 fetch(
   `https://api.themoviedb.org/3/movie/${id}?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US`,
@@ -9,7 +9,7 @@ fetch(
 )
   .then((response) => response.json())
   .then((item) => {
-    console.log(item);
+    // console.log(item);
 
     const id = item.id;
     const title = item.title;
