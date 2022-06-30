@@ -30,7 +30,7 @@ fetch(
 )
   .then((response) => response.json())
   .then(async (data) => {
-    console.log(data);
+    // console.log(data);
     const list = data.results;
 
     list.map((item) => {
@@ -40,7 +40,7 @@ fetch(
       const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
       const date = item.release_date;
-      const year = date.toString().substr(0, 4);
+      const year = date.substr(0, 4);
 
       const movie = `<a href="../select_movies/movie.html?${id}">
       <div class="movie">
@@ -78,8 +78,8 @@ fetch(
       const score = item.vote_average;
       const poster = "http://image.tmdb.org/t/p/w200/" + item.poster_path;
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const date = item.release_date;
-      const year = date.toString().substr(0, 4);
+      const date = item.first_air_date;
+      const year = date.substr(0, 4);
 
       const movie = `<a href="../select_tv_show/tv_show.html?${id}">
       <div class="movie">
@@ -108,7 +108,7 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
+    // console.log(data);
     const list = data.results;
 
     list.map((item) => {
@@ -135,7 +135,7 @@ fetch(
   })
 
   .catch((err) => {
-    console.error(err);
+    // console.error(err);
   });
 
 //latestTvShow
@@ -147,7 +147,7 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
+    // console.log(data);
     const list = data.results;
 
     list.map((item) => {
@@ -156,8 +156,8 @@ fetch(
       const score = item.vote_average;
       const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
       // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const date = item.release_date;
-      const year = date.toString().substr(0, 4);
+      const date = item.first_air_date;
+      const year = date.substr(0, 4);
 
       const movie = `<a href="../select_tv_show/tv_show.html?${id}">
       <div class="movie">

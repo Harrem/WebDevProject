@@ -1,25 +1,64 @@
 body {
   background-color: whitesmoke;
   object-fit: fill;
-  margin: 0 auto;
-  height: 100%;
+  margin: 0;
+  /* height: 100%; */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.SlideShowDiv {
+/* .SlideShowDiv {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 600px;
   z-index: 1;
+} */
+/* slide style */
+
+#slideContainer {
+  margin: 0;
+  background-color: white;
+  object-fit: cover;
+  overflow: hidden;
 }
 
-.mySlides {
-  position: relative;
+#sliderBackdrop {
+  width: 100%;
+  filter: brightness(50%);
+}
+
+#mySlide {
   overflow: hidden;
   width: 100%;
-  height: auto;
+  height: 800px;
   z-index: 2;
 }
+
+.flickity-page-dots {
+  bottom: 30%;
+}
+
+.flickity-page-dots.dot {
+  background: white;
+}
+
+.carousel-cell {
+  height: auto;
+  width: 100%;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+/* #posterHolder {
+  position: relative;
+  margin: 100px;
+  height: 250px;
+  width: 150px;
+  border-radius: 12px;
+  background-color: grey;
+  object-fit: fill;
+  overflow: hidden;
+} */
+
 #type {
   color: black;
   margin: 25px;
@@ -52,12 +91,11 @@ body {
   width: 171px;
   height: 90%;
   border-radius: 10px;
-  box-shadow: 0px 0px 3px grey;
+  box-shadow: 0px 3px 8px rgb(220, 220, 220);
 }
 
 .posters {
-  width: 171px;
-  height: 230px;
+  width: 100%;
   border-radius: 10px 10px 0px 0px;
 }
 
@@ -77,6 +115,7 @@ body {
   word-wrap: break-word;
   white-space: normal;
 }
+
 #titleCard {
   text-align: center;
   font-size: 12px;
@@ -140,16 +179,19 @@ body {
 .details_logo {
   height: 20px;
 }
+
 #sty1 {
   font-size: 18px;
   color: gray;
   margin-right: 5px;
 }
+
 #sty2 {
   color: gray;
   margin-right: 50px;
   font-size: 15px;
 }
+
 #sty3 {
   color: gray;
   font-size: 15px;
@@ -177,6 +219,7 @@ body {
     left: 188px;
     bottom: 0px;
   }
+
   #title {
     user-select: none;
     font-size: 25px;
@@ -191,7 +234,8 @@ body {
 
 @media screen and (max-width: 800px) {
   #poster {
-    display: none;
+    /* box-shadow: inset(); */
+
   }
 
   #container {
@@ -225,6 +269,7 @@ body {
     word-wrap: break-word;
     white-space: normal;
   }
+
   #description {
     user-select: none;
     text-align: left;
@@ -257,6 +302,7 @@ body {
     border-radius: 10px;
     box-shadow: 0px 0px 3px grey;
   }
+
   #description {
     user-select: none;
     text-align: left;
@@ -267,12 +313,14 @@ body {
     width: 100%;
     font-size: 20px;
   }
+
   .posters {
     width: 170px;
     height: 255px;
     border-radius: 10px 10px 0px 0px;
     object-fit: contain;
   }
+
   #title {
     text-align: center;
     color: black;
@@ -285,6 +333,7 @@ body {
     margin-top: 12px;
     text-anchor: middle;
   }
+
   #titleCard {
     text-align: center;
     font-size: 12px;
@@ -294,13 +343,15 @@ body {
     width: 100%;
     height: 45px;
   }
+
   #type {
     color: black;
     margin: 25px;
     text-align: center;
   }
+
   #topimg {
-    filter: brightness(40%);
+    filter: brightness(60%);
     /* vertical-align: middle; */
     overflow: hidden;
     object-fit: fill;
@@ -309,16 +360,19 @@ body {
     z-index: 3;
     object-fit: cover;
   }
+
   #sty1 {
     font-size: 15px;
     color: gray;
     margin-right: 0px;
   }
+
   #sty2 {
     color: gray;
     margin-right: 50px;
     font-size: 15px;
   }
+
   #sty3 {
     color: gray;
     font-size: 15px;
@@ -338,6 +392,7 @@ body {
     border-radius: 7px;
     box-shadow: 0px 0px 3px grey;
   }
+
   #description {
     user-select: none;
     text-align: left;
@@ -348,12 +403,14 @@ body {
     width: 100%;
     font-size: 12px;
   }
+
   .posters {
     width: 126px;
     height: 190px;
     border-radius: 7px 7px 0px 0px;
     object-fit: contain;
   }
+
   #title {
     text-align: center;
     color: black;
@@ -366,6 +423,7 @@ body {
     margin-top: 12px;
     text-anchor: middle;
   }
+
   #titleCard {
     text-align: center;
     font-size: 12px;
@@ -375,12 +433,14 @@ body {
     width: 100%;
     height: 45px;
   }
+
   #type {
     color: black;
     margin: 25px;
     text-align: center;
     font-size: 20px;
   }
+
   #topimg {
     filter: brightness(40%);
     /* vertical-align: middle; */
@@ -391,16 +451,19 @@ body {
     z-index: 3;
     object-fit: cover;
   }
+
   #sty1 {
     font-size: 15px;
     color: gray;
     margin-right: 0px;
   }
+
   #sty2 {
     color: gray;
     margin-right: 20px;
     font-size: 15px;
   }
+
   #sty3 {
     color: gray;
     font-size: 15px;
@@ -420,10 +483,12 @@ body {
     border-radius: 7px;
     box-shadow: 0px 0px 3px grey;
   }
+
   .movie #textContainer {
     margin-top: 5px;
     margin-bottom: 0px;
   }
+
   #description {
     user-select: none;
     text-align: left;
@@ -434,12 +499,14 @@ body {
     width: 100%;
     font-size: 12px;
   }
+
   .posters {
     width: 100px;
     height: 150px;
     border-radius: 7px 7px 0px 0px;
     object-fit: contain;
   }
+
   #title {
     text-align: center;
     color: black;
@@ -452,6 +519,7 @@ body {
     margin-top: 12px;
     text-anchor: middle;
   }
+
   #titleCard {
     text-align: center;
     font-size: 12px;
@@ -461,12 +529,14 @@ body {
     width: 100%;
     height: 73px;
   }
+
   #type {
     color: black;
     margin: 25px;
     text-align: center;
     font-size: 16px;
   }
+
   #topimg {
     filter: brightness(40%);
     /* vertical-align: middle; */
@@ -477,16 +547,19 @@ body {
     z-index: 3;
     object-fit: cover;
   }
+
   #sty1 {
     font-size: 12px;
     color: gray;
     margin-right: 0px;
   }
+
   #sty2 {
     color: gray;
     margin-right: 8px;
     font-size: 12px;
   }
+
   #sty3 {
     color: gray;
     font-size: 12px;
