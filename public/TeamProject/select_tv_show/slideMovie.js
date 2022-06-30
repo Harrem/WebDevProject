@@ -1,5 +1,5 @@
 var id = location.search.substring(1);
-console.log(id);
+// console.log(id);
 
 fetch(
   `https://api.themoviedb.org/3/tv/${id}?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US`,
@@ -12,7 +12,7 @@ fetch(
     console.log(item);
 
     const id = item.id;
-    const title = item.title;
+    const title = item.name;
     const description = item.overview;
     const rating = item.vote_average;
     const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;

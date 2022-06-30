@@ -30,12 +30,15 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-    // console.log(data);
+    console.log(data);
     const list = data.results;
 
     list.map((item) => {
       var trailer = "n/a";
-      if (item.name == "Official Trailer") {
+      if (
+        item.name == "Official Trailer" ||
+        item.name == "CENTAURO | Teaser tráiler | Netflix España"
+      ) {
         trailer = "https://www.youtube.com/embed/" + item.key;
         // console.log(trailer);
 
@@ -59,7 +62,7 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
+    // console.log(data);
     var list = data.genres;
     const release_date = data.release_date;
     const genres = data.genres;
