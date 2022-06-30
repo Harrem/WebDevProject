@@ -2,7 +2,8 @@ var search = document.getElementById("search");
 var nav = document.getElementById("nav");
 var logo = document.getElementById("logo");
 var d = window.innerWidth;
-
+var id = location.search.substring(1);
+// var ss = console.log(id);
 var v = false;
 
 window.onload = function () {
@@ -16,52 +17,13 @@ var nav = document.getElementById("nav");
 function CheckNav() {
   var range = window.scrollY * 0.0025;
   nav.style.backgroundColor = `rgb(20,20,20,${range})`;
-  // nav.style.backgroundImage = `linear-gradient(to bottom, rgba(30, 30, 30,${range}), rgb(0, 0, 0, 0))`
 
   if (window.scrollY >= 400) {
     range = 255;
   }
 }
-//topPopelarMovie
 fetch(
-  "https://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334",
-  {
-    method: "GET",
-  }
-)
-  .then((response) => response.json())
-  .then(async (data) => {
-    console.log(data);
-    const list = data.results;
-
-    list.map((item) => {
-      const id = item.id;
-      const title = item.title;
-      const score = item.vote_average;
-      const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
-      // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const year = item.release_date;
-
-      const movie = `<a href="../select_movies/movie.html">
-      <div class="movie">
-          <img class="posters" src="${poster}" alt="Poster">
-          <div id="textContainer">
-            <h2 style="color: black" id="title">${title}</h2>
-            <h4 style="color: black">${year}</h4>
-            <h4 style="color: black">${score}</h4>
-          </div>
-        </div></a>`;
-      document.getElementById("mostPopularMovie").innerHTML += movie;
-    });
-  })
-
-  .catch((err) => {
-    console.error(err);
-  });
-
-//topPopelarTvShow
-fetch(
-  "https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=1",
+  `https://api.themoviedb.org/3/tv/${id}/videos?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US`,
   {
     method: "GET",
   }
@@ -72,103 +34,70 @@ fetch(
     const list = data.results;
 
     list.map((item) => {
-      const id = item.id;
-      const title = item.name;
-      const score = item.vote_average;
-      const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
-      // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const year = item.first_air_date;
+      var trailer = "n/a";
+      if (item.name == "Final Trailer" || item.name == "Witness") {
+        trailer = "https://www.youtube.com/embed/" + item.key;
+        // console.log(trailer);
 
-      const movie = `<a href="../select_movies/movie.html">
-      <div class="movie">
-          <img class="posters" src="${poster}" alt="Poster">
-          <div id="textContainer">
-            <h2 style="color: black" id="title">${title}</h2>
-            <h4 style="color: black">${year}</h4>
-            <h4 style="color: black">${score}</h4>
-          </div>
-        </div></a>`;
-      document.getElementById("mostPopularTvShow").innerHTML += movie;
+        document.getElementById(
+          "videoContainer"
+        ).innerHTML += `<iframe id="ytplayer" width="560" height="315" src=${trailer}
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>`;
+      }
     });
-  })
-
-  .catch((err) => {
-    console.error(err);
   });
 
-//latestMovie
 fetch(
-  "https://api.themoviedb.org/3/movie/upcoming?api_key=717eacf2852518ed1f0a438d848f9334",
+  `https://api.themoviedb.org/3/tv/${id}?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US`,
   {
     method: "GET",
   }
 )
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
-    const list = data.results;
+    // console.log(data);
+    var list = data.genres;
+    const last_air_date = data.last_air_date;
+    const genres = data.genres;
+    var genre = "";
+    const county = data.production_countries;
+    var country = "";
+    const spoken = data.spoken_languages;
+    var spokenlan = "";
+    const created_by = data.created_by;
+    var created = "";
 
-    list.map((item) => {
-      const id = item.id;
-      const title = item.title;
-      const score = item.vote_average;
-      const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
-      // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const year = item.release_date;
-
-      const movie = `<a href="../select_movies/movie.html">
-      <div class="movie">
-          <img class="posters" src="${poster}" alt="Poster">
-          <div id="textContainer">
-            <h2 style="color: black" id="title">${title}</h2>
-            <h4 style="color: black">${year}</h4>
-            <h4 style="color: black">${score}</h4>
-          </div>
-        </div></a>`;
-      document.getElementById("latestMovie").innerHTML += movie;
+    genres.forEach((element) => {
+      genre += element["name"] + ", ";
     });
-  })
+    genre = genre.substring(0, genre.length - 2);
 
-  .catch((err) => {
-    console.error(err);
-  });
-
-//latestTvShow
-fetch(
-  "https://api.themoviedb.org/3/tv/airing_today?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&page=1",
-  {
-    method: "GET",
-  }
-)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    const list = data.results;
-
-    list.map((item) => {
-      const id = item.id;
-      const title = item.name;
-      const score = item.vote_average;
-      const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
-      // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-      const year = item.first_air_date;
-
-      const movie = `<a href="../select_movies/movie.html">
-      <div class="movie">
-          <img class="posters" src="${poster}" alt="Poster">
-          <div id="textContainer">
-            <h2 style="color: black" id="title">${title}</h2>
-            <h4 style="color: black">${year}</h4>
-            <h4 style="color: black">${score}</h4>
-          </div>
-        </div></a>`;
-      document.getElementById("latestTvShow").innerHTML += movie;
+    created_by.forEach((element) => {
+      created += element["name"];
     });
-  })
 
-  .catch((err) => {
-    console.error(err);
+    county.forEach((element) => {
+      country += element["name"];
+    });
+
+    spoken.forEach((element) => {
+      spokenlan += element["english_name"] + ", ";
+    });
+    spokenlan = spokenlan.substring(0, spokenlan.length - 2);
+
+    // list.map((item) => {
+    document.getElementById(
+      "genres"
+    ).innerHTML += `<div id="list"><span id="released">Released: </span><span id="sp">${last_air_date}</span></br></br>
+                                       <span id="released">Genre: </span><span id="sp">${genre}</span></br></br>
+                                       <span id="released">Original language: </span><span id="sp">${data.original_language}</span></br></br>
+                                       <span id="released">Created by: </span><span id="sp">${created}</span></br></br>
+                                       <span id="released">Country: </span><span id="sp">${country}</span></br></br>
+                                       <span id="released">Spoken languages: </span><span id="sp">${spokenlan}</span></br></br>
+                                       <span id="released">Number of seasons: </span><span id="sp">${data.number_of_seasons}</span></br></br>
+                                       <span id="released">Number of episodes: </span><span id="sp">${data.number_of_episodes}</span></br></br>
+        </div>`;
+    // });
   });
-
-////////////////////////////////////////////////
-/// the Trailar for the Movies

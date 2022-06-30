@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "test-5af71"
-  }
+    "default": "test-5af71",
+    "testing": "kurdmovie-4b5d8"
+  },
+  "targets": {}
 }
