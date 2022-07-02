@@ -234,8 +234,7 @@ body {
 
 @media screen and (max-width: 800px) {
   #poster {
-    /* box-shadow: inset(); */
-
+    display: block;
   }
 
   #container {

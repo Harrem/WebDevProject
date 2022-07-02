@@ -1,4 +1,5 @@
-var url = "https://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334";
+var url =
+  "https://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334";
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
@@ -6,14 +7,13 @@ xhttp.onreadystatechange = function () {
     var response = JSON.parse(this.responseText);
     console.log(response);
     myfunc(response);
-    let script = document.createElement('script');
-    script.src = './flickity.pkgd.min.js';
+    let script = document.createElement("script");
+    script.src = "./flickity.pkgd.min.js";
     document.head.appendChild(script);
   }
-}
+};
 xhttp.open("GET", url, true);
 xhttp.send();
-
 
 var myfunc = function (data) {
   const list = data.results;
@@ -53,10 +53,7 @@ var myfunc = function (data) {
             </div>`;
     document.getElementById("mySlide").innerHTML += movie;
   });
-
-}
-
-
+};
 
 // fetch(
 //   "https://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334",
@@ -101,7 +98,6 @@ var myfunc = function (data) {
 //   });
 
 // var slideIndex = 0;
-
 
 // var img = null;
 
