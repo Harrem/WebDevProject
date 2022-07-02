@@ -44,7 +44,7 @@
             <img src="./film-reel-36145.png">
         </div>
         <div class="login-content">
-            <form action="index.html">
+            <form>
                 <img src="./film-reel-36145.png">
                 <div class="input-div one">
                     <div class="i">
@@ -52,20 +52,23 @@
                     </div>
                     <div class="div">
                         <h5>Email</h5>
-                        <input type="email" class="input">
+                        <input id="email" type="email" class="input">
                     </div>
                 </div>
+                <h6 style="color: red;" id="rooleEmail"></h6>
                 <div class="input-div pass">
                     <div class="i">
                         <i class="fas fa-lock"></i>
                     </div>
                     <div class="div">
                         <h5>Password</h5>
-                        <input type="password" class="input">
+                        <input id="password" type="password" class="input">
                     </div>
                 </div>
+                <h6 style="color: red;" id="roolePassword"></h6>
                 <a id="a" href="#">Forgot Password?</a>
-                <input type="submit" class="btn" value="Login">
+                <input type="submit" id="submit" class="btn" value="Login">
+                <h1 id="Setring">Seting</h1>
             </form>
         </div>
     </div>
@@ -98,6 +101,8 @@
             </div>
         </div>
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="../home/nav.js"></script>
     <script src="./login.js"></script>
 </body>
