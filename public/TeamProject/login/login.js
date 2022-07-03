@@ -42,13 +42,12 @@ submitButton.addEventListener("click", (e) => {
   ) {
     document.getElementById("roolePassword").innerHTML = "";
     const firebaseConfig = {
-      apiKey: "AIzaSyA8zBdkDnyFZXrDaOUhFWYj6V98ag2Iky0",
-      authDomain: "kurdmovie-4b5d8.firebaseapp.com",
-      databaseURL: "https://kurdmovie-4b5d8-default-rtdb.firebaseio.com",
-      projectId: "kurdmovie-4b5d8",
-      storageBucket: "kurdmovie-4b5d8.appspot.com",
-      messagingSenderId: "280311151823",
-      appId: "1:280311151823:web:d3eacfda932985e48e4bba",
+      apiKey: "AIzaSyBtBegQtuB_TcnIDQcIyUynWuOPmZkpfvQ",
+      authDomain: "kurd-movie-trailer.firebaseapp.com",
+      projectId: "kurd-movie-trailer",
+      storageBucket: "kurd-movie-trailer.appspot.com",
+      messagingSenderId: "557149530646",
+      appId: "1:557149530646:web:013ea41fe86c927a652337",
     };
 
     firebase.initializeApp(firebaseConfig);
@@ -64,12 +63,12 @@ submitButton.addEventListener("click", (e) => {
     var password = document.getElementById("password").value;
     var corectEmail = "";
     var corectPassword = "";
-    db.collection("form data")
+    db.collection("userList")
       .get()
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
           if (doc.data().email == email && doc.data().password == password) {
-            // console.log(doc.data().email);
+            console.log(doc.data().email);
             corectEmail = doc.data().email;
             corectPassword = doc.data().password;
             // alert("you passeted sucssesfully");
@@ -82,7 +81,7 @@ submitButton.addEventListener("click", (e) => {
           console.log(corectPassword);
           document.getElementById("email").value = "";
           document.getElementById("password").value = "";
-          document.getElementById("Setring").innerHTML = corectEmail;
+          // document.getElementById("Setring").innerHTML = corectEmail;
           alert("you passeted sucssesfully");
           // chosse = false;
           window.location.replace("../home/index.html");
