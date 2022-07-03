@@ -26,7 +26,7 @@ submitButton.addEventListener("click", (e) => {
   if (document.getElementById("userName").value == "") {
     document.getElementById("rooleName").innerHTML =
       "UserName should not be empty";
-  } else if (document.getElementById("userName").value.length < 8) {
+  } else if (document.getElementById("userName").value.length < 4) {
     document.getElementById("rooleName").innerHTML =
       "UserName should be more than 8 character";
   } else {
@@ -51,7 +51,7 @@ submitButton.addEventListener("click", (e) => {
   if (document.getElementById("password").value == "") {
     document.getElementById("roolePassword").innerHTML =
       "Password should not be empty";
-  } else if (document.getElementById("password").value.length < 10) {
+  } else if (document.getElementById("password").value.length < 8) {
     document.getElementById("roolePassword").innerHTML =
       "Password should be more than 10 character";
   } else {
@@ -72,7 +72,7 @@ submitButton.addEventListener("click", (e) => {
       document.getElementById("password").value &&
     document.getElementById("email").value != "" &&
     document.getElementById("userName").value != "" &&
-    document.getElementById("userName").value.length > 8 &&
+    document.getElementById("userName").value.length > 4 &&
     document.getElementById("format").value != "Choose an Age"
   ) {
     document.getElementById("rooleRepeatPassword").innerHTML = "";

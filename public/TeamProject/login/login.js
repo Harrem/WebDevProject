@@ -33,7 +33,7 @@ submitButton.addEventListener("click", (e) => {
   if (document.getElementById("password").value == "") {
     document.getElementById("roolePassword").innerHTML =
       "Password should not be empty";
-  } else if (document.getElementById("password").value.length < 10) {
+  } else if (document.getElementById("password").value.length < 8) {
     document.getElementById("roolePassword").innerHTML =
       "Password should be more than 10 character";
   } else if (
@@ -41,7 +41,6 @@ submitButton.addEventListener("click", (e) => {
     document.getElementById("password").value != ""
   ) {
     document.getElementById("roolePassword").innerHTML = "";
-
     const firebaseConfig = {
       apiKey: "AIzaSyA8zBdkDnyFZXrDaOUhFWYj6V98ag2Iky0",
       authDomain: "kurdmovie-4b5d8.firebaseapp.com",
@@ -61,35 +60,42 @@ submitButton.addEventListener("click", (e) => {
 
     // submitButton.addEventListener("click", (e) => {
     //   e.preventDefault();
-
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     var corectEmail = "";
     var corectPassword = "";
-
     db.collection("form data")
       .get()
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
           if (doc.data().email == email && doc.data().password == password) {
-            corectEmail = doc.data().userName;
-            // console.log(email);
+            // console.log(doc.data().email);
+            corectEmail = doc.data().email;
             corectPassword = doc.data().password;
-            // console.log(password);
+            // alert("you passeted sucssesfully");
           }
         });
       })
       .then(() => {
-        document.getElementById("email").value = "";
-        document.getElementById("password").value = "";
-        console.log(corectEmail);
-        console.log(corectPassword);
-        document.getElementById("Setring").innerHTML = corectEmail;
-        alert("You login sucessedfully");
-        window.location.replace("../home/index.html");
+        if (corectEmail == email && corectPassword == password) {
+          console.log(corectEmail);
+          console.log(corectPassword);
+          document.getElementById("email").value = "";
+          document.getElementById("password").value = "";
+          document.getElementById("Setring").innerHTML = corectEmail;
+          alert("you passeted sucssesfully");
+          // chosse = false;
+          window.location.replace("../home/index.html");
+        } else {
+          console.log("non");
+          alert("the passord or email is wrong!!!");
+          window.location.reload();
+          // chosse = true;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
       });
-  } else {
-    return false;
   }
 });
 //////////////////////////////////////////////////////////////////////////////////////
