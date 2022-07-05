@@ -133,6 +133,7 @@ submitButton.addEventListener("click", (e) => {
   ////////////////////////////////////////////////////////
 });
 //////////////////////////////////////////////////////////////
+/// eye for showing password and hide it
 function myFunction() {
   var password = document.getElementById("password");
   var hide1 = document.getElementById("hide1");
@@ -164,3 +165,4 @@ function myFunction2() {
     repeathide2.style.display = "block";
   }
 }
+//////////////////////////////////////////////////////////////

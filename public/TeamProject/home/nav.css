@@ -43,6 +43,18 @@ nav .nav-items li a {
 nav .nav-items li a:hover {
   color: #ff3d00;
 }
+
+#Setting {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#Setting:hover {
+  color: #ff3d00;
+  cursor: pointer;
+}
+
 nav form {
   display: flex;
   height: 40px;
@@ -237,3 +249,47 @@ nav .logo.space {
 .content .space {
   margin: 10px 0;
 }
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////////*/
+#openSetting {
+  display: none;
+  bottom: 195px;
+  transform: translate(-50%, 0);
+  width: 350px;
+  position: fixed;
+  left: 50%;
+  align-items: flex-start;
+  border-radius: 5px;
+  z-index: 99;
+  background-color: rgb(255 255 255);
+}
+
+/* #allScrinCaver {
+  background-color: #171c24;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 97;
+}
+@media screen and (max-width: 785px) {
+  #openSetting {
+    position: absolute;
+    left: 20%;
+    z-index: 99;
+    background-color: rgb(255 255 255);
+    border-radius: 10px;
+    padding: 80px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  #openSetting {
+    position: absolute;
+    left: 12%;
+    z-index: 99;
+    background-color: rgb(255 255 255);
+    border-radius: 10px;
+    padding: 80px;
+  }
+} */
