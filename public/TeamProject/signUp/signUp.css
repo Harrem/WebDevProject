@@ -199,3 +199,17 @@ form {
 #op {
   font-size: 11px;
 }
+
+.eye {
+  position: relative;
+  float: right;
+  top: 18px;
+}
+
+#hide1 {
+  display: none;
+}
+
+#repeathide1 {
+  display: none;
+}

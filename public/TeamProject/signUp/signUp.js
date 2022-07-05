@@ -124,6 +124,8 @@ submitButton.addEventListener("click", (e) => {
     document.getElementById("email").value = "";
     document.getElementById("password").value = "";
     document.getElementById("repeatPassword").value = "";
+    localStorage.setItem("myValue", document.getElementById("format").value);
+    // window.location.href = "../home/index.html";
     // });
   } else {
     return false;
@@ -131,3 +133,34 @@ submitButton.addEventListener("click", (e) => {
   ////////////////////////////////////////////////////////
 });
 //////////////////////////////////////////////////////////////
+function myFunction() {
+  var password = document.getElementById("password");
+  var hide1 = document.getElementById("hide1");
+  var hide2 = document.getElementById("hide2");
+
+  if (password.type === "password") {
+    password.type = "text";
+    hide1.style.display = "block";
+    hide2.style.display = "none";
+  } else {
+    password.type = "password";
+    hide1.style.display = "none";
+    hide2.style.display = "block";
+  }
+}
+
+function myFunction2() {
+  var repeatPassword = document.getElementById("repeatPassword");
+  var repeathide1 = document.getElementById("repeathide1");
+  var repeathide2 = document.getElementById("repeathide2");
+
+  if (repeatPassword.type === "password") {
+    repeatPassword.type = "text";
+    repeathide1.style.display = "block";
+    repeathide2.style.display = "none";
+  } else {
+    repeatPassword.type = "password";
+    repeathide1.style.display = "none";
+    repeathide2.style.display = "block";
+  }
+}

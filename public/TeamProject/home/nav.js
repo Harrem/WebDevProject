@@ -22,3 +22,6 @@ searchBtn.onclick = () => {
   searchBtn.classList.add("hide");
   cancelBtn.classList.add("show");
 };
+
+var b = localStorage.getItem("myValue");
+var Setting = (document.getElementById("Setting").innerHTML = b);

@@ -98,3 +98,18 @@ submitButton.addEventListener("click", (e) => {
   }
 });
 //////////////////////////////////////////////////////////////////////////////////////
+function myFunction() {
+  var password = document.getElementById("password");
+  var hide1 = document.getElementById("hide1");
+  var hide2 = document.getElementById("hide2");
+
+  if (password.type === "password") {
+    password.type = "text";
+    hide1.style.display = "block";
+    hide2.style.display = "none";
+  } else {
+    password.type = "password";
+    hide1.style.display = "none";
+    hide2.style.display = "block";
+  }
+}
