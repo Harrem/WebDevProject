@@ -124,7 +124,10 @@ submitButton.addEventListener("click", (e) => {
     document.getElementById("email").value = "";
     document.getElementById("password").value = "";
     document.getElementById("repeatPassword").value = "";
-    localStorage.setItem("myValue", document.getElementById("format").value);
+    localStorage.setItem("myValueUserName", userName);
+    localStorage.setItem("password", password);
+    localStorage.setItem("myValueEmail", email);
+    localStorage.setItem("myValueFormat", age);
     // window.location.href = "../home/index.html";
     // });
   } else {

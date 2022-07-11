@@ -83,6 +83,8 @@ submitButton.addEventListener("click", (e) => {
         if (corectEmail == email && corectPassword == password) {
           console.log(corectEmail);
           console.log(corectPassword);
+          console.log(corectName);
+          console.log(corectAge);
           document.getElementById("email").value = "";
           document.getElementById("password").value = "";
           // document.getElementById("Setring").innerHTML = corectEmail;
@@ -92,11 +94,11 @@ submitButton.addEventListener("click", (e) => {
           localStorage.setItem("myValueFormat", corectAge);
           alert("you passeted sucssesfully");
           // chosse = false;
-          window.location.replace("../home/index.html");
+          window.location.replace("../Setting/setting.html");
         } else {
           console.log("non");
           alert("the passord or email is wrong!!!");
-          window.location.reload();
+          //   window.location.reload();
           // chosse = true;
         }
       })

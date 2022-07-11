@@ -1,0 +1,208 @@
+var format = localStorage.getItem("myValueFormat");
+var myemail = localStorage.getItem("myValueEmail");
+var myuserName = localStorage.getItem("myValueUserName");
+var mypassword = localStorage.getItem("password");
+document.getElementById("age").innerHTML = format;
+document.getElementById("theemail").innerHTML = myemail;
+document.getElementById("name").innerHTML = myuserName;
+document.getElementById("password").innerHTML = mypassword;
+
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+
+const inputs = document.querySelectorAll(".input");
+function addcl() {
+  let parent = this.parentNode.parentNode;
+  parent.classList.add("focus");
+}
+function remcl() {
+  let parent = this.parentNode.parentNode;
+  if (this.value == "") {
+    parent.classList.remove("focus");
+  }
+}
+inputs.forEach((input) => {
+  input.addEventListener("focus", addcl);
+  input.addEventListener("blur", remcl);
+});
+/////////////////////////////////////////////////////////////
+var userName = document.getElementById("userName").value;
+var email = document.getElementById("email").value;
+var password = document.getElementById("inputPassword").value;
+var repeatPassword = document.getElementById("repeatPassword").value;
+var age = document.getElementById("format").value;
+var submitButton = document.getElementById("submit");
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBtBegQtuB_TcnIDQcIyUynWuOPmZkpfvQ",
+  authDomain: "kurd-movie-trailer.firebaseapp.com",
+  projectId: "kurd-movie-trailer",
+  storageBucket: "kurd-movie-trailer.appspot.com",
+  messagingSenderId: "557149530646",
+  appId: "1:557149530646:web:013ea41fe86c927a652337",
+};
+
+firebase.initializeApp(firebaseConfig);
+
+var firestore = firebase.firestore();
+
+submitButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  ////////////////////////////////////////////////////////
+  if (document.getElementById("userName").value == "") {
+    document.getElementById("rooleName").innerHTML =
+      "UserName should not be empty";
+  } else if (document.getElementById("userName").value.length < 4) {
+    document.getElementById("rooleName").innerHTML =
+      "UserName should be more than 4 character";
+  } else {
+    document.getElementById("rooleName").innerHTML = "";
+  }
+  ////////////////////////////////////////////////////////
+  if (document.getElementById("email").value == "") {
+    document.getElementById("rooleEmail").innerHTML =
+      "Email should not be empty";
+  } else if (document.getElementById("email").value == "@") {
+    document.getElementById("rooleEmail").innerHTML = "It is not Email";
+  } else {
+    document.getElementById("rooleEmail").innerHTML = "";
+  }
+  ////////////////////////////////////////////////////////
+  if (document.getElementById("format").value == "Choose an Age") {
+    document.getElementById("selectedFormat").innerHTML = "didnt selected";
+  } else {
+    document.getElementById("selectedFormat").innerHTML = "";
+  }
+  ////////////////////////////////////////////////////////
+  if (document.getElementById("inputPassword").value == "") {
+    document.getElementById("roolePassword").innerHTML =
+      "Password should not be empty";
+  } else if (document.getElementById("inputPassword").value.length < 8) {
+    document.getElementById("roolePassword").innerHTML =
+      "Password should be more than 8 character";
+  } else {
+    document.getElementById("roolePassword").innerHTML = "";
+  }
+  ////////////////////////////////////////////////////////
+  if (document.getElementById("repeatPassword").value == "") {
+    document.getElementById("rooleRepeatPassword").innerHTML =
+      "Repeat Password should not be empty";
+  } else if (
+    document.getElementById("repeatPassword").value !=
+    document.getElementById("inputPassword").value
+  ) {
+    document.getElementById("rooleRepeatPassword").innerHTML =
+      "Repeat Password should be same us a password";
+  } else if (
+    document.getElementById("repeatPassword").value ==
+      document.getElementById("inputPassword").value &&
+    document.getElementById("email").value != "" &&
+    document.getElementById("userName").value != "" &&
+    document.getElementById("userName").value.length > 4 &&
+    document.getElementById("format").value != "Choose an Age"
+  ) {
+    document.getElementById("rooleRepeatPassword").innerHTML = "";
+
+    var n = document.getElementById("userName").value;
+    console.log(n);
+    var em = document.getElementById("email").value;
+    console.log(em);
+    var p = document.getElementById("inputPassword").value;
+    console.log(p);
+    var rP = document.getElementById("repeatPassword").value;
+    console.log(rP);
+    var a = document.getElementById("format").value;
+    console.log(a);
+
+    var userData = {
+      userName: n,
+      email: em,
+      password: p,
+      repeatPassword: rP,
+      age: a,
+    };
+    console.log(userData);
+    firestore
+      .collection("userList")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // console.log(`${doc.id} => ${doc.data().email}`);
+          if (
+            doc.data().email == myemail &&
+            doc.data().password == mypassword &&
+            doc.data().userName == myuserName &&
+            doc.data().age == format
+          ) {
+            console.log(`${doc.id} => ${doc.data().email}`);
+            firestore.collection("userList").doc(doc.id).update(userData);
+          }
+        });
+      })
+      .then(() => {
+        firestore
+          .collection("userList")
+          .get()
+          .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              // console.log(`${doc.id} => ${doc.data().email}`);
+              if (
+                doc.data().email == em &&
+                doc.data().password == p &&
+                doc.data().userName == n &&
+                doc.data().age == a
+              ) {
+                console.log(`${doc.id} => ${doc.data().email}`);
+                firestore.collection("userList").doc(doc.id).update(userData);
+                document.getElementById("theemail").innerHTML = em;
+                document.getElementById("name").innerHTML = n;
+                document.getElementById("password").innerHTML = p;
+                document.getElementById("age").innerHTML = a;
+                alert("The update is completed");
+                window.location.replace("../home/index.html");
+              }
+            });
+          });
+        // window.location.assign("../home/index.html");
+      });
+  } else {
+    return true;
+  }
+  ////////////////////////////////////////////////////////
+});
+//////////////////////////////////////////////////////////////
+/// eye for showing password and hide it
+function myFunction() {
+  var password = document.getElementById("inputPassword");
+  var hide1 = document.getElementById("hide1");
+  var hide2 = document.getElementById("hide2");
+
+  if (password.type === "password") {
+    password.type = "text";
+    hide1.style.display = "block";
+    hide2.style.display = "none";
+  } else {
+    password.type = "password";
+    hide1.style.display = "none";
+    hide2.style.display = "block";
+  }
+}
+
+function myFunction2() {
+  var repeatPassword = document.getElementById("repeatPassword");
+  var repeathide1 = document.getElementById("repeathide1");
+  var repeathide2 = document.getElementById("repeathide2");
+
+  if (repeatPassword.type === "password") {
+    repeatPassword.type = "text";
+    repeathide1.style.display = "block";
+    repeathide2.style.display = "none";
+  } else {
+    repeatPassword.type = "password";
+    repeathide1.style.display = "none";
+    repeathide2.style.display = "block";
+  }
+}
+//////////////////////////////////////////////////////////////
