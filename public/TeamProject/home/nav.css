@@ -14,7 +14,7 @@ nav {
   justify-content: space-between;
   height: 70px;
   width: -webkit-fill-available;
-  padding: 0 100px;
+  padding: 0 20px;
   position: fixed;
 }
 nav .logo {

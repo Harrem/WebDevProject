@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./flickity.css">
-    <title>Kurd Movie Trailer</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./nav.css">
-    <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="../home/nav.css">
+    <link rel="stylesheet" href="../home/footer.css">
+    <link rel="stylesheet" href="./favourite.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../login/login.css">
+    <title>Document</title>
 </head>
 
 <body>
@@ -25,14 +23,14 @@
             KMT
         </div>
         <div class="nav-items">
-            <li><a href="./index.html">Home</a></li>
+            <li><a href="../home/index.html">Home</a></li>
             <li><a href="../MovieView/index.html">Movie</a></li>
             <li><a href="../tv_show/index.html">Tv</a></li>
             <li><a href="../about/about.html">About</a></li>
             <li><a href="../login/login.html">Login</a></li>
             <li><a href="../signUp/signUp.html">Sign Up</a></li>
             <li><span onclick="mySetting()" id="Setting">Setting</span></li>
-            <li><a href="../favourite/favourite.html">Favourite</a></li>
+            <li><a href="./favourite.html">Favourite</a></li>
         </div>
         <div class="search-icon">
             <span class="fas fa-search"></span>
@@ -101,34 +99,26 @@
             </span>
         </form>
     </div>
-    <div id="mySlide" class="carousel" data-flickity='{ "wrapAround": true}'>
-
-    </div>
-    <!-- </div>
-    </div> -->
-    <!-- <div id="allScrinCaver"> -->
-
-    <!-- </div> -->
     <div class="scrollViewer">
-        <h1 id="type">Most popular movies</h1>
+        <div id="type1"></div>
         <div class="movies" id="mostPopularMovie">
         </div>
     </div>
     <div class="scrollViewer">
-        <h1 id="type">Most popular TV show</h1>
+        <div id="type2"></div>
         <div class="movies" id="mostPopularTvShow">
         </div>
     </div>
-    <div class="scrollViewer">
-        <h1 id="type">Latest movie</h1>
+    <!-- <div class="scrollViewer">
+        <div id="type3"></div>
         <div class="movies" id="latestMovie">
         </div>
     </div>
     <div class="scrollViewer">
-        <h1 id="type">Latest TV show</h1>
+        <div id="type4"></div>
         <div class="movies" id="latestTvShow">
         </div>
-    </div>
+    </div> -->
     <footer>
         <div class="footer-content">
             <h3>Kurd Movie Trailer</h3>
@@ -148,16 +138,18 @@
                     <li><a href="../about/about.html">About</a></li>
                     <li><a href="../signUp/signUp.html">signUp</a></li>
                     <li><a href="../login/login.html">Login</a></li>
+                    <li><span onclick="mySetting()" id="Setting">Setting</span></li>
+                    <li><a href="./favourite.html">Favourite</a></li>
                 </ul>
             </div>
         </div>
     </footer>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-    <script src="./login.js"></script>
-    <script src="./nav.js"></script>
-    <script src="./slideShow.js"></script>
-    <script src="./main.js"></script>
+    <script src="../home/nav.js"></script>
+    <script src="../home/login.js"></script>
+    <!-- <script src="../home/main.js"></script> -->
+    <script src="./favourite.js"></script>
 </body>
 
 </html>

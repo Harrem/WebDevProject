@@ -30,7 +30,7 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
+    // console.log(data);
     const list = data.results;
 
     list.map((item) => {
@@ -94,6 +94,135 @@ fetch(
                                      <span id="released">Original language: </span><span id="sp">${data.original_language}</span></br></br>
                                      <span id="released">Country: </span><span id="sp">${country}</span></br></br>
                                      <span id="released">Spoken languages: </span><span id="sp">${spokenlan}</span></br></br>
+                                     <input type="button" value="Favourite" id="bb"></br></br>
       </div>`;
     // });
+    var submitButton = document.getElementById("bb");
+    submitButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      var f = [];
+      var dataID = data.id;
+      // var f2 = [];
+      // var dataID2 = data.id;
+      // console.log(dataID);
+
+      var format = localStorage.getItem("myValueFormat");
+      var myemail = localStorage.getItem("myValueEmail");
+      var myuserName = localStorage.getItem("myValueUserName");
+      var mypassword = localStorage.getItem("password");
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBtBegQtuB_TcnIDQcIyUynWuOPmZkpfvQ",
+        authDomain: "kurd-movie-trailer.firebaseapp.com",
+        projectId: "kurd-movie-trailer",
+        storageBucket: "kurd-movie-trailer.appspot.com",
+        messagingSenderId: "557149530646",
+        appId: "1:557149530646:web:013ea41fe86c927a652337",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+
+      var firestore = firebase.firestore();
+
+      firestore
+        .collection("userList")
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            if (
+              doc.data().email == myemail &&
+              doc.data().password == mypassword &&
+              doc.data().userName == myuserName &&
+              doc.data().age == format
+            ) {
+              for (let i = 0; i < doc.data().FID.length; i++) {
+                if (doc.data().FID[i] == dataID) {
+                  var items = doc.data().FID[i];
+                  var i2 = i;
+                }
+              }
+              if (items == dataID) {
+                f = doc.data().FID;
+                f.splice(i2, 1);
+                console.log(`${doc.id} => ${doc.data().email}`);
+                firestore
+                  .collection("userList")
+                  .doc(doc.id)
+                  .update({ FID: f })
+                  .then(() => {
+                    alert("The movie removed of faivourete");
+                  })
+                  .then(() => {
+                    window.location.reload();
+                  });
+              } else {
+                f = doc.data().FID;
+                f.push(dataID);
+                console.log(`${doc.id} => ${doc.data().email}`);
+                firestore
+                  .collection("userList")
+                  .doc(doc.id)
+                  .update({ FID: f })
+                  .then(() => {
+                    alert("The movie added to faivourete");
+                  })
+                  .then(() => {
+                    window.location.reload();
+                  });
+              }
+            }
+          });
+        });
+      /////////////////////////////////////////////////////////////////////
+      ////////////////////////////////////////////////////////////////////////
+      // firestore
+      //   .collection("userList")
+      //   .get()
+      //   .then((querySnapshot) => {
+      //     querySnapshot.forEach((doc) => {
+      //       if (
+      //         doc.data().email == myemail &&
+      //         doc.data().password == mypassword &&
+      //         doc.data().userName == myuserName &&
+      //         doc.data().age == format
+      //       ) {
+      //         for (let i = 0; i < doc.data().FID2.length; i++) {
+      //           if (doc.data().FID2[i] == dataID2) {
+      //             var items = doc.data().FID2[i];
+      //             var i2 = i;
+      //           }
+      //         }
+      //         if (items == dataID2) {
+      //           f2 = doc.data().FID2;
+      //           f2.splice(i2, 1);
+      //           console.log(`${doc.id} => ${doc.data().email}`);
+      //           firestore
+      //             .collection("userList")
+      //             .doc(doc.id)
+      //             .update({ FID2: f2 })
+      //             .then(() => {
+      //               alert("The movie removed of faivourete");
+      //             })
+      //             .then(() => {
+      //               window.location.reload();
+      //             });
+      //         } else {
+      //           f2 = doc.data().FID2;
+      //           f2.push(dataID2);
+      //           console.log(`${doc.id} => ${doc.data().email}`);
+      //           firestore
+      //             .collection("userList")
+      //             .doc(doc.id)
+      //             .update({ FID2: f2 })
+      //             .then(() => {
+      //               alert("The movie added to faivourete");
+      //             })
+      //             .then(() => {
+      //               window.location.reload();
+      //             });
+      //         }
+      //       }
+      //     });
+      //   });
+    });
   });
