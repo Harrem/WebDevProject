@@ -59,27 +59,27 @@ firestore
         array_name = doc.data().FID;
         // array_name2 = doc.data().FID2;
         console.log(array_name);
-      }
-      for (let v = 0; v < array_name.length; v++) {
-        fetch(
-          // "https://api.themoviedb.org/3/movie/top_rated?api_key=717eacf2852518ed1f0a438d848f9334&page=1",
-          "https://api.themoviedb.org/3/movie/${array_name[v]}?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US",
-          {
-            method: "GET",
-          }
-        )
-          .then((response) => response.json())
-          .then((item) => {
-            console.log(item);
-            const id = item.id;
-            // console.log(id);
-            const title = item.title;
-            const score = item.vote_average;
-            const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
-            const date = item.release_date;
-            const year = date.toString().substr(0, 4);
+        for (let v = 0; v < array_name.length; v++) {
+          fetch(
+            // "https://api.themoviedb.org/3/movie/top_rated?api_key=717eacf2852518ed1f0a438d848f9334&page=1",
+            "https://api.themoviedb.org/3/movie/${array_name[v]}?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US",
+            {
+              method: "GET",
+            }
+          )
+            .then((response) => response.json())
+            .then((item) => {
+              console.log(item);
+              const id = item.id;
+              // console.log(id);
+              const title = item.title;
+              const score = item.vote_average;
+              const poster =
+                "http://image.tmdb.org/t/p/w500/" + item.poster_path;
+              const date = item.release_date;
+              const year = date.toString().substr(0, 4);
 
-            const movie = `<a href="../select_movies/movie.html?${id}">
+              const movie = `<a href="../select_movies/movie.html?${id}">
               <div class="movie">
                   <img class="posters" src="${poster}" alt="Poster">
                   <div id="textContainer">
@@ -89,12 +89,13 @@ firestore
                     <span id="sty3">${year}</span>
                   </div>
                 </div></a>`;
-            document.getElementById("mostPopularMovie").innerHTML += movie;
-          })
+              document.getElementById("mostPopularMovie").innerHTML += movie;
+            })
 
-          .catch((err) => {
-            console.error(err);
-          });
+            .catch((err) => {
+              console.error(err);
+            });
+        }
       }
     });
   });
