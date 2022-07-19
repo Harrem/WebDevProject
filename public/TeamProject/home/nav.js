@@ -26,33 +26,3 @@ searchBtn.onclick = () => {
 //////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
-// var b = localStorage.getItem("myValue");
-// var Setting = (document.getElementById("Setting").innerHTML = b);
-///////////////////////////////////////////////////////////////////////////////////
-
-let btn = document.getElementById("Setting");
-let div = document.getElementById("openSetting");
-btn.addEventListener("click", () => {
-  if (div.style.display === "none") {
-    div.style.display = "block";
-  } else {
-    div.style.display = "none";
-    // window.location.reload();
-  }
-});
-
-function mySetting() {
-  items.classList.remove("active");
-  menuBtn.classList.remove("hide");
-  searchBtn.classList.remove("hide");
-  cancelBtn.classList.remove("show");
-  form.classList.remove("active");
-  cancelBtn.style.color = "#ff3d00";
-}
-
-function myClose() {
-  div.style.display = "none";
-  // window.location.reload();
-}
-//////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////

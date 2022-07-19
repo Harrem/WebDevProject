@@ -1,3 +1,21 @@
+var format = localStorage.getItem("myValueFormat");
+var myemail = localStorage.getItem("myValueEmail");
+var myuserName = localStorage.getItem("myValueUserName");
+var mypassword = localStorage.getItem("password");
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBtBegQtuB_TcnIDQcIyUynWuOPmZkpfvQ",
+  authDomain: "kurd-movie-trailer.firebaseapp.com",
+  projectId: "kurd-movie-trailer",
+  storageBucket: "kurd-movie-trailer.appspot.com",
+  messagingSenderId: "557149530646",
+  appId: "1:557149530646:web:013ea41fe86c927a652337",
+};
+
+firebase.initializeApp(firebaseConfig);
+
+var firestore = firebase.firestore();
+
 var search = document.getElementById("search");
 var nav = document.getElementById("nav");
 var logo = document.getElementById("logo");
@@ -97,6 +115,7 @@ fetch(
                                      <input type="button" value="Favourite" id="bb"></br></br>
       </div>`;
     // });
+
     var submitButton = document.getElementById("bb");
     submitButton.addEventListener("click", (e) => {
       e.preventDefault();
@@ -105,24 +124,6 @@ fetch(
       // var f2 = [];
       // var dataID2 = data.id;
       // console.log(dataID);
-
-      var format = localStorage.getItem("myValueFormat");
-      var myemail = localStorage.getItem("myValueEmail");
-      var myuserName = localStorage.getItem("myValueUserName");
-      var mypassword = localStorage.getItem("password");
-
-      const firebaseConfig = {
-        apiKey: "AIzaSyBtBegQtuB_TcnIDQcIyUynWuOPmZkpfvQ",
-        authDomain: "kurd-movie-trailer.firebaseapp.com",
-        projectId: "kurd-movie-trailer",
-        storageBucket: "kurd-movie-trailer.appspot.com",
-        messagingSenderId: "557149530646",
-        appId: "1:557149530646:web:013ea41fe86c927a652337",
-      };
-
-      firebase.initializeApp(firebaseConfig);
-
-      var firestore = firebase.firestore();
 
       firestore
         .collection("userList")
@@ -173,56 +174,83 @@ fetch(
             }
           });
         });
-      /////////////////////////////////////////////////////////////////////
-      ////////////////////////////////////////////////////////////////////////
-      // firestore
-      //   .collection("userList")
-      //   .get()
-      //   .then((querySnapshot) => {
-      //     querySnapshot.forEach((doc) => {
-      //       if (
-      //         doc.data().email == myemail &&
-      //         doc.data().password == mypassword &&
-      //         doc.data().userName == myuserName &&
-      //         doc.data().age == format
-      //       ) {
-      //         for (let i = 0; i < doc.data().FID2.length; i++) {
-      //           if (doc.data().FID2[i] == dataID2) {
-      //             var items = doc.data().FID2[i];
-      //             var i2 = i;
-      //           }
-      //         }
-      //         if (items == dataID2) {
-      //           f2 = doc.data().FID2;
-      //           f2.splice(i2, 1);
-      //           console.log(`${doc.id} => ${doc.data().email}`);
-      //           firestore
-      //             .collection("userList")
-      //             .doc(doc.id)
-      //             .update({ FID2: f2 })
-      //             .then(() => {
-      //               alert("The movie removed of faivourete");
-      //             })
-      //             .then(() => {
-      //               window.location.reload();
-      //             });
-      //         } else {
-      //           f2 = doc.data().FID2;
-      //           f2.push(dataID2);
-      //           console.log(`${doc.id} => ${doc.data().email}`);
-      //           firestore
-      //             .collection("userList")
-      //             .doc(doc.id)
-      //             .update({ FID2: f2 })
-      //             .then(() => {
-      //               alert("The movie added to faivourete");
-      //             })
-      //             .then(() => {
-      //               window.location.reload();
-      //             });
-      //         }
-      //       }
-      //     });
-      //   });
+    });
+  });
+//////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+var emaile = null;
+var passwordp = null;
+var userNameu = null;
+var agea = null;
+
+firestore.settings({ timestampsInSnapshots: true });
+
+var logout = document.getElementById("logout");
+logout.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  firestore
+    .collection("userList")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (
+          doc.data().email == myemail &&
+          doc.data().password == mypassword &&
+          doc.data().userName == myuserName &&
+          doc.data().age == format
+        ) {
+          emaile = doc.data().email;
+          passwordp = doc.data().password;
+          userNameu = doc.data().userName;
+          agea = doc.data().age;
+          console.log(`${doc.id} => ${doc.data().email}`);
+        }
+      });
+    })
+    .then(() => {
+      if (
+        emaile == myemail &&
+        passwordp == mypassword &&
+        userNameu == myuserName &&
+        agea == format
+      ) {
+        localStorage.setItem("myValueUserName", "");
+        localStorage.setItem("password", "");
+        localStorage.setItem("repeatPassword", "");
+        localStorage.setItem("myValueEmail", "");
+        localStorage.setItem("myValueFormat", "");
+        alert("LogOut of your acounnt!");
+      } else {
+        alert("You are not login to logut!!!");
+      }
+    })
+    .then(() => {
+      window.location.replace("../signUp/signUp.html");
+    });
+});
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+
+firestore
+  .collection("userList")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (
+        doc.data().email == myemail &&
+        doc.data().password == mypassword &&
+        doc.data().userName == myuserName &&
+        doc.data().age == format
+      ) {
+        console.log(`${doc.id} => ${doc.data().email}`);
+        document.getElementById("signUpForHiadenOrShow").style.display = "none";
+      } else {
+        document.getElementById("signUpForHiadenOrShow").style.display =
+          "block";
+      }
     });
   });

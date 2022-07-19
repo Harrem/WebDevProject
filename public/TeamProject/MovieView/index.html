@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../home/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../home/dropdown.css">
 </head>
 
 <body>
@@ -22,12 +23,21 @@
             KMT
         </div>
         <div class="nav-items">
+            <ul>
+                <li id="dd"><a href="#">Acounnte &dtrif;</a>
+                    <ul class="dropdown">
+                        <li id="ff"><a href="../about/about.html">About</a></li>
+                        <li id="ff"><a href="../login/login.html">Login</a></li>
+                        <li id="ff"><a id="logout">LogOut</a></li>
+                        <li id="ff"><a href="../favourite/favourite.html">Favourite</a></li>
+                        <li id="ff"><a href="../Setting/setting.html" id="Setting">Setting</a></li>
+                    </ul>
+                </li>
+            </ul>
             <li><a href="../home/index.html">Home</a></li>
             <li><a href="./index.html">Movie</a></li>
             <li><a href="../tv_show/index.html">Tv</a></li>
-            <li><a href="../about/about.html">About</a></li>
-            <li><a href="../login/login.html">Login</a></li>
-            <li><a href="../signUp/signUp.html">Sign Up</a></li>
+            <li id="signUpForHiadenOrShow"><a href="../signUp/signUp.html">Sign Up</a></li>
         </div>
         <div class="search-icon">
             <span class="fas fa-search"></span>
@@ -113,9 +123,12 @@
             </div>
         </div>
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="../home/nav.js"></script>
     <script src="./slideShow.js"></script>
     <script src="./main.js"></script>
+    <script src="../home/logUot.js"></script>
 </body>
 
 </html>

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./favourite.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../login/login.css">
+    <link rel="stylesheet" href="../home/dropdown.css">
     <title>Document</title>
 </head>
 
@@ -23,14 +23,21 @@
             KMT
         </div>
         <div class="nav-items">
+            <ul>
+                <li id="dd"><a href="#">Acounnte &dtrif;</a>
+                    <ul class="dropdown">
+                        <li id="ff"><a href="../about/about.html">About</a></li>
+                        <li id="ff"><a href="../login/login.html">Login</a></li>
+                        <li id="ff"><a id="logout">LogOut</a></li>
+                        <li id="ff"><a href="../favourite/favourite.html">Favourite</a></li>
+                        <li id="ff"><a href="../Setting/setting.html" id="Setting">Setting</a></li>
+                    </ul>
+                </li>
+            </ul>
             <li><a href="../home/index.html">Home</a></li>
             <li><a href="../MovieView/index.html">Movie</a></li>
             <li><a href="../tv_show/index.html">Tv</a></li>
-            <li><a href="../about/about.html">About</a></li>
-            <li><a href="../login/login.html">Login</a></li>
-            <li><a href="../signUp/signUp.html">Sign Up</a></li>
-            <li><span onclick="mySetting()" id="Setting">Setting</span></li>
-            <li><a href="./favourite.html">Favourite</a></li>
+            <li id="signUpForHiadenOrShow"><a href="../signUp/signUp.html">Sign Up</a></li>
         </div>
         <div class="search-icon">
             <span class="fas fa-search"></span>
@@ -43,82 +50,16 @@
             <button type="submit" class="fas fa-search"></button>
         </form>
     </nav>
-    <div id="openSetting">
-        <form style="width: 301px;
-        margin: 19px;">
-            <div class="input-div one">
-                <div class="i">
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="div">
-                    <h5>Email</h5>
-                    <input id="email" type="email" class="input">
-                </div>
-            </div>
-            <h6 style="color: red;" id="rooleEmail"></h6>
-            <div class="input-div pass">
-                <div class="i">
-                    <i class="fas fa-lock"></i>
-                </div>
-                <div class="div">
-                    <h5>Password</h5>
-                    <input id="password" type="password" class="input">
-                    <span class="eye" onclick=" myFunction()">
-                        <i id="hide1" class="fa fa-eye" aria-hidden="true"></i>
-                        <i id="hide2" class="fa fa-eye-slash" aria-hidden="true"></i>
-                    </span>
-                </div>
-            </div>
-            <h6 style="color: red;" id="roolePassword"></h6>
-            <a id="a" href="#">Forgot Password?</a>
-            <span>
-                <input style="display: block;
-            width: 100%;
-            height: 39px;
-            border-radius: 4px;
-            outline: none;
-            border: none;
-            background-image: linear-gradient(to right, #111212, #2b6854, #230778);
-            background-size: 200%;
-            font-size: 1.2rem;
-            color: #fff;
-            font-family: Poppins, sans-serif; text-transform: uppercase; margin: 1rem 0; cursor: pointer;
-                transition: 0.5s;" type="submit" id="submit" class="btn" value="Login">
-                <input style="display: block;
-                width: 100%;
-                height: 39px;
-                border-radius: 4px;
-                outline: none;
-                border: none;
-                background-image: linear-gradient(to right, #111212, #2b6854, #230778);
-                background-size: 200%;
-                font-size: 1.2rem;
-                color: #fff;
-                font-family: Poppins, sans-serif; text-transform: uppercase; margin: 1rem 0; cursor: pointer;
-                    transition: 0.5s;" type="submit" onclick="myClose()" id="close" class="btn" value="Close">
-            </span>
-        </form>
-    </div>
     <div class="scrollViewer">
         <div id="type1"></div>
-        <div class="movies" id="mostPopularMovie">
+        <div class="movies" id="FavouriteMovie">
         </div>
     </div>
     <div class="scrollViewer">
         <div id="type2"></div>
-        <div class="movies" id="mostPopularTvShow">
+        <div class="movies" id="FavouriteTvShow">
         </div>
     </div>
-    <!-- <div class="scrollViewer">
-        <div id="type3"></div>
-        <div class="movies" id="latestMovie">
-        </div>
-    </div>
-    <div class="scrollViewer">
-        <div id="type4"></div>
-        <div class="movies" id="latestTvShow">
-        </div>
-    </div> -->
     <footer>
         <div class="footer-content">
             <h3>Kurd Movie Trailer</h3>
@@ -147,9 +88,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="../home/nav.js"></script>
-    <script src="../home/login.js"></script>
-    <!-- <script src="../home/main.js"></script> -->
     <script src="./favourite.js"></script>
+
 </body>
 
 </html>

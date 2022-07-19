@@ -20,6 +20,22 @@ let password = document.getElementById("password").value;
 let repeatPassword = document.getElementById("repeatPassword").value;
 let age = document.getElementById("format").value;
 let submitButton = document.getElementById("submit");
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBtBegQtuB_TcnIDQcIyUynWuOPmZkpfvQ",
+  authDomain: "kurd-movie-trailer.firebaseapp.com",
+  projectId: "kurd-movie-trailer",
+  storageBucket: "kurd-movie-trailer.appspot.com",
+  messagingSenderId: "557149530646",
+  appId: "1:557149530646:web:013ea41fe86c927a652337",
+};
+
+firebase.initializeApp(firebaseConfig);
+
+var firestore = firebase.firestore();
+
+const db = firestore.collection("userList");
+
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
   ////////////////////////////////////////////////////////
@@ -77,21 +93,6 @@ submitButton.addEventListener("click", (e) => {
   ) {
     document.getElementById("rooleRepeatPassword").innerHTML = "";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyBtBegQtuB_TcnIDQcIyUynWuOPmZkpfvQ",
-      authDomain: "kurd-movie-trailer.firebaseapp.com",
-      projectId: "kurd-movie-trailer",
-      storageBucket: "kurd-movie-trailer.appspot.com",
-      messagingSenderId: "557149530646",
-      appId: "1:557149530646:web:013ea41fe86c927a652337",
-    };
-
-    firebase.initializeApp(firebaseConfig);
-
-    var firestore = firebase.firestore();
-
-    const db = firestore.collection("userList");
-
     // let submitButton = document.getElementById("submit");
 
     // submitButton.addEventListener("click", (e) => {
@@ -109,6 +110,8 @@ submitButton.addEventListener("click", (e) => {
         password: password,
         repeatPassword: repeatPassword,
         age: age,
+        FID: [],
+        FID2: [],
       })
       .then(() => {
         window.location.replace("../home/index.html");
@@ -120,14 +123,15 @@ submitButton.addEventListener("click", (e) => {
     alert(
       "Your form has been submitted successfully waiting for login to the homepage..."
     );
+    localStorage.setItem("myValueUserName", userName);
+    localStorage.setItem("password", password);
+    localStorage.setItem("repeatPassword", repeatPassword);
+    localStorage.setItem("myValueEmail", email);
+    localStorage.setItem("myValueFormat", age);
     document.getElementById("userName").value = "";
     document.getElementById("email").value = "";
     document.getElementById("password").value = "";
     document.getElementById("repeatPassword").value = "";
-    localStorage.setItem("myValueUserName", userName);
-    localStorage.setItem("password", password);
-    localStorage.setItem("myValueEmail", email);
-    localStorage.setItem("myValueFormat", age);
     // window.location.href = "../home/index.html";
     // });
   } else {
@@ -169,3 +173,85 @@ function myFunction2() {
   }
 }
 //////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+
+var format = localStorage.getItem("myValueFormat");
+var myemail = localStorage.getItem("myValueEmail");
+var myuserName = localStorage.getItem("myValueUserName");
+var mypassword = localStorage.getItem("password");
+var myrepeatPassword = localStorage.getItem("repeatPassword");
+
+var emaile = null;
+var passwordp = null;
+var userNameu = null;
+var agea = null;
+
+firestore.settings({ timestampsInSnapshots: true });
+
+var logout = document.getElementById("logout");
+logout.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  firestore
+    .collection("userList")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (
+          doc.data().email == myemail &&
+          doc.data().password == mypassword &&
+          doc.data().userName == myuserName &&
+          doc.data().age == format
+        ) {
+          emaile = doc.data().email;
+          passwordp = doc.data().password;
+          userNameu = doc.data().userName;
+          agea = doc.data().age;
+          console.log(`${doc.id} => ${doc.data().email}`);
+        }
+      });
+    })
+    .then(() => {
+      if (
+        emaile == myemail &&
+        passwordp == mypassword &&
+        userNameu == myuserName &&
+        agea == format
+      ) {
+        localStorage.setItem("myValueUserName", "");
+        localStorage.setItem("password", "");
+        localStorage.setItem("repeatPassword", "");
+        localStorage.setItem("myValueEmail", "");
+        localStorage.setItem("myValueFormat", "");
+        alert("LogOut of your acounnt!");
+      } else {
+        alert("You are not login to logut!!!");
+      }
+    })
+    .then(() => {
+      window.location.replace("../signUp/signUp.html");
+    });
+});
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+
+firestore
+  .collection("userList")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (
+        doc.data().email == myemail &&
+        doc.data().password == mypassword &&
+        doc.data().userName == myuserName &&
+        doc.data().age == format
+      ) {
+        console.log(`${doc.id} => ${doc.data().email}`);
+        document.getElementById("signUpForHiadenOrShow").style.display = "none";
+      } else {
+        document.getElementById("signUpForHiadenOrShow").style.display =
+          "block";
+      }
+    });
+  });

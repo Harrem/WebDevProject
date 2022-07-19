@@ -129,7 +129,7 @@ submitButton.addEventListener("click", (e) => {
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          // console.log(`${doc.id} => ${doc.data().email}`);
+          console.log(`${doc.id} => ${doc.data().email}`);
           if (
             doc.data().email == myemail &&
             doc.data().password == mypassword &&
@@ -147,7 +147,7 @@ submitButton.addEventListener("click", (e) => {
           .get()
           .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-              // console.log(`${doc.id} => ${doc.data().email}`);
+              console.log(`${doc.id} => ${doc.data().email}`);
               if (
                 doc.data().email == em &&
                 doc.data().password == p &&
@@ -160,12 +160,16 @@ submitButton.addEventListener("click", (e) => {
                 document.getElementById("name").innerHTML = n;
                 document.getElementById("password").innerHTML = p;
                 document.getElementById("age").innerHTML = a;
+                localStorage.setItem("myValueUserName", "");
+                localStorage.setItem("password", "");
+                localStorage.setItem("repeatPassword", "");
+                localStorage.setItem("myValueEmail", "");
+                localStorage.setItem("myValueFormat", "");
                 alert("The update is completed");
-                window.location.replace("../home/index.html");
+                window.location.replace("../login/login.html");
               }
             });
           });
-        // window.location.assign("../home/index.html");
       });
   } else {
     return true;
@@ -206,3 +210,78 @@ function myFunction2() {
   }
 }
 //////////////////////////////////////////////////////////////
+
+var emaile = null;
+var passwordp = null;
+var userNameu = null;
+var agea = null;
+
+firestore.settings({ timestampsInSnapshots: true });
+
+var logout = document.getElementById("logout");
+logout.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  firestore
+    .collection("userList")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (
+          doc.data().email == myemail &&
+          doc.data().password == mypassword &&
+          doc.data().userName == myuserName &&
+          doc.data().age == format
+        ) {
+          emaile = doc.data().email;
+          passwordp = doc.data().password;
+          userNameu = doc.data().userName;
+          agea = doc.data().age;
+          console.log(`${doc.id} => ${doc.data().email}`);
+        }
+      });
+    })
+    .then(() => {
+      if (
+        emaile == myemail &&
+        passwordp == mypassword &&
+        userNameu == myuserName &&
+        agea == format
+      ) {
+        localStorage.setItem("myValueUserName", "");
+        localStorage.setItem("password", "");
+        localStorage.setItem("repeatPassword", "");
+        localStorage.setItem("myValueEmail", "");
+        localStorage.setItem("myValueFormat", "");
+        alert("LogOut of your acounnt!");
+      } else {
+        alert("You are not login to logut!!!");
+      }
+    })
+    .then(() => {
+      window.location.replace("../signUp/signUp.html");
+    });
+});
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+
+firestore
+  .collection("userList")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (
+        doc.data().email == myemail &&
+        doc.data().password == mypassword &&
+        doc.data().userName == myuserName &&
+        doc.data().age == format
+      ) {
+        console.log(`${doc.id} => ${doc.data().email}`);
+        document.getElementById("signUpForHiadenOrShow").style.display = "none";
+      } else {
+        document.getElementById("signUpForHiadenOrShow").style.display =
+          "block";
+      }
+    });
+  });

@@ -3,8 +3,6 @@ var nav = document.getElementById("nav");
 var logo = document.getElementById("logo");
 var d = window.innerWidth;
 
-var v = false;
-
 window.onload = function () {
   CheckNav();
 };
@@ -75,7 +73,6 @@ fetch(
       const title = item.name;
       const score = item.vote_average;
       const poster = "http://image.tmdb.org/t/p/w200/" + item.poster_path;
-      // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
       const date = item.first_air_date;
       const year = date.substr(0, 4);
 
@@ -152,7 +149,6 @@ fetch(
       const title = item.name;
       const score = item.vote_average;
       const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
-      // const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
       const date = item.first_air_date;
       const year = date.substr(0, 4);
 
