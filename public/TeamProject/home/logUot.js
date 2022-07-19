@@ -91,3 +91,40 @@ db.collection("userList")
 ////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+db.collection("userList")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (
+        doc.data().email == myemail &&
+        doc.data().password == mypassword &&
+        doc.data().userName == myuserName &&
+        doc.data().age == format
+      ) {
+        console.log(`${doc.id} => ${doc.data().email}`);
+        document.getElementById("loginForHiadenOrShow").style.display = "none";
+      } else {
+        document.getElementById("loginForHiadenOrShow").style.display = "block";
+      }
+    });
+  });
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+db.collection("userList")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (
+        doc.data().email == myemail &&
+        doc.data().password == mypassword &&
+        doc.data().userName == myuserName &&
+        doc.data().age == format
+      ) {
+        console.log(`${doc.id} => ${doc.data().email}`);
+        document.getElementById("logutForHiadenOrShow").style.display = "block";
+      } else {
+        document.getElementById("logutForHiadenOrShow").style.display = "none";
+      }
+    });
+  });
