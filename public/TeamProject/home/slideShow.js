@@ -5,7 +5,7 @@ var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
     var response = JSON.parse(this.responseText);
-    console.log(response);
+    // console.log(response);
     myfunc(response);
     let script = document.createElement("script");
     script.src = "./flickity.pkgd.min.js";
@@ -17,7 +17,7 @@ xhttp.send();
 
 var myfunc = function (data) {
   const list = data.results;
-  console.log(list);
+  // console.log(list);
   list.map((item) => {
     const id = item.id;
     const title = item.title;

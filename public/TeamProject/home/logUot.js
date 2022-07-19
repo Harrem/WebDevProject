@@ -80,7 +80,7 @@ db.collection("userList")
         doc.data().userName == myuserName &&
         doc.data().age == format
       ) {
-        console.log(`${doc.id} => ${doc.data().email}`);
+        // console.log(`${doc.id} => ${doc.data().email}`);
         document.getElementById("signUpForHiadenOrShow").style.display = "none";
       } else {
         document.getElementById("signUpForHiadenOrShow").style.display =
@@ -101,7 +101,7 @@ db.collection("userList")
         doc.data().userName == myuserName &&
         doc.data().age == format
       ) {
-        console.log(`${doc.id} => ${doc.data().email}`);
+        // console.log(`${doc.id} => ${doc.data().email}`);
         document.getElementById("loginForHiadenOrShow").style.display = "none";
       } else {
         document.getElementById("loginForHiadenOrShow").style.display = "block";
@@ -121,10 +121,92 @@ db.collection("userList")
         doc.data().userName == myuserName &&
         doc.data().age == format
       ) {
-        console.log(`${doc.id} => ${doc.data().email}`);
+        // console.log(`${doc.id} => ${doc.data().email}`);
         document.getElementById("logutForHiadenOrShow").style.display = "block";
       } else {
         document.getElementById("logutForHiadenOrShow").style.display = "none";
       }
     });
   });
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+
+function myFunctionAge1() {
+  db.collection("userList")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (
+          doc.data().email == myemail &&
+          doc.data().password == mypassword &&
+          doc.data().userName == myuserName
+        ) {
+          console.log(`${doc.id} => ${doc.data().email}`);
+          db.collection("userList").doc(doc.id).update({
+            age: "10-15",
+          });
+        }
+      });
+    });
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+function myFunctionAge2() {
+  db.collection("userList")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (
+          doc.data().email == myemail &&
+          doc.data().password == mypassword &&
+          doc.data().userName == myuserName
+        ) {
+          console.log(`${doc.id} => ${doc.data().email}`);
+          db.collection("userList").doc(doc.id).update({
+            age: "15-20",
+          });
+        }
+      });
+    });
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function myFunctionAge3() {
+  db.collection("userList")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (
+          doc.data().email == myemail &&
+          doc.data().password == mypassword &&
+          doc.data().userName == myuserName
+        ) {
+          console.log(`${doc.id} => ${doc.data().email}`);
+          db.collection("userList").doc(doc.id).update({
+            age: "more than 20",
+          });
+        }
+      });
+    });
+}
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+/////////////for sending massege to the team group page ////////////////////////////
+
+function mysended() {
+  db.collection("userList")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (
+          doc.data().email == myemail &&
+          doc.data().password == mypassword &&
+          doc.data().userName == myuserName
+        ) {
+          console.log(`${doc.id} => ${doc.data().email}`);
+          alert("The massege is sended.");
+        }
+      });
+    });
+}
