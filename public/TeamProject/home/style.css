@@ -658,3 +658,12 @@ body {
 #iconfilter:hover {
   cursor: pointer;
 }
+#signUpForHiadenOrShow {
+  display: none;
+}
+#loginForHiadenOrShow {
+  display: none;
+}
+#logutForHiadenOrShow {
+  display: none;
+}

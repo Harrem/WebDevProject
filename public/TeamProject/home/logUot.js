@@ -34,8 +34,7 @@ logout.addEventListener("click", (e) => {
         if (
           doc.data().email == myemail &&
           doc.data().password == mypassword &&
-          doc.data().userName == myuserName &&
-          doc.data().age == format
+          doc.data().userName == myuserName
         ) {
           emaile = doc.data().email;
           passwordp = doc.data().password;
@@ -49,8 +48,7 @@ logout.addEventListener("click", (e) => {
       if (
         emaile == myemail &&
         passwordp == mypassword &&
-        userNameu == myuserName &&
-        agea == format
+        userNameu == myuserName
       ) {
         localStorage.setItem("myValueUserName", "");
         localStorage.setItem("password", "");
@@ -69,7 +67,9 @@ logout.addEventListener("click", (e) => {
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
-
+var r1 = null;
+var r2 = null;
+var r3 = null;
 db.collection("userList")
   .get()
   .then((querySnapshot) => {
@@ -77,20 +77,31 @@ db.collection("userList")
       if (
         doc.data().email == myemail &&
         doc.data().password == mypassword &&
-        doc.data().userName == myuserName &&
-        doc.data().age == format
+        doc.data().userName == myuserName
       ) {
         // console.log(`${doc.id} => ${doc.data().email}`);
-        document.getElementById("signUpForHiadenOrShow").style.display = "none";
+        r1 = doc.data().userName;
+        r2 = doc.data().email;
+        r3 = doc.data().password;
+        console.log(r1);
       } else {
-        document.getElementById("signUpForHiadenOrShow").style.display =
-          "block";
+        // console.log(doc.data().password);
       }
     });
+  })
+  .then(() => {
+    if (r1 != null && r2 != null && r3 != null) {
+      document.getElementById("signUpForHiadenOrShow").style.display = "none";
+    } else {
+      document.getElementById("signUpForHiadenOrShow").style.display = "block";
+    }
   });
 ////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+var r4 = null;
+var r5 = null;
+var r6 = null;
 db.collection("userList")
   .get()
   .then((querySnapshot) => {
@@ -98,19 +109,31 @@ db.collection("userList")
       if (
         doc.data().email == myemail &&
         doc.data().password == mypassword &&
-        doc.data().userName == myuserName &&
-        doc.data().age == format
+        doc.data().userName == myuserName
       ) {
         // console.log(`${doc.id} => ${doc.data().email}`);
-        document.getElementById("loginForHiadenOrShow").style.display = "none";
+        r4 = doc.data().userName;
+        r5 = doc.data().email;
+        r6 = doc.data().password;
+        console.log(r6);
       } else {
-        document.getElementById("loginForHiadenOrShow").style.display = "block";
+        // document.getElementById("loginForHiadenOrShow").style.display = "block";
       }
     });
+  })
+  .then(() => {
+    if (r4 != null && r5 != null && r6 != null) {
+      document.getElementById("loginForHiadenOrShow").style.display = "none";
+    } else {
+      document.getElementById("loginForHiadenOrShow").style.display = "block";
+    }
   });
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
+var r7 = null;
+var r8 = null;
+var r9 = null;
 db.collection("userList")
   .get()
   .then((querySnapshot) => {
@@ -118,15 +141,24 @@ db.collection("userList")
       if (
         doc.data().email == myemail &&
         doc.data().password == mypassword &&
-        doc.data().userName == myuserName &&
-        doc.data().age == format
+        doc.data().userName == myuserName
       ) {
         // console.log(`${doc.id} => ${doc.data().email}`);
-        document.getElementById("logutForHiadenOrShow").style.display = "block";
+        r7 = doc.data().userName;
+        r8 = doc.data().email;
+        r9 = doc.data().password;
+        console.log(r9);
       } else {
-        document.getElementById("logutForHiadenOrShow").style.display = "none";
+        // document.getElementById("logutForHiadenOrShow").style.display = "none";
       }
     });
+  })
+  .then(() => {
+    if (r7 != null && r8 != null && r9 != null) {
+      document.getElementById("logutForHiadenOrShow").style.display = "block";
+    } else {
+      document.getElementById("logutForHiadenOrShow").style.display = "none";
+    }
   });
 ///////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////
