@@ -83,7 +83,7 @@ db.collection("userList")
         r1 = doc.data().userName;
         r2 = doc.data().email;
         r3 = doc.data().password;
-        console.log(r1);
+        // console.log(r1);
       } else {
         // console.log(doc.data().password);
       }
@@ -115,7 +115,7 @@ db.collection("userList")
         r4 = doc.data().userName;
         r5 = doc.data().email;
         r6 = doc.data().password;
-        console.log(r6);
+        // console.log(r6);
       } else {
         // document.getElementById("loginForHiadenOrShow").style.display = "block";
       }
@@ -147,7 +147,7 @@ db.collection("userList")
         r7 = doc.data().userName;
         r8 = doc.data().email;
         r9 = doc.data().password;
-        console.log(r9);
+        // console.log(r9);
       } else {
         // document.getElementById("logutForHiadenOrShow").style.display = "none";
       }
@@ -163,65 +163,44 @@ db.collection("userList")
 ///////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
-
-function myFunctionAge1() {
-  db.collection("userList")
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        if (
-          doc.data().email == myemail &&
-          doc.data().password == mypassword &&
-          doc.data().userName == myuserName
-        ) {
-          console.log(`${doc.id} => ${doc.data().email}`);
-          db.collection("userList").doc(doc.id).update({
-            age: "10-15",
-          });
-        }
-      });
-    });
-}
-/////////////////////////////////////////////////////////////////////////////////////////////////
-
-function myFunctionAge2() {
-  db.collection("userList")
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        if (
-          doc.data().email == myemail &&
-          doc.data().password == mypassword &&
-          doc.data().userName == myuserName
-        ) {
-          console.log(`${doc.id} => ${doc.data().email}`);
-          db.collection("userList").doc(doc.id).update({
-            age: "15-20",
-          });
-        }
-      });
-    });
-}
+// function myFunctionAge1() {
+//   db.collection("userList")
+//     .get()
+//     .then((querySnapshot) => {
+//       querySnapshot.forEach((doc) => {
+//         if (
+//           doc.data().email == myemail &&
+//           doc.data().password == mypassword &&
+//           doc.data().userName == myuserName
+//         ) {
+//           console.log(`${doc.id} => ${doc.data().email}`);
+//           db.collection("userList").doc(doc.id).update({
+//             age: "Old",
+//           });
+//         }
+//       });
+//     });
+// }
+// /////////////////////////////////////////////////////////////////////////////////////////////////
+// function myFunctionAge2() {
+//   db.collection("userList")
+//     .get()
+//     .then((querySnapshot) => {
+//       querySnapshot.forEach((doc) => {
+//         if (
+//           doc.data().email == myemail &&
+//           doc.data().password == mypassword &&
+//           doc.data().userName == myuserName
+//         ) {
+//           console.log(`${doc.id} => ${doc.data().email}`);
+//           db.collection("userList").doc(doc.id).update({
+//             age: "Child",
+//           });
+//         }
+//       });
+//     });
+// }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function myFunctionAge3() {
-  db.collection("userList")
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        if (
-          doc.data().email == myemail &&
-          doc.data().password == mypassword &&
-          doc.data().userName == myuserName
-        ) {
-          console.log(`${doc.id} => ${doc.data().email}`);
-          db.collection("userList").doc(doc.id).update({
-            age: "more than 20",
-          });
-        }
-      });
-    });
-}
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 /////////////for sending massege to the team group page ////////////////////////////
@@ -286,7 +265,7 @@ function myfilterClose() {
         ) {
           // if (filterClose) {
           // filterClose = false;
-          console.log(`${doc.id} => ${doc.data().email}`);
+          // console.log(`${doc.id} => ${doc.data().email}`);
           document.getElementById("boxFilter").style.display = "none";
           // window.location.reload();
           filter = true;
@@ -299,3 +278,21 @@ function myfilterClose() {
       });
     });
 }
+
+// db.collection("userList")
+//   .get()
+//   .then((querySnapshot) => {
+//     querySnapshot.forEach((doc) => {
+//       if (
+//         doc.data().email == myemail &&
+//         doc.data().password == mypassword &&
+//         doc.data().userName == myuserName
+//       ) {
+//         var typeofage = doc.data().age;
+//         localStorage.setItem("myValuetypeofage", typeofage);
+//       }
+//     });
+//   })
+//   .then(() => {
+//     // window.location.reload();
+//   });

@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./flickity.css">
+    <link rel="stylesheet" href="../home/flickity.css">
     <title>Kurd Movie Trailer</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./nav.css">
-    <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="../home/style.css">
+    <link rel="stylesheet" href="../home/nav.css">
+    <link rel="stylesheet" href="../home/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./dropdown.css">
+    <link rel="stylesheet" href="../home/dropdown.css">
 </head>
 
 <body>
@@ -28,9 +28,9 @@
             <ul>
                 <li id="dd"><a href="#">Age &dtrif;</a>
                     <ul class="dropdown">
-                        <li id="ff"><a><span id="olds" onclick="myFunctionAge1()">Old</span></a>
-                        </li>
-                        <li id="ff"><a><span id="childs" onclick="myFunctionAge2()">Child</span></a></li>
+                        <li id="ff"><a><span onclick="myFunctionAge1()">10-15</span></a></li>
+                        <li id="ff"><a><span onclick="myFunctionAge2()">15-20</span></a></li>
+                        <li id="ff"><a><span onclick="myFunctionAge3()">more than 20</span></a></li>
                     </ul>
                 </li>
             </ul>
@@ -45,7 +45,7 @@
                     </ul>
                 </li>
             </ul>
-            <li><a href="./index.html">Home</a></li>
+            <li><a href="../home/index.html">Home</a></li>
             <li><a href="../MovieView/index.html">Movie</a></li>
             <li><a href="../tv_show/index.html">Tv show</a></li>
             <li><a href="../favourite/favourite.html">Favourite</a></li>
@@ -69,28 +69,36 @@
         <div class="cardFltuer">
             <ul id="t0">
                 <li id="t1">Type:</li>
-                <li id="t"><input id="ALL" value="All" name="type" type="radio"><label id="a" for="ALL">All</label></li>
-                <li id="t"><input onclick="mymovie()" id="MOVIE" value="Movie" name="type" type="radio"><label id="a"
-                        for="MOVIE">Movie</label></li>
-                <li id="t"><input id="TVSHOW" value="Tv show" name="type" type="radio"><label id="a" for="TVSHOW">Tv
+                <!-- <li id="t"><input id="ALL" value="All" name="type" type="radio"><label id="a" for="ALL">All</label></li> -->
+                <li id="t"><input onclick="mymovie()" id="MOVIE" name="type" type="radio"><label id="a"
+                        for="MOVIE">Movie</label>
+                </li>
+                <li id="t"><input onclick="mytv()" id="TVSHOW" name="type" type="radio"><label id="a" for="TVSHOW">Tv
                         show</label></li>
             </ul>
             <ul id="t0">
                 <li id="t1">Released:</li>
-                <li id="t"><input id="allReleased" name="Released" type="radio"><label id="a"
+                <li id="t"><input onclick="myallfilter()" id="allReleased" name="Released" type="radio"><label id="a"
                         for="allReleased">All</label>
                 </li>
-                <li id="t"><input id="2022" name="Released" type="radio"><label id="a" for="2022">2022</label></li>
-                <li id="t"><input id="2021" name="Released" type="radio"><label id="a" for="2021">2021</label></li>
-                <li id="t"><input id="2020" name="Released" type="radio"><label id="a" for="2020">2020</label></li>
-                <li id="t"><input id="2019" name="Released" type="radio"><label id="a" for="2019">2019</label></li>
-                <li id="t"><input id="2018" name="Released" type="radio"><label id="a" for="2018">2018</label></li>
-                <li id="t"><input id="older" name="Released" type="radio"><label id="a" for="older">Older</label></li>
+                <li id="t"><input onclick="my2022filter()" id="2022" value="2022" name="Released" type="radio"><label
+                        id="a" for="2022">2022</label></li>
+                <li id="t"><input onclick="my2021filter()" id="2021" value="2021" name="Released" type="radio"><label
+                        id="a" for="2021">2021</label></li>
+                <li id="t"><input onclick="my2020filter()" onclick="my2020filter()" id="2020" value="2020"
+                        name="Released" type="radio"><label id="a" for="2020">2020</label></li>
+                <li id="t"><input onclick="my2019filter()" id="2019" value="2019" name="Released" type="radio"><label
+                        id="a" for="2019">2019</label></li>
+                <li id="t"><input onclick="my2018filter()" id="2018" value="2018" name="Released" type="radio"><label
+                        id="a" for="2018">2018</label></li>
+                <li id="t"><input onclick="myolderfilter()" id="older" value="older" name="Released" type="radio"><label
+                        id="a" for="older">Older</label></li>
             </ul>
             <ul id="t0">
                 <li id="t1">Genre:</li>
                 <li id="t"><input id="allGenre" name="Gener" type="radio"><label id="a" for="allGenre">All</label></li>
-                <li id="t"><input id="Action" name="Gener" type="radio"><label id="a" for="Action">Action
+                <li id="t"><input onclick="myactionfilter()" id="Action" name="Gener" type="radio"><label id="a"
+                        for="Action">Action
                     </label></li>
                 <li id="t"><input id="Comedy" name="Gener" type="radio"><label id="a" for="Comedy">Comedy
                     </label></li>
@@ -123,23 +131,7 @@
         </div>
     </div>
     <div class="scrollViewer">
-        <h1 id="type">Most popular movies</h1>
-        <div class="movies" id="mostPopularMovie">
-        </div>
-    </div>
-    <div class="scrollViewer">
-        <h1 id="type">Most popular TV show</h1>
-        <div class="movies" id="mostPopularTvShow">
-        </div>
-    </div>
-    <div class="scrollViewer">
-        <h1 id="type">Latest movie</h1>
-        <div class="movies" id="latestMovie">
-        </div>
-    </div>
-    <div class="scrollViewer">
-        <h1 id="type">Latest TV show</h1>
-        <div class="movies" id="latestTvShow">
+        <div class="movies" id="mymoviefilter">
         </div>
     </div>
     <footer>
@@ -152,7 +144,7 @@
 
         </div>
         <div class="footer-bottom">
-            <p>&copy; <a href="./index.html">KMT</a></p>
+            <p>&copy; <a href="../home/index.html">KMT</a></p>
             <div class="footer-menu">
                 <ul class="f-menu">
                     <li><a href="../home/index.html">Home</a></li>
@@ -167,10 +159,9 @@
     </footer>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-    <script src="./slideShow.js"></script>
-    <script src="./main.js"></script>
-    <script src="./nav.js"></script>
-    <script src="./logUot.js"></script>
+    <script src="../home/slideShow.js"></script>
+    <script src="../home/nav.js"></script>
+    <script src="../home/logUot.js"></script>
     <script src="../filter/filter.js"></script>
 </body>
 
