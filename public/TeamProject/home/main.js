@@ -21,8 +21,9 @@ function CheckNav() {
 
 // var geners = null;
 var geners = "without_genres";
-
 function myFunctionAge1() {
+  const element = document.getElementById("mostPopularMovie");
+  element.scrollIntoView();
   geners = "without_genres";
 
   for (let i = 1; i < 4; i++) {
@@ -183,6 +184,8 @@ function myFunctionAge1() {
 }
 
 function myFunctionAge2() {
+  const element = document.getElementById("mostPopularMovie");
+  element.scrollIntoView();
   geners = "with_genres=16";
 
   for (let i = 1; i < 4; i++) {

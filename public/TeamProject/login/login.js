@@ -48,7 +48,7 @@ submitButton.addEventListener("click", (e) => {
   if (document.getElementById("password").value == "") {
     document.getElementById("roolePassword").innerHTML =
       "Password should not be empty";
-  } else if (document.getElementById("password").value.length < 8) {
+  } else if (document.getElementById("password").value.length <= 8) {
     document.getElementById("roolePassword").innerHTML =
       "Password should be more than 10 character";
   } else if (

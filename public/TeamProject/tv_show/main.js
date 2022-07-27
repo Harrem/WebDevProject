@@ -25,6 +25,8 @@ function CheckNav() {
 var geners = "without_genres";
 
 function myFunctionAge1() {
+  const element = document.getElementById("type");
+  element.scrollIntoView();
   geners = "without_genres";
   //Most popular TV show
   for (let i = 1; i <= 4; i++) {
@@ -149,6 +151,8 @@ function myFunctionAge1() {
 }
 
 function myFunctionAge2() {
+  const element = document.getElementById("type");
+  element.scrollIntoView();
   geners = "with_genres=16";
   //Most popular TV show
   for (let i = 1; i <= 4; i++) {

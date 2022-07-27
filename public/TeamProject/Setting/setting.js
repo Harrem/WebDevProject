@@ -54,7 +54,7 @@ submitButton.addEventListener("click", (e) => {
   if (document.getElementById("userName").value == "") {
     document.getElementById("rooleName").innerHTML =
       "UserName should not be empty";
-  } else if (document.getElementById("userName").value.length < 4) {
+  } else if (document.getElementById("userName").value.length <= 4) {
     document.getElementById("rooleName").innerHTML =
       "UserName should be more than 4 character";
   } else {
@@ -79,7 +79,7 @@ submitButton.addEventListener("click", (e) => {
   if (document.getElementById("inputPassword").value == "") {
     document.getElementById("roolePassword").innerHTML =
       "Password should not be empty";
-  } else if (document.getElementById("inputPassword").value.length < 8) {
+  } else if (document.getElementById("inputPassword").value.length <= 8) {
     document.getElementById("roolePassword").innerHTML =
       "Password should be more than 8 character";
   } else {
@@ -95,13 +95,18 @@ submitButton.addEventListener("click", (e) => {
   ) {
     document.getElementById("rooleRepeatPassword").innerHTML =
       "Repeat Password should be same us a password";
+  } else if (document.getElementById("repeatPassword").value.length <= 8) {
+    document.getElementById("rooleRepeatPassword").innerHTML =
+      "Repeat Password should be more than 8 character";
   } else if (
     document.getElementById("repeatPassword").value ==
       document.getElementById("inputPassword").value &&
     document.getElementById("email").value != "" &&
     document.getElementById("userName").value != "" &&
-    document.getElementById("userName").value.length > 4 &&
-    document.getElementById("format").value != "Choose an Age"
+    document.getElementById("userName").value.length >= 4 &&
+    document.getElementById("format").value != "Choose an Age" &&
+    document.getElementById("password").value.length >= 8 &&
+    document.getElementById("repeatPassword").value.length >= 8
   ) {
     document.getElementById("rooleRepeatPassword").innerHTML = "";
 

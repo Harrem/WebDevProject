@@ -124,6 +124,9 @@ fetch(
       // var f2 = [];
       // var dataID2 = data.id;
       // console.log(dataID);
+      var emaillogin = null;
+      var userNamelogin = null;
+      var passwordlogin = null;
 
       firestore
         .collection("userList")
@@ -136,6 +139,10 @@ fetch(
               doc.data().userName == myuserName &&
               doc.data().age == format
             ) {
+              emaillogin = doc.data().email;
+              userNamelogin = doc.data().userName;
+              passwordlogin = doc.data().password;
+
               for (let i = 0; i < doc.data().FID.length; i++) {
                 if (doc.data().FID[i] == dataID) {
                   var items = doc.data().FID[i];
@@ -173,6 +180,15 @@ fetch(
               }
             }
           });
+        })
+        .then(() => {
+          if (
+            passwordlogin == null &&
+            emaillogin == null &&
+            userNamelogin == null
+          ) {
+            alert("you should have acount to active faivourete");
+          }
         });
     });
   });
