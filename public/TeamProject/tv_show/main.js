@@ -22,14 +22,17 @@ function CheckNav() {
   }
 }
 
-var geners = "without_genres";
+var changingAge = localStorage.getItem("changingAge");
+console.log(changingAge);
+// var geners = null;
+var geners = changingAge;
 
 function myFunctionAge1() {
   const element = document.getElementById("type");
   element.scrollIntoView();
   geners = "without_genres";
   //Most popular TV show
-  for (let i = 1; i <= 4; i++) {
+  for (let i = 1; i <= 3; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
       {
@@ -69,7 +72,7 @@ function myFunctionAge1() {
   }
   document.getElementById("mostPopular").innerHTML = "";
   //topRated Tv Show
-  for (let i = 1; i <= 4; i++) {
+  for (let i = 1; i < 3; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/top_rated?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
       {
@@ -110,7 +113,7 @@ function myFunctionAge1() {
   document.getElementById("topRated").innerHTML = "";
 
   //latest Tv Show
-  for (let i = 1; i <= 4; i++) {
+  for (let i = 1; i < 3; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/airing_today?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&page=${i}&${geners}`,
       {
@@ -155,7 +158,7 @@ function myFunctionAge2() {
   element.scrollIntoView();
   geners = "with_genres=16";
   //Most popular TV show
-  for (let i = 1; i <= 4; i++) {
+  for (let i = 1; i < 3; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
       {
@@ -195,7 +198,7 @@ function myFunctionAge2() {
   }
   document.getElementById("mostPopular").innerHTML = "";
   //topRated Tv Show
-  for (let i = 1; i <= 4; i++) {
+  for (let i = 1; i < 3; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/top_rated?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
       {
@@ -235,7 +238,7 @@ function myFunctionAge2() {
   }
   document.getElementById("topRated").innerHTML = "";
   //latest Tv Show
-  for (let i = 1; i <= 4; i++) {
+  for (let i = 1; i < 3; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/airing_today?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&page=${i}&${geners}`,
       {
@@ -276,7 +279,7 @@ function myFunctionAge2() {
 }
 
 //Most popular TV show
-for (let i = 1; i <= 4; i++) {
+for (let i = 1; i < 3; i++) {
   fetch(
     `https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
     {
@@ -316,7 +319,7 @@ for (let i = 1; i <= 4; i++) {
 }
 
 //topRated Tv Show
-for (let i = 1; i <= 4; i++) {
+for (let i = 1; i < 3; i++) {
   fetch(
     `https://api.themoviedb.org/3/tv/top_rated?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
     {
@@ -356,7 +359,7 @@ for (let i = 1; i <= 4; i++) {
 }
 
 //latest Tv Show
-for (let i = 1; i <= 4; i++) {
+for (let i = 1; i < 3; i++) {
   fetch(
     `https://api.themoviedb.org/3/tv/airing_today?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&page=${i}&${geners}`,
     {

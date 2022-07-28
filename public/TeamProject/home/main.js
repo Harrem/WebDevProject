@@ -19,14 +19,16 @@ function CheckNav() {
   }
 }
 
+var changingAge = localStorage.getItem("changingAge");
+console.log(changingAge);
 // var geners = null;
-var geners = "without_genres";
+var geners = changingAge;
 function myFunctionAge1() {
   const element = document.getElementById("mostPopularMovie");
   element.scrollIntoView();
   geners = "without_genres";
 
-  for (let i = 1; i < 4; i++) {
+  for (let i = 1; i < 3; i++) {
     fetch(
       `https://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
       {
@@ -65,7 +67,7 @@ function myFunctionAge1() {
   }
   document.getElementById("mostPopularMovie").innerHTML = "";
   //topPopelarTvShow
-  for (let i = 1; i < 4; i++) {
+  for (let i = 1; i < 3; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
       {
@@ -104,7 +106,7 @@ function myFunctionAge1() {
   }
   document.getElementById("mostPopularTvShow").innerHTML = "";
 
-  for (let i = 1; i < 4; i++) {
+  for (let i = 1; i < 3; i++) {
     fetch(
       `https://api.themoviedb.org/3/movie/upcoming?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
       {
@@ -143,7 +145,7 @@ function myFunctionAge1() {
   }
   document.getElementById("latestMovie").innerHTML = "";
   //latestTvShow
-  for (let i = 1; i < 4; i++) {
+  for (let i = 1; i < 3; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/airing_today?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&page=${i}&${geners}`,
       {
@@ -188,7 +190,7 @@ function myFunctionAge2() {
   element.scrollIntoView();
   geners = "with_genres=16";
 
-  for (let i = 1; i < 4; i++) {
+  for (let i = 1; i < 3; i++) {
     fetch(
       `https://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
       {
@@ -227,7 +229,7 @@ function myFunctionAge2() {
   }
   document.getElementById("mostPopularMovie").innerHTML = "";
   //topPopelarTvShow
-  for (let i = 1; i < 4; i++) {
+  for (let i = 1; i < 3; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
       {
@@ -266,7 +268,7 @@ function myFunctionAge2() {
   }
   document.getElementById("mostPopularTvShow").innerHTML = "";
 
-  for (let i = 1; i < 4; i++) {
+  for (let i = 1; i < 3; i++) {
     fetch(
       `https://api.themoviedb.org/3/movie/upcoming?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
       {
@@ -305,7 +307,7 @@ function myFunctionAge2() {
   }
   document.getElementById("latestMovie").innerHTML = "";
   //latestTvShow
-  for (let i = 1; i < 4; i++) {
+  for (let i = 1; i < 3; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/airing_today?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&page=${i}&${geners}`,
       {
@@ -345,7 +347,7 @@ function myFunctionAge2() {
   document.getElementById("latestTvShow").innerHTML = "";
 }
 //topPopelarMovie
-for (let i = 1; i < 4; i++) {
+for (let i = 1; i < 3; i++) {
   fetch(
     `https://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
     {
@@ -384,7 +386,7 @@ for (let i = 1; i < 4; i++) {
 }
 
 //topPopelarTvShow
-for (let i = 1; i < 4; i++) {
+for (let i = 1; i < 3; i++) {
   fetch(
     `https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
     {
@@ -423,8 +425,9 @@ for (let i = 1; i < 4; i++) {
 }
 
 //latestMovie
-for (let i = 1; i < 4; i++) {
+for (let i = 1; i < 3; i++) {
   fetch(
+    // `https://api.themoviedb.org/3/discover/movie?api_key=717eacf2852518ed1f0a438d848f9334&include_adult=true&language=en-US&sort_by=popularity.desc&with_keywords=2426`,
     `https://api.themoviedb.org/3/movie/upcoming?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
     {
       method: "GET",
@@ -462,7 +465,7 @@ for (let i = 1; i < 4; i++) {
 }
 
 //latestTvShow
-for (let i = 1; i < 4; i++) {
+for (let i = 1; i < 3; i++) {
   fetch(
     `https://api.themoviedb.org/3/tv/airing_today?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&page=${i}&${geners}`,
     {

@@ -1,26 +1,36 @@
 var keyword = location.search.substring(1).split("=");
 keyword = keyword[1];
 
-fetch(
-  `https://api.themoviedb.org/3/search/multi?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&query=${keyword}&page=1&include_adult=false`,
-  {
-    method: "GET",
-  }
-)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    const list = data.results;
-    list.map((item) => {
-      if (item.media_type == "tv") {
-        const id = item.id;
-        const title = item.name;
-        const score = item.vote_average;
-        const poster = "http://image.tmdb.org/t/p/w200/" + item.poster_path;
-        const date = item.first_air_date;
-        const year = date.substring(0, 4);
+var changingAge = localStorage.getItem("changingAge");
+// console.log(changingAge);
+// var geners = null;
+var geners = changingAge;
+function myFunctionAge1() {
+  // const element = document.getElementById("mostPopularMovie");
+  // element.scrollIntoView();
+  geners = "without_genres";
 
-        const movie = `<a href="../select_tv_show/tv_show.html?${id}">
+  for (let i = 1; i < 3; i++) {
+    fetch(
+      `https://api.themoviedb.org/3/search/multi?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&query=${keyword}&page=${i}&${geners}&include_adult=false`,
+      {
+        method: "GET",
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        const list = data.results;
+        list.map((item) => {
+          if (item.media_type == "tv") {
+            const id = item.id;
+            const title = item.name;
+            const score = item.vote_average;
+            const poster = "http://image.tmdb.org/t/p/w200/" + item.poster_path;
+            const date = item.first_air_date;
+            const year = date.substring(0, 4);
+
+            const movie = `<a href="../select_tv_show/tv_show.html?${id}">
         <div class="movie">
             <img class="posters" src="${poster}" alt="Poster">
             <div id="textContainer">
@@ -30,16 +40,16 @@ fetch(
               <span id="sty3">${year}</span>
             </div>
           </div></a>`;
-        document.getElementById("searchResult").innerHTML += movie;
-      } else if (item.media_type == "movie") {
-        const id = item.id;
-        const title = item.title;
-        const score = item.vote_average;
-        const poster = "http://image.tmdb.org/t/p/w200/" + item.poster_path;
-        const date = item.release_date;
-        const year = date.substring(0, 4);
+            document.getElementById("searchResult").innerHTML += movie;
+          } else if (item.media_type == "movie") {
+            const id = item.id;
+            const title = item.title;
+            const score = item.vote_average;
+            const poster = "http://image.tmdb.org/t/p/w200/" + item.poster_path;
+            const date = item.release_date;
+            const year = date.substring(0, 4);
 
-        const movie = `<a href="../select_movies/movie.html?${id}">
+            const movie = `<a href="../select_movies/movie.html?${id}">
       <div class="movie">
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
@@ -49,11 +59,156 @@ fetch(
             <span id="sty3">${year}</span>
           </div>
         </div></a>`;
-        document.getElementById("searchResult").innerHTML += movie;
-      }
-    });
-  })
+            document.getElementById("searchResult").innerHTML += movie;
+          }
+        });
+      })
 
-  .catch((err) => {
-    console.error(err);
-  });
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+  document.getElementById("searchResult").innerHTML = "";
+}
+
+function myFunctionAge2() {
+  // const element = document.getElementById("mostPopularMovie");
+  // element.scrollIntoView();
+  geners = "with_genres=16";
+
+  for (let i = 1; i < 3; i++) {
+    fetch(
+      `https://api.themoviedb.org/3/search/multi?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&query=${keyword}&page=${i}&${geners}&include_adult=false`,
+      {
+        method: "GET",
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        const list = data.results;
+        list.map((item) => {
+          if (item.media_type == "tv") {
+            const id = item.id;
+            const title = item.name;
+            const score = item.vote_average;
+            const poster = "http://image.tmdb.org/t/p/w200/" + item.poster_path;
+            const date = item.first_air_date;
+            const year = date.substring(0, 4);
+
+            const movie = `<a href="../select_tv_show/tv_show.html?${id}">
+        <div class="movie">
+            <img class="posters" src="${poster}" alt="Poster">
+            <div id="textContainer">
+              <h2 style="color: black;" id="titleCard">${title}</h2>
+              <i id="sty1" class="fa fa-clock-o"></i>
+              <span id="sty2">${score}</span>
+              <span id="sty3">${year}</span>
+            </div>
+          </div></a>`;
+            for (let n = 0; n < 10; n++) {
+              if (item.genre_ids[n] == "16") {
+                document.getElementById("searchResult").innerHTML += movie;
+              }
+            }
+          } else if (item.media_type == "movie") {
+            const id = item.id;
+            const title = item.title;
+            const score = item.vote_average;
+            const poster = "http://image.tmdb.org/t/p/w200/" + item.poster_path;
+            const date = item.release_date;
+            const year = date.substring(0, 4);
+
+            const movie = `<a href="../select_movies/movie.html?${id}">
+      <div class="movie">
+          <img class="posters" src="${poster}" alt="Poster">
+          <div id="textContainer">
+            <h2 style="color: black;" id="titleCard">${title}</h2>
+            <i id="sty1" class="fa fa-clock-o"></i>
+            <span id="sty2">${score}</span>
+            <span id="sty3">${year}</span>
+          </div>
+        </div></a>`;
+            for (let n = 0; n < 10; n++) {
+              if (item.genre_ids[n] == "16") {
+                document.getElementById("searchResult").innerHTML += movie;
+              }
+            }
+          }
+        });
+      })
+
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+  document.getElementById("searchResult").innerHTML = "";
+}
+
+for (let i = 1; i < 3; i++) {
+  fetch(
+    `https://api.themoviedb.org/3/search/multi?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&query=${keyword}&page=${i}&${geners}`,
+    {
+      method: "GET",
+    }
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      const list = data.results;
+      list.map((item) => {
+        if (item.media_type == "tv") {
+          const id = item.id;
+          const title = item.name;
+          const score = item.vote_average;
+          const genert = item.genre_ids;
+          const poster = "http://image.tmdb.org/t/p/w200/" + item.poster_path;
+          const date = item.first_air_date;
+          const year = date.substring(0, 4);
+
+          const movie = `<a href="../select_tv_show/tv_show.html?${id}">
+        <div class="movie">
+            <img class="posters" src="${poster}" alt="Poster">
+            <div id="textContainer">
+              <h2 style="color: black;" id="titleCard">${title}</h2>
+              <i id="sty1" class="fa fa-clock-o"></i>
+              <span id="sty2">${score}</span>
+              <span id="sty3">${year}</span>
+            </div>
+          </div></a>`;
+          for (let n = 0; n < 10; n++) {
+            if (item.genre_ids[n] == "16") {
+              document.getElementById("searchResult").innerHTML += movie;
+            }
+          }
+        } else if (item.media_type == "movie") {
+          const id = item.id;
+          const title = item.title;
+          const score = item.vote_average;
+          const poster = "http://image.tmdb.org/t/p/w200/" + item.poster_path;
+          const date = item.release_date;
+          const year = date.substring(0, 4);
+
+          const movie = `<a href="../select_movies/movie.html?${id}">
+      <div class="movie">
+          <img class="posters" src="${poster}" alt="Poster">
+          <div id="textContainer">
+            <h2 style="color: black;" id="titleCard">${title}</h2>
+            <i id="sty1" class="fa fa-clock-o"></i>
+            <span id="sty2">${score}</span>
+            <span id="sty3">${year}</span>
+          </div>
+        </div></a>`;
+          for (let n = 0; n < 10; n++) {
+            if (item.genre_ids[n] == "16") {
+              document.getElementById("searchResult").innerHTML += movie;
+            }
+          }
+        }
+      });
+    })
+
+    .catch((err) => {
+      console.error(err);
+    });
+}

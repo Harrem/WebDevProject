@@ -2,7 +2,13 @@ var format = localStorage.getItem("myValueFormat");
 var myemail = localStorage.getItem("myValueEmail");
 var myuserName = localStorage.getItem("myValueUserName");
 var mypassword = localStorage.getItem("password");
-document.getElementById("age").innerHTML = format;
+// document.getElementById("age").innerHTML = format;
+
+if (format == "with_genres=16") {
+  document.getElementById("age").innerHTML = "Child";
+} else if (format == "without_genres") {
+  document.getElementById("age").innerHTML = "Old";
+}
 document.getElementById("theemail").innerHTML = myemail;
 document.getElementById("name").innerHTML = myuserName;
 document.getElementById("password").innerHTML = mypassword;
@@ -105,7 +111,7 @@ submitButton.addEventListener("click", (e) => {
     document.getElementById("userName").value != "" &&
     document.getElementById("userName").value.length >= 4 &&
     document.getElementById("format").value != "Choose an Age" &&
-    document.getElementById("password").value.length >= 8 &&
+    document.getElementById("inputPassword").value.length >= 8 &&
     document.getElementById("repeatPassword").value.length >= 8
   ) {
     document.getElementById("rooleRepeatPassword").innerHTML = "";

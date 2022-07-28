@@ -296,3 +296,20 @@ function myfilterClose() {
 //   .then(() => {
 //     // window.location.reload();
 //   });
+
+db.collection("userList")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (
+        doc.data().email == myemail &&
+        doc.data().password == mypassword &&
+        doc.data().userName == myuserName
+      ) {
+        var changingAge = doc.data().age;
+
+        localStorage.setItem("changingAge", changingAge);
+        // console.log(`${doc.id} => ${doc.data().email}`);
+      }
+    });
+  });
