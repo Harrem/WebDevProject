@@ -22,6 +22,8 @@ body {
 }
 
 #sliderBackdrop {
+  object-fit: cover;
+  min-height: 500px;
   width: 100%;
   filter: brightness(50%);
 }
@@ -235,7 +237,12 @@ body {
 
 @media screen and (max-width: 800px) {
   #poster {
-    display: block;
+    position: absolute;
+    left: 30%;
+    top: 38%;
+    transform: translate(0, -50%);
+    width: 184px;
+    height: 291px;
   }
 
   #container {
@@ -290,6 +297,14 @@ body {
 }
 
 @media screen and (max-width: 400px) {
+  #poster {
+    position: absolute;
+    left: 26%;
+    top: 30%;
+    transform: translate(0, -50%);
+    width: 184px;
+    height: 291px;
+  }
   .movies .movie {
     background-color: #f4f5f5;
     backdrop-filter: blur(10px);

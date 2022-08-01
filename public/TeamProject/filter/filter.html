@@ -61,15 +61,19 @@
             <button type="submit" class="fas fa-search"></button>
         </form>
     </nav>
+
     <div id="mySlide" class="carousel" data-flickity='{ "wrapAround": true}'>
 
     </div>
-    <div><button onclick="myfilter()" id="iconfilter">Filter<i class="fa fa-filter"></i></button></div>
+
+    <div id="buttomfilterforchoosing"><button onclick="myfilter()" id="iconfilter">Filter<i
+                class="fa fa-filter"></i></button>
+    </div>
+
     <div id="boxFilter" class="containerCard">
         <div class="cardFltuer">
             <ul id="t0">
                 <li id="t1">Type:</li>
-                <!-- <li id="t"><input id="ALL" value="All" name="type" type="radio"><label id="a" for="ALL">All</label></li> -->
                 <li id="t"><input onclick="mymovie()" id="MOVIE" name="type" type="radio"><label id="a"
                         for="MOVIE">Movie</label>
                 </li>
@@ -81,47 +85,58 @@
                 <li id="t"><input onclick="myallfilter()" id="allReleased" name="Released" type="radio"><label id="a"
                         for="allReleased">All</label>
                 </li>
-                <li id="t"><input onclick="my2022filter()" id="2022" value="2022" name="Released" type="radio"><label
+                <li id="t"><input onclick="myallfilter()" id="2022" value="2022" name="Released" type="radio"><label
                         id="a" for="2022">2022</label></li>
-                <li id="t"><input onclick="my2021filter()" id="2021" value="2021" name="Released" type="radio"><label
+                <li id="t"><input onclick="myallfilter()" id="2021" value="2021" name="Released" type="radio"><label
                         id="a" for="2021">2021</label></li>
-                <li id="t"><input onclick="my2020filter()" onclick="my2020filter()" id="2020" value="2020"
+                <li id="t"><input onclick="myallfilter()" onclick="my2020filter()" id="2020" value="2020"
                         name="Released" type="radio"><label id="a" for="2020">2020</label></li>
-                <li id="t"><input onclick="my2019filter()" id="2019" value="2019" name="Released" type="radio"><label
+                <li id="t"><input onclick="myallfilter()" id="2019" value="2019" name="Released" type="radio"><label
                         id="a" for="2019">2019</label></li>
-                <li id="t"><input onclick="my2018filter()" id="2018" value="2018" name="Released" type="radio"><label
+                <li id="t"><input onclick="myallfilter()" id="2018" value="2018" name="Released" type="radio"><label
                         id="a" for="2018">2018</label></li>
-                <li id="t"><input onclick="myolderfilter()" id="older" value="older" name="Released" type="radio"><label
+                <li id="t"><input onclick="myallfilter()" id="older" value="older" name="Released" type="radio"><label
                         id="a" for="older">Older</label></li>
             </ul>
             <ul id="t0">
                 <li id="t1">Genre:</li>
-                <li id="t"><input id="allGenre" name="Gener" type="radio"><label id="a" for="allGenre">All</label></li>
-                <li id="t"><input onclick="myactionfilter()" id="Action" name="Gener" type="radio"><label id="a"
+                <li id="t"><input onclick="myallfiltermovietv()" id="allGenre" name="Gener" type="radio"><label id="a"
+                        for="allGenre">All</label></li>
+                <li id="t"><input onclick="myallfiltermovietv()" id="Action" name="Gener" type="radio"><label id="a"
                         for="Action">Action
                     </label></li>
-                <li id="t"><input id="Comedy" name="Gener" type="radio"><label id="a" for="Comedy">Comedy
+                <li id="t"><input onclick="myallfiltermovietv()" id="Comedy" name="Gener" type="radio"><label id="a"
+                        for="Comedy">Comedy
                     </label></li>
-                <li id="t"><input id="Drama" name="Gener" type="radio"><label id="a" for="Drama">Drama
+                <li id="t"><input onclick="myallfiltermovietv()" id="Drama" name="Gener" type="radio"><label id="a"
+                        for="Drama">Drama
                     </label></li>
-                <li id="t"><input id="Family" name="Gener" type="radio"><label id="a" for="Family">Family
+                <li id="t"><input onclick="myallfiltermovietv()" id="Family" name="Gener" type="radio"><label id="a"
+                        for="Family">Family
                     </label></li>
-                <li id="t"><input id="Romance" name="Gener" type="radio"><label id="a" for="Romance">Romance
+                <li id="t"><input onclick="myallfiltermovietv()" id="Romance" name="Gener" type="radio"><label id="a"
+                        for="Romance">Romance
                     </label></li>
-                <li id="t"><input id="History" name="Gener" type="radio"><label id="a" for="History">History
+                <li id="t"><input onclick="myallfiltermovietv()" id="History" name="Gener" type="radio"><label id="a"
+                        for="History">History
                     </label></li>
-                <li id="t"><input id="Kids" name="Gener" type="radio"><label id="a" for="Kids">Kids
+                <li id="t"><input onclick="myallfiltermovietv()" id="crime" name="Gener" type="radio"><label id="a"
+                        for="crime">Crime
                     </label></li>
-                <li id="t"><input id="Science Fiction" name="Gener" type="radio"><label id="a"
-                        for="Science Fiction">Science Fiction
+                <li id="t"><input onclick="myallfiltermovietv()" id="ScienceFiction" name="Gener" type="radio"><label
+                        id="a" for="ScienceFiction">Science Fiction
                     </label></li>
-                <li id="t"><input id="Adventure" name="Gener" type="radio"><label id="a" for="Adventure">Adventure
+                <li id="t"><input onclick="myallfiltermovietv()" id="Adventure" name="Gener" type="radio"><label id="a"
+                        for="Adventure">Adventure
                     </label></li>
-                <li id="t"><input id="Animation" name="Gener" type="radio"><label id="a" for="Animation">Animation
+                <li id="t"><input onclick="myallfiltermovietv()" id="fantasy" name="Gener" type="radio"><label id="a"
+                        for="fantasy">Fantasy
                     </label></li>
-                <li id="t"><input id="Horror" name="Gener" type="radio"><label id="a" for="Horror">Horror
+                <li id="t"><input onclick="myallfiltermovietv()" id="Horror" name="Gener" type="radio"><label id="a"
+                        for="Horror">Horror
                     </label></li>
-                <li id="t"><input id="war" name="Gener" type="radio"><label id="a" for="war">war
+                <li id="t"><input onclick="myallfiltermovietv()" id="war" name="Gener" type="radio"><label id="a"
+                        for="war">war
                     </label></li>
             </ul>
             <ul id="buttons">
@@ -162,7 +177,8 @@
     <script src="../home/slideShow.js"></script>
     <script src="../home/nav.js"></script>
     <script src="../home/logUot.js"></script>
-    <script src="../filter/filter.js"></script>
+    <script src="../filter/filter2.js"></script>
+    <script src="../home/flickity.pkgd.min.js"></script>
 </body>
 
 </html>

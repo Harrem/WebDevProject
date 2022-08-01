@@ -60,15 +60,16 @@ submitButton.addEventListener("click", (e) => {
       .sendPasswordResetEmail(userEmail)
       .then(() => {
         alert("Password Reset Email Sent Successfully!");
-        // document.getElementById("send").style.display = "none";
-        // document.getElementById("submit").style.display = "block";
-        // document.getElementById("display").style.display = "block";
+        document.getElementById("send").style.display = "none";
+        document.getElementById("submit").style.display = "block";
+        document.getElementById("display").style.display = "block";
       })
       .catch((error) => {
         alert("same thing wrong of your email..!!!!");
       });
   }
 });
+
 //////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 // var submitButtonforupdate = document.getElementById("submit");

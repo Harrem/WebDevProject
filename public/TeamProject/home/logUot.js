@@ -225,59 +225,59 @@ function mysended() {
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
-var filter = true;
-function myfilter() {
-  db.collection("userList")
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        if (
-          doc.data().email == myemail &&
-          doc.data().password == mypassword &&
-          doc.data().userName == myuserName
-        ) {
-          if (filter) {
-            filter = false;
-            console.log(`${doc.id} => ${doc.data().email}`);
-            document.getElementById("boxFilter").style.display = "flex";
-          } else {
-            console.log(`${doc.id} => ${doc.data().email}`);
-            filter = true;
-            document.getElementById("boxFilter").style.display = "none";
-          }
-        }
-      });
-    });
-}
+// var filter = true;
+// function myfilter() {
+//   db.collection("userList")
+//     .get()
+//     .then((querySnapshot) => {
+//       querySnapshot.forEach((doc) => {
+//         if (
+//           doc.data().email == myemail &&
+//           doc.data().password == mypassword &&
+//           doc.data().userName == myuserName
+//         ) {
+//           if (filter) {
+//             filter = false;
+//             console.log(`${doc.id} => ${doc.data().email}`);
+//             document.getElementById("boxFilter").style.display = "flex";
+//           } else {
+//             console.log(`${doc.id} => ${doc.data().email}`);
+//             filter = true;
+//             document.getElementById("boxFilter").style.display = "none";
+//           }
+//         }
+//       });
+//     });
+// }
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 // var filterClose = true;
-function myfilterClose() {
-  db.collection("userList")
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        if (
-          doc.data().email == myemail &&
-          doc.data().password == mypassword &&
-          doc.data().userName == myuserName
-        ) {
-          // if (filterClose) {
-          // filterClose = false;
-          // console.log(`${doc.id} => ${doc.data().email}`);
-          document.getElementById("boxFilter").style.display = "none";
-          // window.location.reload();
-          filter = true;
-          // } else {
-          //   console.log(`${doc.id} => ${doc.data().email}`);
-          //   filterClose = true;
-          //   document.getElementById("boxFilter").style.display = "none";
-          // }
-        }
-      });
-    });
-}
+// function myfilterClose() {
+//   db.collection("userList")
+//     .get()
+//     .then((querySnapshot) => {
+//       querySnapshot.forEach((doc) => {
+//         if (
+//           doc.data().email == myemail &&
+//           doc.data().password == mypassword &&
+//           doc.data().userName == myuserName
+//         ) {
+//           // if (filterClose) {
+//           // filterClose = false;
+//           // console.log(`${doc.id} => ${doc.data().email}`);
+//           document.getElementById("boxFilter").style.display = "none";
+//           // window.location.reload();
+//           filter = true;
+//           // } else {
+//           //   console.log(`${doc.id} => ${doc.data().email}`);
+//           //   filterClose = true;
+//           //   document.getElementById("boxFilter").style.display = "none";
+//           // }
+//         }
+//       });
+//     });
+// }
 
 // db.collection("userList")
 //   .get()
