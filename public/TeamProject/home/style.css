@@ -1,5 +1,5 @@
 body {
-  background-color: whitesmoke;
+  background-color: #0b0d14;
   object-fit: fill;
   margin: 0;
   /* height: 100%; */
@@ -16,7 +16,7 @@ body {
 
 #slideContainer {
   margin: 0;
-  background-color: white;
+  background-color: #48f4ea;
   object-fit: cover;
   overflow: hidden;
 }
@@ -63,9 +63,17 @@ body {
 } */
 
 #type {
+  font-weight: 100;
+  margin-left: 20px;
+  border-radius: 5px;
+  background: #ceff00;
   color: black;
-  margin: 25px;
-  text-align: center;
+  font-size: 25px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+  float: left;
 }
 
 .scrollViewer {
@@ -80,7 +88,8 @@ body {
   /* overflow: auto; */
   /* white-space: nowrap; */
   text-align: center;
-  padding-top: 10px;
+  padding-top: 85px;
+  padding-bottom: 50px;
   user-select: none;
 }
 
@@ -93,18 +102,19 @@ body {
   padding: 0px;
   width: 171px;
   height: 90%;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0px 3px 8px rgb(220, 220, 220);
 }
 
 .posters {
-  width: 100%;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 5px 5px 0 0;
+  width: 212px;
+  height: 270px;
 }
 
 .movie #textContainer {
-  margin-top: 10px;
-  margin-bottom: 12px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   padding: 0px;
 }
 
@@ -122,11 +132,11 @@ body {
 #titleCard {
   text-align: center;
   font-size: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   padding-left: 12px;
   padding-right: 12px;
   width: 100%;
-  height: 45px;
+  height: 30px;
 }
 
 #description {
@@ -164,7 +174,7 @@ body {
 .details_li {
   padding: 10px;
   display: inline-table;
-  width: 40px;
+  width: 135px;
 }
 
 .button {
@@ -292,7 +302,7 @@ body {
     color: black;
     padding: 10px;
     display: inline-table;
-    width: 65px;
+    width: 135px;
   }
 }
 
@@ -306,15 +316,18 @@ body {
     height: 291px;
   }
   .movies .movie {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 10px;
     background-color: #f4f5f5;
     backdrop-filter: blur(10px);
     display: inline-table;
     position: relative;
-    margin: 5px;
     padding: 0px;
     width: 160px;
     height: 355px;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0px 0px 3px grey;
   }
 
@@ -330,68 +343,67 @@ body {
   }
 
   .posters {
-    width: 170px;
-    height: 255px;
-    border-radius: 10px 10px 0px 0px;
-    object-fit: contain;
+    border-radius: 5px 5px 0 0;
+    width: 212px;
+    height: 270px;
   }
+}
 
-  #title {
-    text-align: center;
-    color: black;
-    box-sizing: content-box;
-    font-size: 20px;
-    margin-bottom: 10px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 12px;
-    margin-top: 12px;
-    text-anchor: middle;
-  }
+#title {
+  text-align: center;
+  color: black;
+  box-sizing: content-box;
+  font-size: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  text-anchor: middle;
+}
 
-  #titleCard {
-    text-align: center;
-    font-size: 12px;
-    margin-bottom: 10px;
-    padding-left: 12px;
-    padding-right: 12px;
-    width: 100%;
-    height: 45px;
-  }
+#titleCard {
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 100%;
+  height: 45px;
+}
 
-  #type {
-    color: black;
-    margin: 25px;
-    text-align: center;
-  }
+#type {
+  color: black;
+  margin: 25px;
+  text-align: center;
+}
 
-  #topimg {
-    filter: brightness(60%);
-    /* vertical-align: middle; */
-    overflow: hidden;
-    object-fit: fill;
-    width: 100%;
-    height: 55%;
-    z-index: 3;
-    object-fit: cover;
-  }
+#topimg {
+  filter: brightness(60%);
+  /* vertical-align: middle; */
+  overflow: hidden;
+  object-fit: fill;
+  width: 100%;
+  height: 55%;
+  z-index: 3;
+  object-fit: cover;
+}
 
-  #sty1 {
-    font-size: 15px;
-    color: gray;
-    margin-right: 0px;
-  }
+#sty1 {
+  font-size: 15px;
+  color: gray;
+  margin-right: 0px;
+}
 
-  #sty2 {
-    color: gray;
-    margin-right: 50px;
-    font-size: 15px;
-  }
+#sty2 {
+  color: gray;
+  margin-right: 50px;
+  font-size: 15px;
+}
 
-  #sty3 {
-    color: gray;
-    font-size: 15px;
-  }
+#sty3 {
+  color: gray;
+  font-size: 15px;
 }
 
 @media screen and (max-width: 388px) {
@@ -404,7 +416,7 @@ body {
     padding: 0px;
     width: 126px;
     height: 295px;
-    border-radius: 7px;
+    border-radius: 5px;
     box-shadow: 0px 0px 3px grey;
   }
 
@@ -420,69 +432,68 @@ body {
   }
 
   .posters {
-    width: 126px;
-    height: 190px;
-    border-radius: 7px 7px 0px 0px;
-    object-fit: contain;
+    border-radius: 5px 5px 0 0;
+    width: 212px;
+    height: 270px;
   }
+}
 
-  #title {
-    text-align: center;
-    color: black;
-    box-sizing: content-box;
-    font-size: 20px;
-    margin-bottom: 10px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 12px;
-    margin-top: 12px;
-    text-anchor: middle;
-  }
+#title {
+  text-align: center;
+  color: black;
+  box-sizing: content-box;
+  font-size: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  text-anchor: middle;
+}
 
-  #titleCard {
-    text-align: center;
-    font-size: 12px;
-    margin-bottom: 10px;
-    padding-left: 12px;
-    padding-right: 12px;
-    width: 100%;
-    height: 45px;
-  }
+#titleCard {
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 100%;
+  height: 20px;
+}
 
-  #type {
-    color: black;
-    margin: 25px;
-    text-align: center;
-    font-size: 20px;
-  }
+#type {
+  color: black;
+  margin: 25px;
+  text-align: center;
+  font-size: 20px;
+}
 
-  #topimg {
-    filter: brightness(40%);
-    /* vertical-align: middle; */
-    overflow: hidden;
-    object-fit: fill;
-    width: 100%;
-    height: 55%;
-    z-index: 3;
-    object-fit: cover;
-  }
+#topimg {
+  filter: brightness(40%);
+  /* vertical-align: middle; */
+  overflow: hidden;
+  object-fit: fill;
+  width: 100%;
+  height: 55%;
+  z-index: 3;
+  object-fit: cover;
+}
 
-  #sty1 {
-    font-size: 15px;
-    color: gray;
-    margin-right: 0px;
-  }
+#sty1 {
+  font-size: 15px;
+  color: gray;
+  margin-right: 0px;
+}
 
-  #sty2 {
-    color: gray;
-    margin-right: 20px;
-    font-size: 15px;
-  }
+#sty2 {
+  color: gray;
+  margin-right: 20px;
+  font-size: 15px;
+}
 
-  #sty3 {
-    color: gray;
-    font-size: 15px;
-  }
+#sty3 {
+  color: gray;
+  font-size: 15px;
 }
 
 @media screen and (max-width: 295px) {
@@ -495,7 +506,7 @@ body {
     padding: 0px;
     width: 100px;
     height: 270px;
-    border-radius: 7px;
+    border-radius: 5px;
     box-shadow: 0px 0px 3px grey;
   }
 
@@ -516,10 +527,9 @@ body {
   }
 
   .posters {
-    width: 100px;
-    height: 150px;
-    border-radius: 7px 7px 0px 0px;
-    object-fit: contain;
+    border-radius: 5px 5px 0 0;
+    width: 212px;
+    height: 270px;
   }
 
   #title {
@@ -602,7 +612,7 @@ body {
 /* Actual card with shadow */
 .cardFltuer {
   position: relative;
-  background: #593b3b;
+  background: #595b69;
   height: 75%;
   width: 80%;
   border-radius: 5px;
@@ -614,7 +624,7 @@ body {
   border-width: 1px;
   width: auto;
   height: auto;
-  background-color: #f8cbbb;
+  background-color: #eeeeee;
   padding: 20px;
 }
 #t1 {
@@ -661,7 +671,7 @@ body {
   cursor: pointer;
 }
 
-#iconfilter {
+/* #iconfilter {
   border-radius: 7px;
   background: #707070;
   color: #91ff04;
@@ -672,7 +682,7 @@ body {
 }
 #iconfilter:hover {
   cursor: pointer;
-}
+} */
 #signUpForHiadenOrShow {
   display: none;
 }
@@ -681,4 +691,223 @@ body {
 }
 #logutForHiadenOrShow {
   display: none;
+}
+
+/* <!-- HTML !-->
+<button class="button-85" role="button">Button 85</button> */
+
+/* CSS */
+#iconfilter {
+  margin-bottom: 30px;
+  margin-left: 29px;
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 10px;
+}
+
+#iconfilter:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+#iconfilter:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/* <!-- HTML !-->
+<button class="button-85" role="button">Button 85</button> */
+
+/* CSS */
+#fltuer {
+  margin-right: 6px;
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 10px;
+}
+
+#fltuer:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+#fltuer:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/* <!-- HTML !-->
+<button class="button-85" role="button">Button 85</button> */
+
+/* CSS */
+#close {
+  margin-bottom: 10px;
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#close:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+#close:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
