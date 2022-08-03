@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../home/dropdown.css">
+    <link rel="stylesheet" href="../home/style.css">
     <title>Document</title>
 </head>
 
@@ -22,23 +23,22 @@
         <div class="logo">
             KMT
         </div>
-        <div class="nav-items">
+        <div id="divscroll" class="nav-items">
             <ul>
                 <li id="dd"><a href="#">Acounnte &dtrif;</a>
                     <ul class="dropdown">
                         <li id="ff"><a href="../about/about.html">About</a></li>
-                        <li id="signUpForHiadenOrShow"><a href="../signUp/signUp.html">Sign Up</a></li>
+                        <li id="signUpForHiadenOrShow"><a href="../signUp/signUp.html">Register</a></li>
                         <li id="ff"><a href="../Setting/setting.html" id="Setting">Setting</a></li>
-                        <li id="loginForHiadenOrShow" id="ff"><a href="../login/login.html">Login</a></li>
-                        <li id="logutForHiadenOrShow" id="ff"><a id="logout">LogOut</a></li>
+                        <li id="loginForHiadenOrShow"><a href="../login/login.html">Login</a></li>
+                        <li id="logutForHiadenOrShow"><a id="logout">LogOut</a></li>
                     </ul>
                 </li>
             </ul>
-            <li><a href="../home/index.html">Home</a></li>
-            <li><a href="../MovieView/index.html">Movie</a></li>
-            <li><a href="../tv_show/index.html">Tv show</a></li>
-            <li><a href="../favourite/favourite.html">Favourite</a></li>
-
+            <li id="items"><a href="../home/index.html">Home</a></li>
+            <li id="items"><a href="../MovieView/index.html">Movie</a></li>
+            <li id="items"><a href="../tv_show/index.html">Tv show</a></li>
+            <li id="items"><a href="../favourite/favourite.html">Favourite</a></li>
         </div>
         <div class="search-icon">
             <span class="fas fa-search"></span>
@@ -61,34 +61,29 @@
         <div class="movies" id="FavouriteTvShow">
         </div>
     </div>
-    <footer>
+    <!-- <footer>
         <div class="footer-content">
             <h3>Kurd Movie Trailer</h3>
-            <p>This website is make by peshawa othman and harem mhamad they are student in
-                charmo university and this website it ferst project for peshawa and harem. by
-                the way i an sure you will like it becouse it bilde by to secsecful person in the world.
+            <p>This website is for movie trailer you can find any movie you think about in the website you can know
+                about everything of the movie you like and you can have account for free and you can save your favuret
+                movie on favuret page.
             </p>
 
         </div>
         <div class="footer-bottom">
-            <p>&copy; <a href="./index.html">KMT</a></p>
+            <p>&copy; <a href="../home/index.html">KMT</a></p>
             <div class="footer-menu">
                 <ul class="f-menu">
                     <li><a href="../home/index.html">Home</a></li>
                     <li><a href="../MovieView/index.html">Movie</a></li>
-                    <li><a href="../tv_show/index.html">Tv Show</a></li>
+                    <li><a href="../tv_show/index.html">Tv</a></li>
                     <li><a href="../about/about.html">About</a></li>
-                    <li><a href="../signUp/signUp.html">signUp</a></li>
-                    <li><a href="../login/login.html">Login</a></li>
-                    <li><span onclick="mySetting()" id="Setting">Setting</span></li>
-                    <li><a href="./favourite.html">Favourite</a></li>
                 </ul>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-    <script src="../home/nav.js"></script>
     <script src="./favourite.js"></script>
 
 </body>

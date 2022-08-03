@@ -19,27 +19,29 @@ fetch(
     const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
     const year = item.release_date;
 
-    const movie = `<div class="mySlides" id="" >
-            <img id="topimg" class="backgroundImage"
-                src="${backdrop}"
-                alt="cover image">
-            <img src="${poster}"
-                alt="" id="poster">
-            <div id="container">
-                <div id="textContainer">
+    const movie = `
+            <div class="carousel-cell"  id="" >
+              <div id="slideContainer">
+              <img src="${backdrop}" alt="" id="sliderBackdrop">
+              <img src="${poster}" alt="" id="poster">
+                <div id="container">
+                  <div id="textContainer">
                     <h1 id="title">${title}</h1>
                     <p id="description">${description}</p>
                     <div id="details">
-                        <ol>
-                            <li class="details_li" id="imdbRating">
-                                <img class="details_logo" id="imdb" src="./2-imdb.png">
-                                ${rating}
-                            </li>
-                        </ol>
+                      <ol>
+                        <li class="details_li" id="imdbRating">
+                          <img class="details_logo" id="imdb" src="./2-imdb.png">
+                          ${rating}
+                        </li>
+                        <li class="details_li">
+                          <h4>Released Date: ${year}</h4>
+                        </li>
+                      </ol>
                     </div>
+                  </div>
                 </div>
-            </div>
-        </div>`;
-
-    document.getElementById("slideshowdiv").innerHTML += movie;
+              </div>
+            </div>`;
+    document.getElementById("mySlide").innerHTML += movie;
   });

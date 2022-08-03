@@ -2,6 +2,30 @@ var search = document.getElementById("search");
 var nav = document.getElementById("nav");
 var logo = document.getElementById("logo");
 var d = window.innerWidth;
+const menuBtn = document.querySelector(".menu-icon span");
+const searchBtn = document.querySelector(".search-icon");
+const cancelBtn = document.querySelector(".cancel-icon");
+const items = document.querySelector(".nav-items");
+const form = document.querySelector("form");
+menuBtn.onclick = () => {
+  items.classList.add("active");
+  menuBtn.classList.add("hide");
+  searchBtn.classList.add("hide");
+  cancelBtn.classList.add("show");
+};
+cancelBtn.onclick = () => {
+  items.classList.remove("active");
+  menuBtn.classList.remove("hide");
+  searchBtn.classList.remove("hide");
+  cancelBtn.classList.remove("show");
+  form.classList.remove("active");
+  cancelBtn.style.color = "#ff3d00";
+};
+searchBtn.onclick = () => {
+  form.classList.add("active");
+  searchBtn.classList.add("hide");
+  cancelBtn.classList.add("show");
+};
 
 var v = false;
 
@@ -28,11 +52,17 @@ console.log(changingAge);
 var geners = changingAge;
 
 function myFunctionAge1() {
+  items.classList.remove("active");
+  menuBtn.classList.remove("hide");
+  searchBtn.classList.remove("hide");
+  cancelBtn.classList.remove("show");
+  form.classList.remove("active");
+  cancelBtn.style.color = "#ff3d00";
   const element = document.getElementById("type");
   element.scrollIntoView();
   geners = "without_genres";
   //Most popular TV show
-  for (let i = 1; i <= 3; i++) {
+  for (let i = 1; i <= 2; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
       {
@@ -57,8 +87,8 @@ function myFunctionAge1() {
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
           <h2 style="color: black;" id="titleCard">${title}</h2>
-          <i id="sty1" class="fa fa-clock-o"></i>
-          <span id="sty2">2:24</span>
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                          <span id="sty2">${score}K</span>
           <span id="sty3">${year}</span>
           </div>
         </div></a>`;
@@ -72,7 +102,7 @@ function myFunctionAge1() {
   }
   document.getElementById("mostPopular").innerHTML = "";
   //topRated Tv Show
-  for (let i = 1; i < 3; i++) {
+  for (let i = 1; i < 2; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/top_rated?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
       {
@@ -97,8 +127,8 @@ function myFunctionAge1() {
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
           <h2 style="color: black;" id="titleCard">${title}</h2>
-          <i id="sty1" class="fa fa-clock-o"></i>
-          <span id="sty2">2:24</span>
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+          <span id="sty2">${score}K</span>
           <span id="sty3">${year}</span>
           </div>
         </div></a>`;
@@ -113,7 +143,7 @@ function myFunctionAge1() {
   document.getElementById("topRated").innerHTML = "";
 
   //latest Tv Show
-  for (let i = 1; i < 3; i++) {
+  for (let i = 1; i < 2; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/airing_today?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&page=${i}&${geners}`,
       {
@@ -138,8 +168,8 @@ function myFunctionAge1() {
             <img class="posters" src="${poster}" alt="Poster">
             <div id="textContainer">
             <h2 style="color: black;" id="titleCard">${title}</h2>
-            <i id="sty1" class="fa fa-clock-o"></i>
-            <span id="sty2">2:24</span>
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                          <span id="sty2">${score}K</span>
             <span id="sty3">${year}</span>
             </div>
           </div></a>`;
@@ -154,11 +184,17 @@ function myFunctionAge1() {
 }
 
 function myFunctionAge2() {
+  items.classList.remove("active");
+  menuBtn.classList.remove("hide");
+  searchBtn.classList.remove("hide");
+  cancelBtn.classList.remove("show");
+  form.classList.remove("active");
+  cancelBtn.style.color = "#ff3d00";
   const element = document.getElementById("type");
   element.scrollIntoView();
   geners = "with_genres=16";
   //Most popular TV show
-  for (let i = 1; i < 3; i++) {
+  for (let i = 1; i < 2; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
       {
@@ -183,8 +219,8 @@ function myFunctionAge2() {
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
           <h2 style="color: black;" id="titleCard">${title}</h2>
-          <i id="sty1" class="fa fa-clock-o"></i>
-          <span id="sty2">2:24</span>
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                          <span id="sty2">${score}K</span>
           <span id="sty3">${year}</span>
           </div>
         </div></a>`;
@@ -198,7 +234,7 @@ function myFunctionAge2() {
   }
   document.getElementById("mostPopular").innerHTML = "";
   //topRated Tv Show
-  for (let i = 1; i < 3; i++) {
+  for (let i = 1; i < 2; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/top_rated?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
       {
@@ -223,8 +259,8 @@ function myFunctionAge2() {
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
           <h2 style="color: black;" id="titleCard">${title}</h2>
-          <i id="sty1" class="fa fa-clock-o"></i>
-          <span id="sty2">2:24</span>
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                          <span id="sty2">${score}K</span>
           <span id="sty3">${year}</span>
           </div>
         </div></a>`;
@@ -238,7 +274,7 @@ function myFunctionAge2() {
   }
   document.getElementById("topRated").innerHTML = "";
   //latest Tv Show
-  for (let i = 1; i < 3; i++) {
+  for (let i = 1; i < 2; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/airing_today?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&page=${i}&${geners}`,
       {
@@ -263,8 +299,8 @@ function myFunctionAge2() {
             <img class="posters" src="${poster}" alt="Poster">
             <div id="textContainer">
             <h2 style="color: black;" id="titleCard">${title}</h2>
-            <i id="sty1" class="fa fa-clock-o"></i>
-            <span id="sty2">2:24</span>
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                          <span id="sty2">${score}K</span>
             <span id="sty3">${year}</span>
             </div>
           </div></a>`;
@@ -279,7 +315,7 @@ function myFunctionAge2() {
 }
 
 //Most popular TV show
-for (let i = 1; i < 3; i++) {
+for (let i = 1; i < 2; i++) {
   fetch(
     `https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
     {
@@ -304,8 +340,8 @@ for (let i = 1; i < 3; i++) {
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
           <h2 style="color: black;" id="titleCard">${title}</h2>
-          <i id="sty1" class="fa fa-clock-o"></i>
-          <span id="sty2">2:24</span>
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                          <span id="sty2">${score}K</span>
           <span id="sty3">${year}</span>
           </div>
         </div></a>`;
@@ -319,7 +355,7 @@ for (let i = 1; i < 3; i++) {
 }
 
 //topRated Tv Show
-for (let i = 1; i < 3; i++) {
+for (let i = 1; i < 2; i++) {
   fetch(
     `https://api.themoviedb.org/3/tv/top_rated?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
     {
@@ -344,8 +380,8 @@ for (let i = 1; i < 3; i++) {
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
           <h2 style="color: black;" id="titleCard">${title}</h2>
-          <i id="sty1" class="fa fa-clock-o"></i>
-          <span id="sty2">2:24</span>
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                          <span id="sty2">${score}K</span>
           <span id="sty3">${year}</span>
           </div>
         </div></a>`;
@@ -359,7 +395,7 @@ for (let i = 1; i < 3; i++) {
 }
 
 //latest Tv Show
-for (let i = 1; i < 3; i++) {
+for (let i = 1; i < 2; i++) {
   fetch(
     `https://api.themoviedb.org/3/tv/airing_today?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&page=${i}&${geners}`,
     {
@@ -384,8 +420,8 @@ for (let i = 1; i < 3; i++) {
             <img class="posters" src="${poster}" alt="Poster">
             <div id="textContainer">
             <h2 style="color: black;" id="titleCard">${title}</h2>
-            <i id="sty1" class="fa fa-clock-o"></i>
-            <span id="sty2">2:24</span>
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                          <span id="sty2">${score}K</span>
             <span id="sty3">${year}</span>
             </div>
           </div></a>`;

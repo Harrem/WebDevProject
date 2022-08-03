@@ -40,6 +40,7 @@ function CheckNav() {
     range = 255;
   }
 }
+var keys = [];
 fetch(
   `https://api.themoviedb.org/3/tv/${id}/videos?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US`,
   {
@@ -48,12 +49,12 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-    // console.log(data);
+    console.log(data);
     const list = data.results;
-
     list.map((item) => {
+      keys.push(item.id);
       var trailer = "n/a";
-      if (item.name == "Final Trailer" || item.name == "Witness") {
+      if (item.id == keys[0]) {
         trailer = "https://www.youtube.com/embed/" + item.key;
         // console.log(trailer);
 

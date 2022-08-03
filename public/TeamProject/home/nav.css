@@ -250,7 +250,7 @@ nav .logo.space {
 @media (max-width: 980px) {
   #divscroll {
     overflow-y: scroll;
-    height: 200px;
+    height: 224px;
     width: 100%;
     /* background-color: #fff; */
     margin: 0 0 10px 0;
@@ -291,7 +291,7 @@ nav .logo.space {
 @media (max-width: 350px) {
   #divscroll {
     overflow-y: scroll;
-    height: 200px;
+    height: 224px;
     width: 100%;
     /* background-color: #fff; */
     margin: 0 0 10px 0;

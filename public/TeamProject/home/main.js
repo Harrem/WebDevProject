@@ -73,7 +73,7 @@ function myFunctionAge1() {
         list.map((item) => {
           const id = item.id;
           const title = item.title;
-          const score = item.adult;
+          const score = item.vote_average;
           const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
           const date = item.release_date;
           const year = date.substr(0, 4);
@@ -83,8 +83,8 @@ function myFunctionAge1() {
             <img class="posters" src="${poster}" alt="Poster">
             <div id="textContainer">
               <h2 style="color: black;" id="titleCard">${title}</h2>
-              <i id="sty1" class="fa fa-clock-o"></i>
-              <span id="sty2">2:24</span>
+              <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+              <span id="sty2">${score}K</span>
               <span id="sty3">${year}</span>
             </div>
           </div></a>`;
@@ -112,7 +112,7 @@ function myFunctionAge1() {
         list.map((item) => {
           const id = item.id;
           const title = item.name;
-          const score = item.adult;
+          const score = item.vote_average;
           const poster = "http://image.tmdb.org/t/p/w200/" + item.poster_path;
           const date = item.first_air_date;
           const year = date.substr(0, 4);
@@ -122,8 +122,8 @@ function myFunctionAge1() {
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
             <h2 style="color: black;" id="titleCard">${title}</h2>
-            <i id="sty1" class="fa fa-clock-o"></i>
-            <span id="sty2">2:24</span>
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <span id="sty2">${score}K</span>
             <span id="sty3">${year}</span>
           </div>
         </div></a>`;
@@ -151,7 +151,7 @@ function myFunctionAge1() {
         list.map((item) => {
           const id = item.id;
           const title = item.title;
-          const score = item.adult;
+          const score = item.vote_average;
           const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
           const date = item.release_date;
           const year = date.toString().substr(0, 4);
@@ -161,8 +161,8 @@ function myFunctionAge1() {
             <img class="posters" src="${poster}" alt="Poster">
             <div id="textContainer">
               <h2 style="color: black;" id="titleCard">${title}</h2>
-              <i id="sty1" class="fa fa-clock-o"></i>
-              <span id="sty2">2:24</span>
+              <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+              <span id="sty2">${score}K</span>
               <span id="sty3">${year}</span>
             </div>
           </div></a>`;
@@ -190,7 +190,7 @@ function myFunctionAge1() {
         list.map((item) => {
           const id = item.id;
           const title = item.name;
-          const score = item.adult;
+          const score = item.vote_average;
           const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
           const date = item.first_air_date;
           const year = date.substr(0, 4);
@@ -200,8 +200,8 @@ function myFunctionAge1() {
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
             <h2 style="color: black;" id="titleCard">${title}</h2>
-            <i id="sty1" class="fa fa-clock-o"></i>
-            <span id="sty2">2:24</span>
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <span id="sty2">${score}K</span>
             <span id="sty3">${year}</span>
           </div>
         </div></a>`;
@@ -241,7 +241,7 @@ function myFunctionAge2() {
         list.map((item) => {
           const id = item.id;
           const title = item.title;
-          const score = item.adult;
+          const score = item.vote_average;
           const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
           const date = item.release_date;
           const year = date.substr(0, 4);
@@ -251,8 +251,8 @@ function myFunctionAge2() {
             <img class="posters" src="${poster}" alt="Poster">
             <div id="textContainer">
               <h2 style="color: black;" id="titleCard">${title}</h2>
-              <i id="sty1" class="fa fa-clock-o"></i>
-              <span id="sty2">2:24</span>
+              <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+              <span id="sty2">${score}K</span>
               <span id="sty3">${year}</span>
             </div>
           </div></a>`;
@@ -280,7 +280,7 @@ function myFunctionAge2() {
         list.map((item) => {
           const id = item.id;
           const title = item.name;
-          const score = item.adult;
+          const score = item.vote_average;
           const poster = "http://image.tmdb.org/t/p/w200/" + item.poster_path;
           const date = item.first_air_date;
           const year = date.substr(0, 4);
@@ -290,8 +290,8 @@ function myFunctionAge2() {
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
             <h2 style="color: black;" id="titleCard">${title}</h2>
-            <i id="sty1" class="fa fa-clock-o"></i>
-            <span id="sty2">2:24</span>
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <span id="sty2">${score}K</span>
             <span id="sty3">${year}</span>
           </div>
         </div></a>`;
@@ -319,7 +319,7 @@ function myFunctionAge2() {
         list.map((item) => {
           const id = item.id;
           const title = item.title;
-          const score = item.adult;
+          const score = item.vote_average;
           const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
           const date = item.release_date;
           const year = date.toString().substr(0, 4);
@@ -329,8 +329,8 @@ function myFunctionAge2() {
             <img class="posters" src="${poster}" alt="Poster">
             <div id="textContainer">
               <h2 style="color: black;" id="titleCard">${title}</h2>
-              <i id="sty1" class="fa fa-clock-o"></i>
-              <span id="sty2">2:24</span>
+              <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <span id="sty2">${score}K</span>
               <span id="sty3">${year}</span>
             </div>
           </div></a>`;
@@ -358,7 +358,7 @@ function myFunctionAge2() {
         list.map((item) => {
           const id = item.id;
           const title = item.name;
-          const score = item.adult;
+          const score = item.vote_average;
           const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
           const date = item.first_air_date;
           const year = date.substr(0, 4);
@@ -368,8 +368,8 @@ function myFunctionAge2() {
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
             <h2 style="color: black;" id="titleCard">${title}</h2>
-            <i id="sty1" class="fa fa-clock-o"></i>
-            <span id="sty2">2:24</span>
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <span id="sty2">${score}K</span>
             <span id="sty3">${year}</span>
           </div>
         </div></a>`;
@@ -398,7 +398,7 @@ for (let i = 1; i < 2; i++) {
       list.map((item) => {
         const id = item.id;
         const title = item.title;
-        const score = item.adult;
+        const score = item.vote_average;
         const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
         const date = item.release_date;
         const year = date.substr(0, 4);
@@ -408,8 +408,8 @@ for (let i = 1; i < 2; i++) {
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
             <h2 style="color: black;" id="titleCard">${title}</h2>
-            <i id="sty1" class="fa fa-clock-o"></i>
-            <span id="sty2">2:24</span>
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <span id="sty2">${score}K</span>
             <span id="sty3">${year}</span>
           </div>
         </div></a>`;
@@ -437,7 +437,7 @@ for (let i = 1; i < 2; i++) {
       list.map((item) => {
         const id = item.id;
         const title = item.name;
-        const score = item.adult;
+        const score = item.vote_average;
         const poster = "http://image.tmdb.org/t/p/w200/" + item.poster_path;
         const date = item.first_air_date;
         const year = date.substr(0, 4);
@@ -447,8 +447,8 @@ for (let i = 1; i < 2; i++) {
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
             <h2 style="color: black;" id="titleCard">${title}</h2>
-            <i id="sty1" class="fa fa-clock-o"></i>
-            <span id="sty2">2:24</span>
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <span id="sty2">${score}K</span>
             <span id="sty3">${year}</span>
           </div>
         </div></a>`;
@@ -477,7 +477,7 @@ for (let i = 1; i < 2; i++) {
       list.map((item) => {
         const id = item.id;
         const title = item.title;
-        const score = item.adult;
+        const score = item.vote_average;
         const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
         const date = item.release_date;
         const year = date.toString().substr(0, 4);
@@ -487,8 +487,8 @@ for (let i = 1; i < 2; i++) {
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
             <h2 style="color: black;" id="titleCard">${title}</h2>
-            <i id="sty1" class="fa fa-clock-o"></i>
-            <span id="sty2">2:24</span>
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <span id="sty2">${score}K</span>
             <span id="sty3">${year}</span>
           </div>
         </div></a>`;
@@ -516,7 +516,7 @@ for (let i = 1; i < 2; i++) {
       list.map((item) => {
         const id = item.id;
         const title = item.name;
-        const score = item.adult;
+        const score = item.vote_average;
         const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
         const date = item.first_air_date;
         const year = date.substr(0, 4);
@@ -526,8 +526,8 @@ for (let i = 1; i < 2; i++) {
           <img class="posters" src="${poster}" alt="Poster">
           <div id="textContainer">
             <h2 style="color: black;" id="titleCard">${title}</h2>
-            <i id="sty1" class="fa fa-clock-o"></i>
-            <span id="sty2">2:24</span>
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <span id="sty2">${score}K</span>
             <span id="sty3">${year}</span>
           </div>
         </div></a>`;

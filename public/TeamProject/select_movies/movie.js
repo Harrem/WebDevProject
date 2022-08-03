@@ -1,3 +1,27 @@
+const menuBtn = document.querySelector(".menu-icon span");
+const searchBtn = document.querySelector(".search-icon");
+const cancelBtn = document.querySelector(".cancel-icon");
+const items = document.querySelector(".nav-items");
+const form = document.querySelector("form");
+menuBtn.onclick = () => {
+  items.classList.add("active");
+  menuBtn.classList.add("hide");
+  searchBtn.classList.add("hide");
+  cancelBtn.classList.add("show");
+};
+cancelBtn.onclick = () => {
+  items.classList.remove("active");
+  menuBtn.classList.remove("hide");
+  searchBtn.classList.remove("hide");
+  cancelBtn.classList.remove("show");
+  form.classList.remove("active");
+  cancelBtn.style.color = "#ff3d00";
+};
+searchBtn.onclick = () => {
+  form.classList.add("active");
+  searchBtn.classList.add("hide");
+  cancelBtn.classList.add("show");
+};
 var format = localStorage.getItem("myValueFormat");
 var myemail = localStorage.getItem("myValueEmail");
 var myuserName = localStorage.getItem("myValueUserName");
@@ -40,6 +64,7 @@ function CheckNav() {
     range = 255;
   }
 }
+var keys = [];
 fetch(
   `https://api.themoviedb.org/3/movie/${id}/videos?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US`,
   {
@@ -48,17 +73,15 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-    // console.log(data);
+    console.log(data);
     const list = data.results;
 
     list.map((item) => {
       var trailer = "n/a";
-      if (
-        item.name == "Official Trailer" ||
-        item.name == "CENTAURO | Teaser tráiler | Netflix España"
-      ) {
+      keys.push(item.id);
+      if (item.id == keys[0]) {
         trailer = "https://www.youtube.com/embed/" + item.key;
-        // console.log(trailer);
+        console.log(trailer);
 
         document.getElementById(
           "videoContainer"

@@ -3,6 +3,30 @@ var nav = document.getElementById("nav");
 var logo = document.getElementById("logo");
 var d = window.innerWidth;
 var id = location.search.substring(1);
+const menuBtn = document.querySelector(".menu-icon span");
+const searchBtn = document.querySelector(".search-icon");
+const cancelBtn = document.querySelector(".cancel-icon");
+const items = document.querySelector(".nav-items");
+const form = document.querySelector("form");
+menuBtn.onclick = () => {
+  items.classList.add("active");
+  menuBtn.classList.add("hide");
+  searchBtn.classList.add("hide");
+  cancelBtn.classList.add("show");
+};
+cancelBtn.onclick = () => {
+  items.classList.remove("active");
+  menuBtn.classList.remove("hide");
+  searchBtn.classList.remove("hide");
+  cancelBtn.classList.remove("show");
+  form.classList.remove("active");
+  cancelBtn.style.color = "#ff3d00";
+};
+searchBtn.onclick = () => {
+  form.classList.add("active");
+  searchBtn.classList.add("hide");
+  cancelBtn.classList.add("show");
+};
 
 var v = false;
 var chooseone1 = true;
@@ -86,8 +110,8 @@ firestore
                 <img class="posters" src="${poster}" alt="Poster">
                 <div id="textContainer">
                 <h2 style="color: black" id="titleCard">${title}</h2>
-                  <i id="sty1" class="fa fa-clock-o"></i>
-                  <span id="sty2">2:23</span>
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                <span id="sty2">${score}K</span>
                   <span id="sty3">${year}</span>
                 </div>
               </div></a>`;
@@ -129,8 +153,8 @@ firestore
       <img class="posters" src="${poster}" alt="Poster">
       <div id="textContainer">
         <h2 style="color: black;" id="titleCard">${title}</h2>
-        <i id="sty1" class="fa fa-clock-o"></i>
-        <span id="sty2">2:24</span>
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+              <span id="sty2">${score}K</span>
         <span id="sty3">${year}</span>
       </div>
     </div></a>`;

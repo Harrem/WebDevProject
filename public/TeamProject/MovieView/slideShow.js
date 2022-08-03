@@ -1,5 +1,9 @@
+var changingAge = localStorage.getItem("changingAge");
+console.log(changingAge);
+// var geners = null;
+var geners = changingAge;
 fetch(
-  "https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334",
+  `https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334&${geners}`,
   {
     method: "GET",
   }
