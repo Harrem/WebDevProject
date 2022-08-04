@@ -62,7 +62,7 @@ function myFunctionAge1() {
   element.scrollIntoView();
   geners = "without_genres";
   //Most popular TV show
-  for (let i = 1; i <= 2; i++) {
+  for (let i = 1; i <= 1; i++) {
     fetch(
       `https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334&page=${i}&${geners}`,
       {
