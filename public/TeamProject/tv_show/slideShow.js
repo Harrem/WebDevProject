@@ -24,7 +24,7 @@ var myfunc = function (data) {
   // console.log(list);
   list.map((item) => {
     const id = item.id;
-    const title = item.title;
+    const title = item.name;
     const description = item.overview;
     const rating = item.vote_average;
     const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
