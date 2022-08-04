@@ -23,13 +23,14 @@ var myfunc = function (data) {
   const list = data.results;
   // console.log(list);
   list.map((item) => {
+    // console.log(item.backdrop_path);
     const id = item.id;
     const title = item.name;
     const description = item.overview;
     const rating = item.vote_average;
     const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
     const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-    const year = item.release_date;
+    const year = item.first_air_date;
 
     const movie = `
             <div class="carousel-cell"  id="" >
