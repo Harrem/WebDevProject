@@ -216,7 +216,7 @@ var passwordp = null;
 var userNameu = null;
 var agea = null;
 
-firestore.settings({ timestampsInSnapshots: true });
+firestore.settings({ timestampsInSnapshots: true, merge: true });
 
 var logout = document.getElementById("logout");
 logout.addEventListener("click", (e) => {

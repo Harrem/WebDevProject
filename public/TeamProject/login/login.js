@@ -55,7 +55,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
-db.settings({ timestampsInSnapshots: true });
+db.settings({ timestampsInSnapshots: true, merge: true });
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
