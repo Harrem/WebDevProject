@@ -538,3 +538,7 @@ for (let i = 1; i < 2; i++) {
       console.error(err);
     });
 }
+
+function home() {
+  window.location.replace("../home/index.html");
+}
