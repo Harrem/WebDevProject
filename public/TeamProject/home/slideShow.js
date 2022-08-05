@@ -3,7 +3,7 @@ var changingAge = localStorage.getItem("changingAge");
 // var geners = null;
 var geners = changingAge;
 
-var url = `https://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334&${geners}`;
+var url = `https://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334&`;
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
