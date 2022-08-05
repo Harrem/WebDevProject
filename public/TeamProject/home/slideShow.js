@@ -13,7 +13,7 @@ xhttp.onreadystatechange = function () {
     myfunc(response);
     let script = document.createElement("script");
     script.src = "./flickity.pkgd.min.js";
-    // document.head.appendChild(script);
+    document.head.appendChild(script);
   }
 };
 xhttp.open("GET", url, true);
