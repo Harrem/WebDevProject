@@ -1,5 +1,5 @@
 var changingAge = localStorage.getItem("changingAge");
-console.log(changingAge);
+// console.log(changingAge);
 
 var achgeners = 16;
 var geners = "without_geners";
@@ -161,7 +161,7 @@ fltuer.addEventListener("click", (e) => {
 
   for (let i = 1; i < 5; i++) {
     if (chooosemovie == true) {
-      console.log(chooosemovie);
+      // console.log(chooosemovie);
       fetch(
         `https://api.themoviedb.org/3/discover/${type}?api_key=717eacf2852518ed1f0a438d848f9334&sort_by=popularity.desc&${geners}&page=${i}`,
         {
@@ -213,7 +213,7 @@ fltuer.addEventListener("click", (e) => {
     }
 
     if (chooosetv == true) {
-      console.log(chooosetv);
+      // console.log(chooosetv);
       fetch(
         `https://api.themoviedb.org/3/discover/${type}?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&sort_by=popularity.desc&page=${i}&${geners}`,
         {
@@ -269,7 +269,7 @@ fltuer.addEventListener("click", (e) => {
     ifYearSelect == true &&
     ifGenerSelect == true
   ) {
-    console.log(true);
+    // console.log(true);
     if (chooosetv == true) {
       document.getElementById("mymoviefilter").innerHTML = "";
     }

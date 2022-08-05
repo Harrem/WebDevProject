@@ -158,20 +158,20 @@ submitButton.addEventListener("click", (e) => {
       repeatPassword: rP,
       age: a,
     };
-    console.log(userData);
+    // console.log(userData);
     firestore
       .collection("userList")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          console.log(`${doc.id} => ${doc.data().email}`);
+          // console.log(`${doc.id} => ${doc.data().email}`);
           if (
             doc.data().email == myemail &&
             doc.data().password == mypassword &&
             doc.data().userName == myuserName &&
             doc.data().age == format
           ) {
-            console.log(`${doc.id} => ${doc.data().email}`);
+            // console.log(`${doc.id} => ${doc.data().email}`);
             firestore.collection("userList").doc(doc.id).update(userData);
           }
         });
@@ -182,14 +182,14 @@ submitButton.addEventListener("click", (e) => {
           .get()
           .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-              console.log(`${doc.id} => ${doc.data().email}`);
+              // console.log(`${doc.id} => ${doc.data().email}`);
               if (
                 doc.data().email == em &&
                 doc.data().password == p &&
                 doc.data().userName == n &&
                 doc.data().age == a
               ) {
-                console.log(`${doc.id} => ${doc.data().email}`);
+                // console.log(`${doc.id} => ${doc.data().email}`);
                 firestore.collection("userList").doc(doc.id).update(userData);
                 document.getElementById("theemail").innerHTML = em;
                 document.getElementById("name").innerHTML = n;
@@ -272,7 +272,7 @@ logout.addEventListener("click", (e) => {
           passwordp = doc.data().password;
           userNameu = doc.data().userName;
           agea = doc.data().age;
-          console.log(`${doc.id} => ${doc.data().email}`);
+          // console.log(`${doc.id} => ${doc.data().email}`);
         }
       });
     })
@@ -318,7 +318,7 @@ firestore
         r1 = doc.data().userName;
         r2 = doc.data().email;
         r3 = doc.data().password;
-        console.log(r1);
+        // console.log(r1);
       } else {
         // console.log(doc.data().password);
       }
@@ -351,7 +351,7 @@ firestore
         r4 = doc.data().userName;
         r5 = doc.data().email;
         r6 = doc.data().password;
-        console.log(r6);
+        // console.log(r6);
       } else {
         // document.getElementById("loginForHiadenOrShow").style.display = "block";
       }
@@ -384,7 +384,7 @@ firestore
         r7 = doc.data().userName;
         r8 = doc.data().email;
         r9 = doc.data().password;
-        console.log(r9);
+        // console.log(r9);
       } else {
         // document.getElementById("logutForHiadenOrShow").style.display = "none";
       }

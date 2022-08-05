@@ -9,7 +9,7 @@ fetch(
 )
   .then((response) => response.json())
   .then((item) => {
-    console.log(item);
+    // console.log(item);
 
     const id = item.id;
     const title = item.name;

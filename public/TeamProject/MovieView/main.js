@@ -47,7 +47,7 @@ function CheckNav() {
 }
 
 var changingAge = localStorage.getItem("changingAge");
-console.log(changingAge);
+// console.log(changingAge);
 // var geners = null;
 var geners = changingAge;
 
@@ -286,7 +286,7 @@ function myFunctionAge2() {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         const list = data.results;
 
         list.map((item) => {
@@ -408,7 +408,7 @@ for (let i = 1; i < 2; i++) {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       const list = data.results;
 
       list.map((item) => {

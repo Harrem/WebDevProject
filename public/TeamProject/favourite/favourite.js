@@ -198,7 +198,7 @@ logout.addEventListener("click", (e) => {
           passwordp = doc.data().password;
           userNameu = doc.data().userName;
           agea = doc.data().age;
-          console.log(`${doc.id} => ${doc.data().email}`);
+          // console.log(`${doc.id} => ${doc.data().email}`);
         }
       });
     })

@@ -1,5 +1,5 @@
 var changingAge = localStorage.getItem("changingAge");
-console.log(changingAge);
+// console.log(changingAge);
 // var geners = null;
 var geners = changingAge;
 fetch(

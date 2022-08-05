@@ -1,3 +1,27 @@
+const menuBtn = document.querySelector(".menu-icon span");
+const searchBtn = document.querySelector(".search-icon");
+const cancelBtn = document.querySelector(".cancel-icon");
+const items = document.querySelector(".nav-items");
+const form = document.querySelector("form");
+menuBtn.onclick = () => {
+  items.classList.add("active");
+  menuBtn.classList.add("hide");
+  searchBtn.classList.add("hide");
+  cancelBtn.classList.add("show");
+};
+cancelBtn.onclick = () => {
+  items.classList.remove("active");
+  menuBtn.classList.remove("hide");
+  searchBtn.classList.remove("hide");
+  cancelBtn.classList.remove("show");
+  form.classList.remove("active");
+  cancelBtn.style.color = "#ff3d00";
+};
+searchBtn.onclick = () => {
+  form.classList.add("active");
+  searchBtn.classList.add("hide");
+  cancelBtn.classList.add("show");
+};
 var format = localStorage.getItem("myValueFormat");
 var myemail = localStorage.getItem("myValueEmail");
 var myuserName = localStorage.getItem("myValueUserName");
@@ -49,7 +73,7 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
+    // console.log(data);
     const list = data.results;
     list.map((item) => {
       keys.push(item.id);
@@ -153,7 +177,7 @@ fetch(
               if (items == dataID) {
                 f = doc.data().FID2;
                 f.splice(i2, 1);
-                console.log(`${doc.id} => ${doc.data().email}`);
+                // console.log(`${doc.id} => ${doc.data().email}`);
                 firestore
                   .collection("userList")
                   .doc(doc.id)
@@ -167,7 +191,7 @@ fetch(
               } else {
                 f = doc.data().FID2;
                 f.push(dataID);
-                console.log(`${doc.id} => ${doc.data().email}`);
+                // console.log(`${doc.id} => ${doc.data().email}`);
                 firestore
                   .collection("userList")
                   .doc(doc.id)
@@ -222,7 +246,7 @@ logout.addEventListener("click", (e) => {
           passwordp = doc.data().password;
           userNameu = doc.data().userName;
           agea = doc.data().age;
-          console.log(`${doc.id} => ${doc.data().email}`);
+          // console.log(`${doc.id} => ${doc.data().email}`);
         }
       });
     })
@@ -268,7 +292,7 @@ firestore
         r1 = doc.data().userName;
         r2 = doc.data().email;
         r3 = doc.data().password;
-        console.log(r1);
+        // console.log(r1);
       } else {
         // console.log(doc.data().password);
       }
@@ -301,7 +325,7 @@ firestore
         r4 = doc.data().userName;
         r5 = doc.data().email;
         r6 = doc.data().password;
-        console.log(r6);
+        // console.log(r6);
       } else {
         // document.getElementById("loginForHiadenOrShow").style.display = "block";
       }
@@ -334,7 +358,7 @@ firestore
         r7 = doc.data().userName;
         r8 = doc.data().email;
         r9 = doc.data().password;
-        console.log(r9);
+        // console.log(r9);
       } else {
         // document.getElementById("logutForHiadenOrShow").style.display = "none";
       }

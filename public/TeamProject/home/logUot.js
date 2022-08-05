@@ -215,7 +215,7 @@ function mysended() {
           doc.data().password == mypassword &&
           doc.data().userName == myuserName
         ) {
-          console.log(`${doc.id} => ${doc.data().email}`);
+          // console.log(`${doc.id} => ${doc.data().email}`);
           alert("The massege is sended.");
         }
       });

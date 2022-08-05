@@ -96,7 +96,7 @@ submitButton.addEventListener("click", (e) => {
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
           if (doc.data().email == email && doc.data().password == password) {
-            console.log(doc.data().email);
+            // console.log(doc.data().email);
             corectEmail = doc.data().email;
             corectPassword = doc.data().password;
             corectAge = doc.data().age;
@@ -107,8 +107,8 @@ submitButton.addEventListener("click", (e) => {
       })
       .then(() => {
         if (corectEmail == email && corectPassword == password) {
-          console.log(corectEmail);
-          console.log(corectPassword);
+          // console.log(corectEmail);
+          // console.log(corectPassword);
           document.getElementById("email").value = "";
           document.getElementById("password").value = "";
           localStorage.setItem("myValueUserName", corectName);
@@ -119,7 +119,7 @@ submitButton.addEventListener("click", (e) => {
           // chosse = false;
           window.location.replace("../home/index.html");
         } else {
-          console.log("non");
+          // console.log("non");
           alert("the passord or email is wrong!!!");
           window.location.reload();
           // chosse = true;
@@ -179,7 +179,7 @@ logout.addEventListener("click", (e) => {
           passwordp = doc.data().password;
           userNameu = doc.data().userName;
           agea = doc.data().age;
-          console.log(`${doc.id} => ${doc.data().email}`);
+          // console.log(`${doc.id} => ${doc.data().email}`);
         }
       });
     })
@@ -224,7 +224,7 @@ db.collection("userList")
         r1 = doc.data().userName;
         r2 = doc.data().email;
         r3 = doc.data().password;
-        console.log(r1);
+        // console.log(r1);
       } else {
         // console.log(doc.data().password);
       }
@@ -256,7 +256,7 @@ db.collection("userList")
         r4 = doc.data().userName;
         r5 = doc.data().email;
         r6 = doc.data().password;
-        console.log(r6);
+        // console.log(r6);
       } else {
         // document.getElementById("loginForHiadenOrShow").style.display = "block";
       }
@@ -288,7 +288,7 @@ db.collection("userList")
         r7 = doc.data().userName;
         r8 = doc.data().email;
         r9 = doc.data().password;
-        console.log(r9);
+        // console.log(r9);
       } else {
         // document.getElementById("logutForHiadenOrShow").style.display = "none";
       }

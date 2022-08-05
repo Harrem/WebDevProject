@@ -237,7 +237,7 @@ logout.addEventListener("click", (e) => {
           passwordp = doc.data().password;
           userNameu = doc.data().userName;
           agea = doc.data().age;
-          console.log(`${doc.id} => ${doc.data().email}`);
+          // console.log(`${doc.id} => ${doc.data().email}`);
         }
       });
     })
@@ -282,7 +282,7 @@ firestore
         r1 = doc.data().userName;
         r2 = doc.data().email;
         r3 = doc.data().password;
-        console.log(r1);
+        // console.log(r1);
       } else {
         // console.log(doc.data().password);
       }
@@ -315,7 +315,7 @@ firestore
         r4 = doc.data().userName;
         r5 = doc.data().email;
         r6 = doc.data().password;
-        console.log(r6);
+        // console.log(r6);
       } else {
         // document.getElementById("loginForHiadenOrShow").style.display = "block";
       }
@@ -348,7 +348,7 @@ firestore
         r7 = doc.data().userName;
         r8 = doc.data().email;
         r9 = doc.data().password;
-        console.log(r9);
+        // console.log(r9);
       } else {
         // document.getElementById("logutForHiadenOrShow").style.display = "none";
       }

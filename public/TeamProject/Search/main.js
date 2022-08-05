@@ -43,7 +43,7 @@ function myFunctionAge1() {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         const list = data.results;
         list.map((item) => {
           if (item.media_type == "tv") {
@@ -109,7 +109,7 @@ function myFunctionAge2() {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         const list = data.results;
         list.map((item) => {
           if (item.media_type == "tv") {
@@ -178,7 +178,7 @@ for (let i = 1; i < 5; i++) {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       const list = data.results;
       list.map((item) => {
         if (item.media_type == "tv") {
