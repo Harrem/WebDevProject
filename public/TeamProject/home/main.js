@@ -542,3 +542,11 @@ for (let i = 1; i < 2; i++) {
 function home() {
   window.location.replace("../home/index.html");
 }
+
+function movies() {
+  window.location.replace("../MovieView/index.html");
+}
+
+function tvshows() {
+  window.location.replace("../tv_show/index.html");
+}
