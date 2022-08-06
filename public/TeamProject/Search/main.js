@@ -34,7 +34,7 @@ function myFunctionAge1() {
   // element.scrollIntoView();
   geners = "without_genres";
 
-  for (let i = 1; i < 2; i++) {
+  for (let i = 1; i < 100; i++) {
     fetch(
       `https://api.themoviedb.org/3/search/multi?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&query=${keyword}&page=${i}&${geners}&include_adult=false`,
       {
@@ -100,7 +100,7 @@ function myFunctionAge2() {
   // element.scrollIntoView();
   geners = "with_genres=16";
 
-  for (let i = 1; i < 2; i++) {
+  for (let i = 1; i < 100; i++) {
     fetch(
       `https://api.themoviedb.org/3/search/multi?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&query=${keyword}&page=${i}&${geners}&include_adult=false`,
       {
@@ -169,7 +169,7 @@ function myFunctionAge2() {
   document.getElementById("searchResult").innerHTML = "";
 }
 
-for (let i = 1; i < 2; i++) {
+for (let i = 1; i < 100; i++) {
   fetch(
     `https://api.themoviedb.org/3/search/multi?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&query=${keyword}&page=${i}&${geners}`,
     {
