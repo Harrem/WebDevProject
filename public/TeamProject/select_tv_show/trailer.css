@@ -32,3 +32,9 @@
     position: relative;
   }
 }
+
+#heart {
+  color: black;
+  padding: 4px;
+  font-size: 15px;
+}

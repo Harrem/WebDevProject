@@ -141,9 +141,36 @@ fetch(
                                        <span id="released">Spoken languages: </span><span id="sp">${spokenlan}</span></br></br>
                                        <span id="released">Number of seasons: </span><span id="sp">${data.number_of_seasons}</span></br></br>
                                        <span id="released">Number of episodes: </span><span id="sp">${data.number_of_episodes}</span></br></br>
-                                       <input type="button" value="Favourite" id="bb"></br></br>
+                                       <button id="bb">Favourite <i id="heart" class="fa fa-heart" aria-hidden="true"></i></button></br></br>
         </div>`;
     // });
+
+    firestore
+      .collection("userList")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          if (
+            doc.data().email == myemail &&
+            doc.data().password == mypassword &&
+            doc.data().userName == myuserName &&
+            doc.data().age == format
+          ) {
+            emaillogin = doc.data().email;
+            userNamelogin = doc.data().userName;
+            passwordlogin = doc.data().password;
+
+            for (let i = 0; i < doc.data().FID2.length; i++) {
+              if (doc.data().FID2[i] == data.id) {
+                document.getElementById("heart").style.color = "red";
+              } else {
+                document.getElementById("heart").style.color = "black";
+              }
+            }
+          }
+        });
+      });
+
     var submitButton = document.getElementById("bb");
     submitButton.addEventListener("click", (e) => {
       e.preventDefault();
@@ -183,10 +210,11 @@ fetch(
                   .doc(doc.id)
                   .update({ FID2: f })
                   .then(() => {
-                    alert("The movie removed of faivourete");
+                    document.getElementById("heart").style.color = "black";
+                    // alert("The movie removed of faivourete");
                   })
                   .then(() => {
-                    window.location.reload();
+                    // window.location.reload();
                   });
               } else {
                 f = doc.data().FID2;
@@ -197,10 +225,11 @@ fetch(
                   .doc(doc.id)
                   .update({ FID2: f })
                   .then(() => {
-                    alert("The movie added to faivourete");
+                    document.getElementById("heart").style.color = "red";
+                    // alert("The movie added to faivourete");
                   })
                   .then(() => {
-                    window.location.reload();
+                    // window.location.reload();
                   });
               }
             }

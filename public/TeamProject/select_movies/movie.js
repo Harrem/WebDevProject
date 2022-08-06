@@ -207,7 +207,7 @@ fetch(
                   .doc(doc.id)
                   .update({ FID: f })
                   .then(() => {
-                    alert("The movie removed of faivourete");
+                    // alert("The movie removed of faivourete");
                     document.getElementById("heart").style.color = "black";
                   })
                   .then(() => {
@@ -222,7 +222,7 @@ fetch(
                   .doc(doc.id)
                   .update({ FID: f })
                   .then(() => {
-                    alert("The movie added to faivourete");
+                    // alert("The movie added to faivourete");
                     document.getElementById("heart").style.color = "red";
                   })
                   .then(() => {
