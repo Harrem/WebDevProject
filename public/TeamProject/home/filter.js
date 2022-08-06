@@ -2,7 +2,7 @@ var changingAge = localStorage.getItem("changingAge");
 // console.log(changingAge);
 
 var achgeners = 16;
-var geners = "without_geners";
+var geners = changingAge;
 
 var type = null;
 var chooosemovie = false;
@@ -159,7 +159,7 @@ fltuer.addEventListener("click", (e) => {
     document.getElementById("hidenfilter").style.display = "block";
   }
 
-  for (let i = 1; i < 50; i++) {
+  for (let i = 1; i < 100; i++) {
     if (chooosemovie == true) {
       // console.log(chooosemovie);
       fetch(
