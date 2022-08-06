@@ -43,7 +43,7 @@ function CheckNav() {
   }
 }
 
-var changingAge = localStorage.getItem("changingAge");
+var changingAge = localStorage.getItem("myValueFormat");
 // console.log(changingAge);
 // var geners = null;
 var geners = changingAge;
