@@ -17,7 +17,7 @@ fetch(
     const rating = item.vote_average;
     const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
     const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-    const year = item.release_date;
+    const year = item.first_air_date;
 
     const movie = `
             <div class="carousel-cell"  id="" >
