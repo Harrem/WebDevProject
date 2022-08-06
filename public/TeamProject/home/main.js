@@ -44,7 +44,7 @@ function CheckNav() {
 }
 
 var changingAge = localStorage.getItem("myValueFormat");
-// console.log(changingAge);
+console.log(changingAge);
 // var geners = null;
 var geners = changingAge;
 function myFunctionAge1() {
