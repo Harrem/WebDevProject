@@ -160,7 +160,7 @@ fltuer.addEventListener("click", (e) => {
     document.getElementById("hidenfilter").style.display = "block";
   }
 
-  for (let i = 1; i < 100; i++) {
+  for (let i = 1; i < 50; i++) {
     if (chooosemovie == true) {
       // console.log(chooosemovie);
       fetch(
