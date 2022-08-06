@@ -715,7 +715,7 @@ body {
   display: none;
 }
 #logutForHiadenOrShow {
-  display: none;
+  display: block;
 }
 
 /* <!-- HTML !-->
