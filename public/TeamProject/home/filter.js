@@ -1,8 +1,9 @@
-var changingAge = localStorage.getItem("changingAge");
+var changingAge = localStorage.getItem("myValueFormat");
 // console.log(changingAge);
 
 var achgeners = 16;
 var geners = changingAge;
+console.log(geners);
 
 var type = null;
 var chooosemovie = false;
@@ -190,7 +191,25 @@ fltuer.addEventListener("click", (e) => {
                             <span id="sty3">${year}</span>
                           </div>
                         </div></a>`;
-            if (genress.includes(achgeners) || geners == "without_geners") {
+            if (geners == "without_geners" || geners == "") {
+              if (theAllGenre == "theAllGenre") {
+                if (year == YEARS) {
+                  document.getElementById("mymoviefilter").innerHTML += movie;
+                } else if (year <= YEARSALL) {
+                  document.getElementById("mymoviefilter").innerHTML += movie;
+                } else if (year <= YEARSOLDER) {
+                  document.getElementById("mymoviefilter").innerHTML += movie;
+                }
+              } else if (genress.includes(theGenre)) {
+                if (year == YEARS) {
+                  document.getElementById("mymoviefilter").innerHTML += movie;
+                } else if (year <= YEARSALL) {
+                  document.getElementById("mymoviefilter").innerHTML += movie;
+                } else if (year <= YEARSOLDER) {
+                  document.getElementById("mymoviefilter").innerHTML += movie;
+                }
+              }
+            } else if (genress.includes(achgeners)) {
               if (theAllGenre == "theAllGenre") {
                 if (year == YEARS) {
                   document.getElementById("mymoviefilter").innerHTML += movie;
@@ -243,7 +262,25 @@ fltuer.addEventListener("click", (e) => {
                   <span id="sty3">${year}</span>
                 </div>
               </div></a>`;
-            if (genress.includes(achgeners) || geners == "without_geners") {
+            if (geners == "without_geners" || geners == "") {
+              if (theAllGenre == "theAllGenre") {
+                if (year == YEARS) {
+                  document.getElementById("mymoviefilter").innerHTML += movie;
+                } else if (year <= YEARSALL) {
+                  document.getElementById("mymoviefilter").innerHTML += movie;
+                } else if (year <= YEARSOLDER) {
+                  document.getElementById("mymoviefilter").innerHTML += movie;
+                }
+              } else if (genress.includes(theGenre)) {
+                if (year == YEARS) {
+                  document.getElementById("mymoviefilter").innerHTML += movie;
+                } else if (year <= YEARSALL) {
+                  document.getElementById("mymoviefilter").innerHTML += movie;
+                } else if (year <= YEARSOLDER) {
+                  document.getElementById("mymoviefilter").innerHTML += movie;
+                }
+              }
+            } else if (genress.includes(achgeners)) {
               if (theAllGenre == "theAllGenre") {
                 if (year == YEARS) {
                   document.getElementById("mymoviefilter").innerHTML += movie;

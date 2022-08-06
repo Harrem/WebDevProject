@@ -25,7 +25,7 @@ searchBtn.onclick = () => {
 var keyword = location.search.substring(1).split("=");
 keyword = keyword[1];
 
-var changingAge = localStorage.getItem("changingAge");
+var changingAge = localStorage.getItem("myValueFormat");
 // console.log(changingAge);
 // var geners = null;
 var geners = changingAge;
@@ -169,7 +169,7 @@ function myFunctionAge2() {
   document.getElementById("searchResult").innerHTML = "";
 }
 
-for (let i = 1; i < 100; i++) {
+for (let i = 1; i < 50; i++) {
   fetch(
     `https://api.themoviedb.org/3/search/multi?api_key=717eacf2852518ed1f0a438d848f9334&language=en-US&query=${keyword}&page=${i}&${geners}`,
     {
@@ -200,11 +200,13 @@ for (let i = 1; i < 100; i++) {
               <span id="sty3">${year}</span>
             </div>
           </div></a>`;
-          for (let n = 0; n < 10; n++) {
-            if (item.genre_ids[n] == "16") {
-              document.getElementById("searchResult").innerHTML += movie;
-            }
+          // for (let n = 0; n < 10; n++) {
+          if (geners == "without_geners" || geners == "") {
+            document.getElementById("searchResult").innerHTML += movie;
+          } else if (item.genre_ids == "16") {
+            document.getElementById("searchResult").innerHTML += movie;
           }
+          // }
         } else if (item.media_type == "movie") {
           const id = item.id;
           const title = item.title;
@@ -223,11 +225,15 @@ for (let i = 1; i < 100; i++) {
             <span id="sty3">${year}</span>
           </div>
         </div></a>`;
-          for (let n = 0; n < 10; n++) {
-            if (item.genre_ids[n] == "16") {
-              document.getElementById("searchResult").innerHTML += movie;
-            }
+          // for (let n = 0; n < 10; n++) {
+          // if (item.genre_ids[n] == "16") {
+          if (geners == "without_geners" || geners == "") {
+            document.getElementById("searchResult").innerHTML += movie;
+          } else if (item.genre_ids == "16") {
+            document.getElementById("searchResult").innerHTML += movie;
           }
+          // }
+          // }
         }
       });
     })
