@@ -190,18 +190,22 @@ logout.addEventListener("click", (e) => {
         userNameu == myuserName &&
         agea == format
       ) {
-        localStorage.setItem("myValueUserName", "");
-        localStorage.setItem("password", "");
-        localStorage.setItem("repeatPassword", "");
-        localStorage.setItem("myValueEmail", "");
-        localStorage.setItem("myValueFormat", "");
-        alert("LogOut of your acounnt!");
+        if (confirm("LogOut of your acounnt!") == true) {
+          localStorage.setItem("myValueUserName", "");
+          localStorage.setItem("password", "");
+          localStorage.setItem("repeatPassword", "");
+          localStorage.setItem("myValueEmail", "");
+          localStorage.setItem("myValueFormat", "");
+          window.location.replace("../login/login.html");
+        } else {
+          return false;
+        }
       } else {
         alert("You are not login to logut!!!");
       }
     })
     .then(() => {
-      window.location.replace("../signUp/signUp.html");
+      // window.location.replace("../signUp/signUp.html");
     });
 });
 //////////////////////////////////////////////////////////////////

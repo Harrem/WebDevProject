@@ -135,9 +135,35 @@ fetch(
                                      <span id="released">Original language: </span><span id="sp">${data.original_language}</span></br></br>
                                      <span id="released">Country: </span><span id="sp">${country}</span></br></br>
                                      <span id="released">Spoken languages: </span><span id="sp">${spokenlan}</span></br></br>
-                                     <input type="button" value="Favourite" id="bb"></br></br>
+                                     <button id="bb">Favourite <i id="heart" class="fa fa-heart" aria-hidden="true"></i></button></br></br>
       </div>`;
     // });
+
+    firestore
+      .collection("userList")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          if (
+            doc.data().email == myemail &&
+            doc.data().password == mypassword &&
+            doc.data().userName == myuserName &&
+            doc.data().age == format
+          ) {
+            emaillogin = doc.data().email;
+            userNamelogin = doc.data().userName;
+            passwordlogin = doc.data().password;
+
+            for (let i = 0; i < doc.data().FID.length; i++) {
+              if (doc.data().FID[i] == data.id) {
+                document.getElementById("heart").style.color = "red";
+              } else {
+                document.getElementById("heart").style.color = "black";
+              }
+            }
+          }
+        });
+      });
 
     var submitButton = document.getElementById("bb");
     submitButton.addEventListener("click", (e) => {
@@ -182,9 +208,10 @@ fetch(
                   .update({ FID: f })
                   .then(() => {
                     alert("The movie removed of faivourete");
+                    document.getElementById("heart").style.color = "black";
                   })
                   .then(() => {
-                    window.location.reload();
+                    // window.location.reload();
                   });
               } else {
                 f = doc.data().FID;
@@ -196,9 +223,10 @@ fetch(
                   .update({ FID: f })
                   .then(() => {
                     alert("The movie added to faivourete");
+                    document.getElementById("heart").style.color = "red";
                   })
                   .then(() => {
-                    window.location.reload();
+                    // window.location.reload();
                   });
               }
             }
@@ -256,18 +284,22 @@ logout.addEventListener("click", (e) => {
         userNameu == myuserName &&
         agea == format
       ) {
-        localStorage.setItem("myValueUserName", "");
-        localStorage.setItem("password", "");
-        localStorage.setItem("repeatPassword", "");
-        localStorage.setItem("myValueEmail", "");
-        localStorage.setItem("myValueFormat", "");
-        alert("LogOut of your acounnt!");
+        if (confirm("LogOut of your acounnt!") == true) {
+          localStorage.setItem("myValueUserName", "");
+          localStorage.setItem("password", "");
+          localStorage.setItem("repeatPassword", "");
+          localStorage.setItem("myValueEmail", "");
+          localStorage.setItem("myValueFormat", "");
+          window.location.replace("../login/login.html");
+        } else {
+          return false;
+        }
       } else {
         alert("You are not login to logut!!!");
       }
     })
     .then(() => {
-      window.location.replace("../signUp/signUp.html");
+      // window.location.replace("../signUp/signUp.html");
     });
 });
 //////////////////////////////////////////////////////////////////

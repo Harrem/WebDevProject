@@ -19,9 +19,9 @@
   border-radius: 12px;
 }
 
-#list :hover {
+/* #list :hover {
   color: chartreuse;
-}
+} */
 
 @media screen and (max-width: 450px) {
   #list {
@@ -30,4 +30,10 @@
   #sp {
     position: relative;
   }
+}
+
+#heart {
+  color: black;
+  padding: 4px;
+  font-size: 15px;
 }
