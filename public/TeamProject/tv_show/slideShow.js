@@ -65,7 +65,7 @@ var changingAge = localStorage.getItem("changingAge");
 // var geners = null;
 var geners = changingAge;
 
-var url = `https://api.themoviedb.org/3/tv/popular?api_key=717eacf2852518ed1f0a438d848f9334&`;
+var url = `https://api.themoviedb.org/3/movie/popular?api_key=717eacf2852518ed1f0a438d848f9334&`;
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
@@ -86,12 +86,12 @@ var myfunc = function (data) {
   // console.log(list);
   list.map((item) => {
     const id = item.id;
-    const title = item.name;
+    const title = item.title;
     const description = item.overview;
     const rating = item.vote_average;
     const poster = "http://image.tmdb.org/t/p/w500/" + item.poster_path;
     const backdrop = "http://image.tmdb.org/t/p/w1280/" + item.backdrop_path;
-    const year = item.first_air_date;
+    const year = item.release_date;
 
     const movie = `
             <div class="carousel-cell"  id="" >
