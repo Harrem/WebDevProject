@@ -69,7 +69,7 @@
 //   x[slideIndex - 1].style.display = "block";
 //   setTimeout(carousel, 5000); // Change image every 2 seconds
 // }
-var changingAge = localStorage.getItem("changingAge");
+var changingAge = localStorage.getItem("myValueFormat");
 // console.log(changingAge);
 // var geners = null;
 var geners = changingAge;
